@@ -1,0 +1,36 @@
+// Generic pages
+// Page utilities
+.page-utilities {
+  margin-top: $line-height-computed * 1.5;
+}
+
+.page-utilities-last-modified {
+  font-size: $font-size-small;
+  color: $text-muted;
+
+  @media (min-width: $screen-sm) {
+    float: right;
+    text-align: right;
+  }
+}
+
+// Compensate for the nav margin on bottom
+.jumbotron {
+  margin-top: -$line-height-computed;
+}
+
+// IFramePage
+.Iframepage-iframe {
+  border: 0;
+}
+
+// Page features & quicklinks, used on homepage
+.page-showcase {
+  padding-bottom: $line-height-computed * 1.5;
+}
+
+// Sidebar Widget Spacing
+// Used for side menus, News and Events widgets and Blog widgets
+.page-sidebar-widget {
+  margin-bottom: $line-height-computed * 1.5;
+}
