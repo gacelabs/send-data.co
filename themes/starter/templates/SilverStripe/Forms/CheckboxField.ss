@@ -1,1 +1,0 @@
-<input $getAttributesHTML('aria-required') />
