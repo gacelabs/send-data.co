@@ -1,0 +1,35 @@
+body {
+	padding-top: 54px;
+}
+
+@media (min-width: 992px) {
+	body {
+		padding-top: 56px;
+	}
+}
+
+.business-header {
+	height: 50vh;
+	min-height: 300px;
+	background: url('../images/header-bg.jpg') center center no-repeat scroll;
+	-webkit-background-size: cover;
+	-moz-background-size: cover;
+	background-size: cover;
+	-o-background-size: cover;
+}
+
+.card {
+	height: 100%;
+}
+.nav-item.active>a {
+	color: #ffc107 !important;
+}
+.icon-left {
+	margin-right: 15px;
+}
+.text-grey {
+	color: #555;
+}
+.text-all-caps {
+	text-transform: uppercase;
+}
