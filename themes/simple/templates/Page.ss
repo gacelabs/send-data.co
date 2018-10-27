@@ -1,4 +1,11 @@
 <!DOCTYPE html>
+<!--
+>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
+Simple. by Sara (saratusar.com, @saratusar) for Innovatif - an awesome Slovenia-based digital agency (innovatif.com/en)
+Change it, enhance it and most importantly enjoy it!
+>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
+-->
+
 <!--[if !IE]><!-->
 <html lang="$ContentLocale">
 <!--<![endif]-->
@@ -19,7 +26,7 @@
 	<% require themedCSS('typography') %>
 	<% require themedCSS('form') %>
 	<% require themedCSS('layout') %>
-	<link rel="shortcut icon" href="resources/themes/simple/images/favicon.ico" />
+	<link rel="shortcut icon" href="themes/simple/images/favicon.ico" />
 </head>
 <body class="$ClassName.ShortName<% if not $Menu(2) %> no-sidebar<% end_if %>" <% if $i18nScriptDirection %>dir="$i18nScriptDirection"<% end_if %>>
 <% include Header %>
@@ -30,9 +37,7 @@
 </div>
 <% include Footer %>
 
-<% require javascript('resources/themes/simple/javascript/jquery-3.3.1.min.js') %>
-<% require javascript('resources/themes/simple/javascript/bootstrap.min.js') %>
-<% require javascript('resources/themes/simple/javascript/fontawesome.js') %>
+<% require javascript('//code.jquery.com/jquery-3.3.1.min.js') %>
 <% require themedJavascript('script') %>
 
 </body>

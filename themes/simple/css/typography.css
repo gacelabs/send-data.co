@@ -56,7 +56,7 @@ body {
 .typography h4,
 .typography h5,
 .typography h6 {
-    font-family: Helvetica, "CamboRegular", Georgia, "Times New Roman", Times, serif; /* This references one of the custom @font-face fonts - the other fonts that are referenced are fallbacks for browsers that don't support @fontface */
+    font-family: "CamboRegular", Georgia, "Times New Roman", Times, serif; /* This references one of the custom @font-face fonts - the other fonts that are referenced are fallbacks for browsers that don't support @fontface */
     font-weight: normal;
     margin-bottom: 10px;
     color: #444;
@@ -78,7 +78,7 @@ body {
 /* PARAGRAGHS */
 .typography  p { font-size: 13px; line-height: 20px; margin: 0 0 20px; }
   .typography .intro {
-      font-family: Helvetica, "CamboRegular", Georgia, "Times New Roman", Times, serif;
+      font-family: "CamboRegular", Georgia, "Times New Roman", Times, serif;
       font-size: 22px;
       line-height: 32px;
       margin-bottom: 20px;
@@ -236,7 +236,7 @@ body {
 -------------------------------------------- */
 .typography blockquote {
   background: transparent url(../images/blockquote.png) no-repeat 0px 6px;
-  font-family: Helvetica, "CamboRegular", Georgia, "Times New Roman", Times, serif;
+  font-family: "CamboRegular", Georgia, "Times New Roman", Times, serif;
   color: #777;
   display: block;
   font-style: italic;

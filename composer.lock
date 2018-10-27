@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "e3b910b90a4f53dfcc781bdf608fd70e",
+    "content-hash": "1751ff057b34de397648a6647c7c6ff7",
     "packages": [
         {
             "name": "composer/ca-bundle",
@@ -181,47 +181,6 @@
                 "zikula"
             ],
             "time": "2018-08-27T06:10:37+00:00"
-        },
-        {
-            "name": "cwp/starter-theme",
-            "version": "2.0.2",
-            "source": {
-                "type": "git",
-                "url": "https://github.com/silverstripe/cwp-starter-theme.git",
-                "reference": "83ba91a3cfd537a57586e7e24ed9c66d5bcad616"
-            },
-            "dist": {
-                "type": "zip",
-                "url": "https://api.github.com/repos/silverstripe/cwp-starter-theme/zipball/83ba91a3cfd537a57586e7e24ed9c66d5bcad616",
-                "reference": "83ba91a3cfd537a57586e7e24ed9c66d5bcad616",
-                "shasum": ""
-            },
-            "require": {
-                "silverstripe/framework": "^4.0"
-            },
-            "suggest": {
-                "cwp/cwp": "Much of the functionality in this theme is enabled by this module"
-            },
-            "type": "silverstripe-theme",
-            "extra": {
-                "installer-name": "starter",
-                "expose": [
-                    "dist",
-                    "ico",
-                    "images"
-                ]
-            },
-            "notification-url": "https://packagist.org/downloads/",
-            "license": [
-                "BSD-3-Clause"
-            ],
-            "description": "CWP Theme",
-            "keywords": [
-                "cwp",
-                "silverstripe",
-                "theme"
-            ],
-            "time": "2018-07-19T23:37:47+00:00"
         },
         {
             "name": "embed/embed",
