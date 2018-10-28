@@ -13,7 +13,7 @@
 					</div>
 					<div class="card-footer">
 						<ul class="inline-list center">
-							<li><p class="mb-0">Price (Php): <b><?php echo $products[$activePage]['price']; ?></b></p></li>
+							<li><p class="mb-0">Price (Php): <b><?php echo number_format($products[$activePage]['price'], 2, '.', ','); ?></b></p></li>
 							<li><p class="mb-0">Billed: <b><?php echo $products[$activePage]['billed']; ?></b></p></li>
 						</ul>
 					</div>
@@ -39,36 +39,36 @@
 			<div class="form-header text-center">
 				<h5 class="zero-gaps">REGISTRATION</h5>
 			</div>
-			<form action="" method="" class="pt-3 px-3 form-body">
-				<input type="text" name="prod-name" class="d-none" value="<?php echo $activePage?>"/>
-				<input type="text" name="price-name" class="d-none" value="<?php echo $products[$activePage]['price']?>"/>
-				<input type="text" name="price-name" class="d-none" value="<?php echo $products[$activePage]['billed']?>"/>
+			<form action="http://api.datapushthru.com/register" method="get" class="pt-3 px-3 form-body">
+				<input type="text" name="register_type" class="d-none" value="<?php echo $activePage?>"/>
+				<input type="text" name="price" class="d-none" value="<?php echo $products[$activePage]['price']?>"/>
+				<input type="text" name="billed" class="d-none" value="<?php echo $products[$activePage]['billed']?>"/>
 				<div class="form-group mb-0">
 					<label for="org-name">Organization</label>
-					<input type="text" name="org-name" id="org-name" class="form-control" placeholder="Software Company Philippines" required/>
+					<input type="text" name="company" id="org-name" class="form-control" placeholder="Software Company Philippines" required />
 				</div>
 				<div class="row mt-3">
 					<div class="col-lg form-group mb-0">
 						<label for="email-name">Email Address</label>
-						<input type="email" name="email-name" id="email-name" class="form-control" placeholder="juancruz@softwarecompanyph.com" required/>
+						<input type="email" name="email" id="email-name" class="form-control" placeholder="juancruz@softwarecompanyph.com" required />
 					</div>
 					<div class="col-lg form-group mb-0">
 						<label for="admin-name">Admin Name</label>
-						<input type="text" name="admin-name" id="admin-name" class="form-control" placeholder="Juan Cruz" required/>
+						<input type="text" name="admin" id="admin-name" class="form-control" placeholder="Juan Cruz" required />
 					</div>
 				</div>
 				<div class="form-group mt-3">
 					<label for="url-name">Website Domain</label>
-					<input type="url" name="url-name" id="url-name" class="form-control" placeholder="www.website.com" required/>
+					<input type="url" name="origin" id="url-name" class="form-control" placeholder="www.website.com" required />
 				</div>
 				<div class="row mt-3">
 					<div class="col-lg form-group mb-0">
 						<label for="pw-name">Password</label>
-						<input type="password" name="pw-name" id="pw-name" class="form-control" required/>
+						<input type="password" name="password" id="pw-name" class="form-control" required />
 					</div>
 					<div class="col-lg form-group mb-0">
 						<label for="re-pw-name">Retype Password</label>
-						<input type="password" name="re-pw-name" id="re-pw-name" class="form-control" required/>
+						<input type="password" id="re-pw-name" class="form-control" required />
 					</div>
 				</div>
 				<div class="row mt-3 mb-3">

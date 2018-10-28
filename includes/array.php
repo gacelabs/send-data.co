@@ -3,7 +3,7 @@
 	$products = array(
 		'Free' => array(
 			'reg-link' => 'free-register',
-			'price' => 'Free',
+			'price' => '0.00',
 			'billed' => 'Monthly',
 			'desc' => array(
 				'2 Months Max',
@@ -13,7 +13,7 @@
 		),
 		'Business' => array(
 			'reg-link' => 'business-register',
-			'price' => '7,000',
+			'price' => '7000.00',
 			'billed' => 'Monthly',
 			'desc' => array(
 				'Monthly',
@@ -24,7 +24,7 @@
 		),
 		'Customed' => array(
 			'reg-link' => 'customed-register',
-			'price' => '1,000',
+			'price' => '1000.00',
 			'billed' => 'Monthly',
 			'desc' => array(
 				'Monthly',
