@@ -57,10 +57,11 @@
 						</ul>
 						<ul class="no-style-ul mt-4">
 							<li>And here's the other way</li>
-							<li class="mt-2"><pre class="mb-2"><code><b>b.</b> pushthru.bind('name_of_the_event', 'name_of_channel', {
-			whiteListed: false, // include yourself to receive the transmitted data (when set to true)
-			blackListed: false  // exclude yourself to receive the transmitted data (when set to true)
-		});</code></pre></li>
+							<li class="mt-2"><pre class="mb-2"><code><b>b.</b> pushthru.bind('name_of_the_event', 'name_of_channel', function(data) {
+	console.log(data.user_id);
+	console.log(data.message);
+	// this will output the values of the object transmitted to this channel connection with the event specify
+});</code></pre></li>
 							<ul class="no-style-ul">
 								<li class="alert alert-warning mb-2" role="alert"><pre class="mb-0"><code class="nohighlight">'name_of_the_event'<br/><span class="fa fa-info-circle text-grey"></span> <span class="small">The parameter is a string value of your event name</span></code></pre></li>
 								<li class="alert alert-warning mb-2" role="alert"><pre class="mb-0"><code class="nohighlight">'name_of_channel'<br/><span class="fa fa-info-circle text-grey"></span> <span class="small">The parameter is a string value of your channel name</span></code></pre></li>
@@ -75,10 +76,11 @@
 							<ul class="no-style-ul">
 								<li class="alert alert-warning" role="alert"><pre class="mb-0"><code class="nohighlight">'name_of_channel'<br/><span class="fa fa-info-circle text-grey"></span> <span class="small">The parameter is a string value of your channel name</span></code></pre></li>
 							</ul>
-							<li class="mt-4"><pre class="mb-2"><code>channel.listen('name_of_the_event', {
-			whiteListed: false, // include yourself to receive the transmitted data (when set to true)
-			blackListed: false  // exclude yourself to receive the transmitted data (when set to true)
-		});</code></pre></li>
+							<li class="mt-4"><pre class="mb-2"><code>channel.listen('name_of_the_event', function(data) {
+	console.log(data.user_id);
+	console.log(data.message);
+	// this will output the values of the object transmitted to this channel connection with the event specify
+});</code></pre></li>
 							<ul class="no-style-ul">
 								<li class="alert alert-warning mb-2" role="alert"><pre class="mb-0"><code class="nohighlight">'name_of_the_event'<br/><span class="fa fa-info-circle text-grey"></span> <span class="small">The parameter is a string value of your event name</span><br/><span class="fa fa-info-circle text-grey"></span> <span class="small">The parameter is a fixed object for event binding of pushthru class</span></code></pre></li>
 								<li class="alert alert-success" role="alert"><span class="small"><b>NOTE:</b> You cant only call the <kbd>listen</kbd> function on the last subscribed channel</span></li>
@@ -99,24 +101,20 @@
 							<li class="mb-2">Data types of <kbd><b>data_to_transmit_or_push</b></kbd> parameter</li>
 							<li class="mb-2"><pre class="mb-0"><code><b>string</b><br/>pushthru.trigger('name_of_the_event', 'name_of_channel', 'Hello world!');</code></pre></li>
 							<li><pre><code><b>object</b><br/>pushthru.trigger('name_of_the_event', 'name_of_channel', {
-				user_id: 1,
-				message: "Hello world!"
-			});</code></pre></li>
+	user_id: 1,
+	message: "Hello world!"
+});</code></pre></li>
 						</ul>
 					</div>
 					<div class="mt-5">
 						<p class="mb-0"><b>6. Catching the transmitted data.</b></p>
 						<ul class="no-style-ul">
 							<li>This will show you how to handle the transmitted data.</li>
-							<li class="mt-2"><pre class="mb-2"><code><b>a.</b> pushthru.bind('name_of_the_event', 'name_of_channel', {
-		whiteListed: false, // include yourself to receive the transmitted data (when set to true)
-		blackListed: false, // exclude yourself to receive the transmitted data (when set to true)
-		callback: function(data) {
-			console.log(data.user_id);
-			console.log(data.message);
-			// this will output the values of the object transmitted to this channel connection with the event specify
-		}
-	});</code></pre></li>
+							<li class="mt-2"><pre class="mb-2"><code><b>a.</b> pushthru.bind('name_of_the_event', 'name_of_channel', function(data) {
+	console.log(data.user_id);
+	console.log(data.message);
+	// this will output the values of the object transmitted to this channel connection with the event specify
+});</code></pre></li>
 							<ul class="no-style-ul mb-4">
 								<li class="alert alert-warning mb-2" role="alert"><pre class="mb-0"><code class="nohighlight">'name_of_the_event'<br/><span class="fa fa-info-circle text-grey"></span> <span class="small">The parameter is a string value of your event name</span></code></pre></li>
 								<li class="alert alert-warning mb-2" role="alert"><pre class="mb-0"><code class="nohighlight">'name_of_channel'<br/><span class="fa fa-info-circle text-grey"></span> <span class="small">The parameter is a string value of your channel name</span></code></pre></li>
