@@ -134,7 +134,7 @@
 							<li>Copy and patse this php file to desired folder in your website application path.</li>
 							<li>This is class library for backend implementation, there are ways of initializing this class base on your framework style on initializing it.</li>
 							<li class="mt-2"><pre class="mb-2"><code><h5 class="mb-0"><b>CodeIgniter</b></h5><br/>$this->load->library('pushthru', array('app_key'=><i><kbd>YOUR_APP_KEY</kbd></i>));</code></pre></li>
-							<li class="mt-2"><pre class="mb-2"><code><h5 class="mb-0"><b>Native PHP</b></h5><br/>require('PushThru.php');<br/><br/>$PushThruClass = new PushThru;<br/>$pushthru = $PushThruClass->initialize('<i><kbd>YOUR_APP_KEY</kbd></i>');</code></pre></li>
+							<li class="mt-2"><pre class="mb-2"><code><h5 class="mb-0"><b>Native PHP</b></h5><br/>require('path/to/the/PushThru.php');<br/><br/>$PushThruClass = new PushThru;<br/>$pushthru = $PushThruClass->initialize('<i><kbd>YOUR_APP_KEY</kbd></i>');</code></pre></li>
 							<li>or this</li>
 							<li class="mt-2"><pre class="mb-2"><code>$pushthru = new PushThru('<i><kbd>YOUR_APP_KEY</kbd></i>');</code></pre></li>
 						</ul>		
@@ -144,7 +144,7 @@
 						<ul class="no-style-ul">
 							<li>Transmitting data from backend. You must already subscribed and added the event on a channel (please see JavaScript Documentation steps 3 and 4).</li>
 							<li class="mt-2"><pre class="mb-2"><code><h5 class="mb-0"><b>CodeIgniter</b></h5><br/>$this->load->library('pushthru', array('app_key'=><i><kbd>YOUR_APP_KEY</kbd></i>));<br/>$PushThruObject = $this->pushthru;<br/><br/>$PushThruObject->trigger('name_of_the_event', 'name_of_channel', data_to_transmit_or_push);</code></pre></li>
-							<li class="mt-2"><pre class="mb-2"><code><h5 class="mb-0"><b>Native PHP</b></h5><br/>require('PushThru.php');<br/><br/>$PushThruClass = new PushThru;<br/>$pushthru = $PushThruClass->initialize('<i><kbd>YOUR_APP_KEY</kbd></i>');</code></pre></li>
+							<li class="mt-2"><pre class="mb-2"><code><h5 class="mb-0"><b>Native PHP</b></h5><br/>require('path/to/the/PushThru.php');<br/><br/>$PushThruClass = new PushThru;<br/>$pushthru = $PushThruClass->initialize('<i><kbd>YOUR_APP_KEY</kbd></i>');</code></pre></li>
 							<li>or this</li>
 							<li class="mt-2"><pre class="mb-2"><code><h5 class="mb-0"><b>Native PHP</b></h5><br/>$pushthru = new PushThru('<i><kbd>YOUR_APP_KEY</kbd></i>');<br/><br/>$pushthru->trigger('name_of_the_event', 'name_of_channel', data_to_transmit_or_push);</code></pre></li>
 						</ul>
