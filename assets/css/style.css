@@ -7,17 +7,40 @@ body {
 		padding-top: 56px;
 	}
 }
+@media (max-width: 767px) {
+	/*.container {
+		padding: 0;
+	}*/
+	.skew-bg {
+		padding-left: 10px;
+		padding-right: 10px;
+	}
+	/*.card {
+		margin-left: 10px;
+		margin-right: 10px;
+	}*/
+	.sm-no-gaps {
+		padding: 0;
+		margin: 0;
+	}
+}
 
 .business-header {
 	height: 50vh;
-	min-height: 300px;
+	min-height: 400px;
 	background: url('../images/header-bg.jpg') center center no-repeat scroll;
 	-webkit-background-size: cover;
 	-moz-background-size: cover;
 	background-size: cover;
 	-o-background-size: cover;
 }
-
+.skew-bg {
+	transform: skew(0deg, -4deg) translateY(-65px);
+	background: white;
+}
+.skew-bg .skew-bg-child {
+	transform: skew(0deg, 4deg) translateY(65px);
+}
 .card {
 	height: 100%;
 }
@@ -32,4 +55,70 @@ body {
 }
 .text-all-caps {
 	text-transform: uppercase;
+}
+.form-header {
+	background-color: #ffc107;
+	border-left: 1px solid #ffc107;
+	border-right: 1px solid #ffc107;
+	color: #fff;
+	padding: 15px 0;
+	border-top-left-radius: 6px;
+	border-top-right-radius: 6px;
+}
+.form-body {
+	border-left: 1px solid #ddd;
+	border-bottom: 1px solid #ddd;
+	border-right: 1px solid #ddd;
+	border-radius: 6px;
+}
+.inline-list {
+	padding: 0;
+	margin: 0;
+}
+.inline-list>li {
+	display: inline-block;
+}
+.inline-list.center>li {
+	text-align: center;
+	margin: 0 15px;
+}
+.bold-caps {
+	text-transform: uppercase;
+	font-weight: bold;
+}
+.no-style-ul {
+	list-style: none;
+	padding-left: 15px;
+}
+kbd {
+	color: #212529;
+	font-weight: bold;
+	padding: .2rem 0;
+    background-color: transparent;
+}
+.toggle-hide {
+	display: none;
+	transition: all .3s ease-in-out;
+}
+.fa-caret-down,.fa-caret-up {
+	cursor: pointer;
+	color: #aaa;
+	transition: all .3s ease-in-out;
+}
+.fa-caret-down:hover,.fa-caret-up:hover {
+	color: #ffc107;
+}
+.form-container {
+	margin-top: 30px !important;
+	margin-bottom: 30px !important;
+}
+.form-container.controlled {
+	width: 320px;
+}
+.form-container.controlled.center {
+	margin: 0 auto;
+}
+.zero-gaps {
+	padding: 0;
+	margin: 0;
 }

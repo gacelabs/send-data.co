@@ -3,33 +3,29 @@
 	include('includes/page_head.php');
 
 ?>
-<body>
+	<body>
 
 
-	<!-- Navigation -->
-	<?php
+		<!-- Navigation -->
+		<?php
 
-		include('includes/page_nav.php');
+			include('includes/page_nav.php');
 
-	?>
+		?>
 
-	<!-- Page Content -->
-	<div class="container">
-
+		<!-- Page Content -->
 		<?php
 
 			include($pageContent);
 
 		?>
 
-	</div>
+		<!-- Footer -->
+		<?php
 
-	<!-- Footer -->
-	<?php
+			include('includes/page_footer.php');
 
-		include('includes/page_footer.php');
+		?>
 
-	?>
-
-</body>
+	</body>
 </html>

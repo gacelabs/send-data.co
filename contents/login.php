@@ -1,0 +1,43 @@
+<div class="container">
+	<div class="form-container controlled center">
+		<form action="" method="" id="login-form" class="form-body pb-3">
+			<div class="form-header text-center mb-3">
+				<h5 class="zero-gaps">LOGIN</h5>
+			</div>
+			<div class="form-group mb-0 mx-3">
+				<label for="email-name">Email address</label>
+				<input type="email" name="email-name" id="email-name" class="form-control" placeholder="juancruz@softwarcompanyph.com" required/>
+			</div>
+			<div class="form-group my-3 mx-3">
+				<label for="pw-name">Password</label>
+				<input type="password" name="pw-name" id="pw-name" class="form-control" required/>
+			</div>
+			<div class="mx-3">
+				<button class="btn btn-block btn-lg btn-success">Login</button>
+			</div>
+		</form>
+		<div class="row mt-3 mx-3">
+			<a href="#">Reset Password</a>
+		</div>
+	</div>
+	<hr/>
+	<div class="row mt-4">
+		<?php foreach($products as $product => $rows) { ?>
+			<div class="col-lg col-md mt-2 mb-5">
+				<div class="card">
+					<div class="card-body">
+						<h4 class="card-title text-center"><b><?php echo $product; ?></b></h4>
+						<?php foreach($rows['desc'] as $val) { ?>
+							<div class="col-lg">
+								<p class="card-text"><h1 class="fa fa-check icon-left text-warning"></h1><?php echo $val; ?></p>
+							</div>
+						<?php } ?>
+					</div>
+					<div class="card-footer text-center">
+						<a href="?page=<?php echo $rows['reg-link'] ?>" class="btn btn-primary">Register</a>
+					</div>
+				</div>
+			</div>
+		<?php } ?>
+	</div>
+</div>

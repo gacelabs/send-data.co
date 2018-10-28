@@ -15,17 +15,22 @@
 			case 'free-register': // free register page
 				$pageTitle = 'Free - Register';
 				$pageContent = 'contents/register.php';
-				$activePage = 'free-reg';
+				$activePage = 'Free';
 				break;
 			case 'business-register': // business register page
 				$pageTitle = 'Bueiness - Register';
 				$pageContent = 'contents/register.php';
-				$activePage = 'business-reg';
+				$activePage = 'Business';
 				break;
 			case 'customed-register': // customed register page
 				$pageTitle = 'Customed - Register';
 				$pageContent = 'contents/register.php';
-				$activePage = 'customed-reg';
+				$activePage = 'Customed';
+				break;
+			default:
+				$pageTitle = 'Page Not Found';
+				$pageContent = 'contents/404.php';
+				$activePage = '404';
 				break;
 		}
 	} else {
