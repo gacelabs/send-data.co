@@ -58,17 +58,17 @@
 					</div>
 				</div>
 				<div class="form-group mt-3">
-					<label for="url-name">Website Domain</label>
-					<input type="url" name="origin" id="url-name" class="form-control" placeholder="www.website.com" required />
+					<label for="url-name">Website URL/Domain</label>
+					<input type="url" name="origin" id="url-name" class="form-control" placeholder="https://www.website.com" required />
 				</div>
 				<div class="row mt-3">
 					<div class="col-lg form-group mb-0">
 						<label for="pw-name">Password</label>
-						<input type="password" name="password" id="pw-name" class="form-control" required />
+						<input type="password" name="password" id="pw-name" class="form-control" placeholder="secured password" required />
 					</div>
 					<div class="col-lg form-group mb-0">
 						<label for="re-pw-name">Retype Password</label>
-						<input type="password" id="re-pw-name" class="form-control" required />
+						<input type="password" id="re-pw-name" class="form-control" placeholder="check password" required />
 					</div>
 				</div>
 				<div class="row mt-3 mb-3">
