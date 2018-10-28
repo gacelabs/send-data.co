@@ -37,7 +37,7 @@
 							<li>Place before the <kbd>&lt;/body&gt;</kbd> tag to call the Pushthru object class</li>
 							<li class="my-2">
 								<p class="mb-2">Example:</p>
-								<pre><code>	&lt;script type="text/javascript" src="/your/other/js/files.js">&lt;/script&gt;<br/>	<b>&lt;script type="text/javascript" id="push-thru-scripts" src="http://datapushthru.com/api/jsfile/<YOUR APP KEY>">&lt;/script&gt;</b><br>&lt;/body&gt;<br>&lt;/html&gt;</code></pre>
+								<pre><code>	&lt;script type="text/javascript" src="/your/other/js/files.js">&lt;/script&gt;<br/>	<b>&lt;script type="text/javascript" id="push-thru-scripts" src="http://api.datapushthru.com/get/jsfile/YOUR_APP_KEY">&lt;/script&gt;</b><br>&lt;/body&gt;<br>&lt;/html&gt;</code></pre>
 							</li>
 							<li>
 								<p class="mb-2">Then initialize the object class and pass your <kbd>API key</kbd> as a parameter, just like so:</p>
