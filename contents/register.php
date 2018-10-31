@@ -13,7 +13,7 @@
 					</div>
 					<div class="card-footer">
 						<ul class="inline-list center">
-							<li><p class="mb-0">Price (Php): <b><?php echo number_format($products[$activePage]['price'], 2, '.', ','); ?></b></p></li>
+							<li><p class="mb-0">Price (Php): <b><?php echo $products[$activePage]['price']; ?></b></p></li>
 							<li><p class="mb-0">Billed: <b><?php echo $products[$activePage]['billed']; ?></b></p></li>
 						</ul>
 					</div>
@@ -39,10 +39,10 @@
 			<div class="form-header text-center">
 				<h5 class="zero-gaps">REGISTRATION</h5>
 			</div>
-			<form action="http://api.datapushthru.com/register" method="get" class="pt-3 px-3 form-body">
-				<input type="text" name="register_type" class="d-none" value="<?php echo $activePage?>"/>
-				<input type="text" name="price" class="d-none" value="<?php echo $products[$activePage]['price']?>"/>
-				<input type="text" name="billed" class="d-none" value="<?php echo $products[$activePage]['billed']?>"/>
+			<form action="http://local.api.datapushthru.com/register" method="get" class="pt-3 px-3 form-body">
+				<input type="text" name="register_type" class="d-none" value="<?php echo $activePage;?>"/>
+				<input type="text" name="price" class="d-none" value="<?php echo str_replace(',', '', $products[$activePage]['price']);?>"/>
+				<input type="text" name="billed" class="d-none" value="<?php echo $products[$activePage]['billed'];?>"/>
 				<div class="form-group mb-0">
 					<label for="org-name">Organization</label>
 					<input type="text" name="company" id="org-name" class="form-control" placeholder="Software Company Philippines" required />

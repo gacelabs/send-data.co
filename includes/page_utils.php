@@ -27,6 +27,11 @@
 				$pageContent = 'contents/register.php';
 				$activePage = 'Customed';
 				break;
+			case 'thank-you': // customed register page
+				$pageTitle = 'Successful - Thank You!';
+				$pageContent = 'contents/thankyou.php';
+				$activePage = 'thankyou';
+				break;
 			default:
 				$pageTitle = 'Page Not Found';
 				$pageContent = 'contents/404.php';

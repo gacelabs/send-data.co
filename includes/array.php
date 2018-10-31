@@ -3,7 +3,7 @@
 	$products = array(
 		'Free' => array(
 			'reg-link' => 'free-register',
-			'price' => '0.00',
+			'price' => 'Free',
 			'billed' => 'Monthly',
 			'desc' => array(
 				'2 Months Max',
@@ -13,7 +13,7 @@
 		),
 		'Business' => array(
 			'reg-link' => 'business-register',
-			'price' => '7000.00',
+			'price' => '7,000',
 			'billed' => 'Monthly',
 			'desc' => array(
 				'Monthly',
@@ -24,7 +24,7 @@
 		),
 		'Customed' => array(
 			'reg-link' => 'customed-register',
-			'price' => '1000.00',
+			'price' => '1,000',
 			'billed' => 'Monthly',
 			'desc' => array(
 				'Monthly',
@@ -55,38 +55,6 @@
 		)
 	);
 
-
-	$js = array(
-		'Declare' => array(
-			'desc' => 'Declaring the javascript and getting your backend php file library for your website.',
-			'docs' => array(
-				'<li>- Login to https://datapushthru.com/login and input your Account credentials.</li>',
-				'<li>- Goto https://datapushthru.com/generate_files/<YOUR APP KEY></li>',
-				'<li>- In there your php file library (for backend transmitting) and javascript tag will be generated.</li>',
-				'<li>a. In the script panel, copy the script tag and patse it at the bottom before the body end tag.</li>',
-				'<li>b. After your page have been loaded it also loads the Pushthru object class and dependencies.</li>',
-				'<li>c. For the backend php file library, include it to autoload file or anywhere you wanted to be. (click this to learn its use)</li>'
-			)
-		),
-		'Initialize' => array(
-			'desc' => 'Initializing the Pushthru object class.',
-			'docs' => array(
-				'<li>- Place this anywhere you want it to call the Pushthru object class.</li>',
-				'<li class="script-block">Example:<br/><script type="text/javascript" id="push-thru-scripts" src="http://datapushthru.com/api/jsfile/<YOUR APP KEY>"></script><br/>a. var pushthru = new Pushthru(<YOUR APP KEY>).<br/><span class="text-indent">i. Parameter -> a string value of your APP KEY.</span></li>'
-			)
-		),
-		'Subscribe' => array(
-			'desc' => 'Subscribing channels for connection.',
-			'docs' => array(
-				'<li>- There are two ways to declare a subscribe method.</li>',
-				'<li>a. pushthru.subscribe(\'name_of_channel\');</li>',
-				'<li>- In this method, you initially subscribe the \'name_of_channel\' for a connection</li>',
-				'<li class="info-block text-indent">i. Parameter -> a string value of your channel name</li>',
-				'<li></li>',
-				'<li></li>'
-			)
-		)
-	);
 
 	$sampleSystems = array(
 		'chat.jpg',
