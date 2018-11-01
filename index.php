@@ -1,5 +1,6 @@
 <?php
 
+	include('includes/constants.php');
 	include('includes/page_head.php');
 
 ?>

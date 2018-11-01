@@ -39,7 +39,13 @@
 			<div class="form-header text-center">
 				<h5 class="zero-gaps">REGISTRATION</h5>
 			</div>
-			<form action="http://local.api.datapushthru.com/register" method="get" class="pt-3 px-3 form-body">
+			<?php
+				$register_url = 'http://local.api.datapushthru/register';
+				if (PROD == 1) {
+					$register_url = 'http://api.datapushthru.com/register';
+				}
+			?>
+			<form action="<?php echo $register_url;?>" method="get" class="pt-3 px-3 form-body">
 				<input type="text" name="register_type" class="d-none" value="<?php echo $activePage;?>"/>
 				<input type="text" name="price" class="d-none" value="<?php echo str_replace(',', '', $products[$activePage]['price']);?>"/>
 				<input type="text" name="billed" class="d-none" value="<?php echo $products[$activePage]['billed'];?>"/>
