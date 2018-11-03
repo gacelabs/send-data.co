@@ -22,11 +22,11 @@
 			),
 			'sub2' => array(
 				'icon' => 'fa fa-info-circle',
-				'label' => 'Details'
+				'label' => 'Details',
 			),
 			'sub3' => array(
 				'icon' => 'fa fa-tag',
-				'label' => 'Business'
+				'label' => 'Free'
 			)
 		)
 	);

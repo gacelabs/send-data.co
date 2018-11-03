@@ -4,14 +4,22 @@ $(document).ready(function() {
 		yearNow = date.getFullYear();
 	$('.yearNow').text(yearNow);
 
-	setTimeout(function() {
-		$('.treeview').click();
-	},5000);
-
-	$('.treeview').on('click', function() {
-		var targetDash = $(this).attr('target-dash');
-
-				
+	$('.treeview').on('click', function(e) {
+		console.log(e.isDefaultPrevented);
 	});
+
+	$('ul').tree({
+		'followLink': true
+	});
+
+	$(function() {
+		$('.treeview').on('click', function() {
+			$('.domain-project-content').removeClass('active');
+			var targetContent = $(this).attr('target-content');
+				contentBody = $(this).parents().eq(2).next().find('#admin-content-body');
+
+			contentBody.find('#'+targetContent).addClass('active');
+		});
+	})
 
 });

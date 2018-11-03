@@ -28,8 +28,10 @@
 				<ul class="sidebar-menu" data-widget="tree">
 					<li class="header">PROJECTS</li>
 					<?php foreach($projects as $project => $rows) { ?>
-					<li class="treeview" target-dash="<?php echo $project; ?>">
-						<a href="#"><i class="fa fa-globe"></i> <span><?php echo $project; ?></span>
+					<li class="treeview <?php if ($page == "$project") {echo "active";} ?>" target-content="<?php echo $project; ?>">
+						<a href="?page=<?php echo $project; ?>">
+							<i class="fa fa-globe"></i>
+							<span><?php echo $project; ?></span>
 							<span class="pull-right-container">
 								<i class="fa fa-angle-left pull-right"></i>
 							</span>
@@ -51,19 +53,8 @@
 			</section>
 		</aside>
 
-		<div class="content-wrapper">
-
-			<div id="">
-				<section class="content-header">
-					<h1 id="dashDomain">domaingoeshere <small>Package Subscription</small></h1>
-				</section>
-
-				<section class="content container-fluid">
-					<!------------------------
-					| Your Page Content Here |
-					-------------------------->
-				</section>
-			</div>
+		<div class="content-wrapper" id="admin-main-canvas">
+			<?php include($pageContent); ?>
 		</div>
 
 		<footer class="main-footer">

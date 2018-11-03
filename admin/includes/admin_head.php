@@ -5,8 +5,14 @@
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
 	<meta content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" name="viewport">
 	
+	<?php
 
-	<title>Admin Dash | DataPushThru</title>
+		include('./admin/includes/admin_array.php');
+		include('./admin/includes/page_utils.php');
+
+	?>
+
+	<title>Admin Dash | <?php echo $pageTitle; ?></title>
 	<link rel="stylesheet" href="admin/assets/css/bootstrap.min.css">
 	<link rel="stylesheet" href="admin/assets/css/font-awesome.min.css">
 	<link rel="stylesheet" href="admin/assets/css/ionicons.min.css">
@@ -21,9 +27,4 @@
   	<script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
 	<![endif]-->
 	<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,600,700,300italic,400italic,600italic">
-	<?php
-
-		include('admin/includes/admin_array.php');
-
-	?>
 </head>

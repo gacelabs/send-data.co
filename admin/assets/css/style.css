@@ -1,3 +1,21 @@
+.admin-content-container {
+	margin-bottom: 30px;
+}
+
+.domain-project-content {
+	display: none;
+}
+.domain-project-content.active {
+	display: block;
+}
+hr	{
+	border: 0; /* reset the default stylesheet */
+	border-bottom: 1px solid rgba(255,255,255,0.5);
+	border-top: 1px solid rgba(0,0,0,0.12)
+}
+.icon-left {
+	margin-right: 15px;
+}
 .treeview-menu>li>p{
 	padding-left: 15px;
 }
