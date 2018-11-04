@@ -82,7 +82,7 @@
 						<button type="submit" class="btn btn-lg btn-success">Register</button>
 					</div>
 					<div class="col-lg">
-						<p class="mb-0">Add <b><?php echo $activePage; ?> Product</b> to an existing account? <a href="#">Login here</a></p>
+						<p class="mb-0">Add <b><?php echo $activePage; ?> Product</b> to an existing account? <a href="/?page=login">Login here</a></p>
 					</div>
 				</div>
 			</form>
