@@ -23,12 +23,12 @@
 						<p class="mb-0"><b>1. Declaring the JavaScript and getting your backend php file library for your website.</b></p>
 						<ul class="no-style-ul">
 							<li>Login to <b><a href="/?page=login">http://www.datapushthru.com/?page=login</a></b></li>
-							<li>Copy and paste this URL with your <b>API key</b> at the end <pre class="mt-2"><code class="plaintext"><b class="text-grey">http://api.datapushthru.com/generate_files/<i class="text-warning">YOUR_APP_KEY</i></b></pre></code></li>
+							<li>Navigate to <b><a href="http://api.datapushthru.com/admin/profile">http://api.datapushthru.com/admin/profile</a></b> and click the<img src="/assets/images/appfilestab.png">tab. Then click the generate button for the desired project.</li>
 							<li>Your php file library (for backend transmitting) and javascript tag will be generated.</li>
 							<li class="my-3"></li>
 							<li>a. In the script panel, copy the script tag and patse it at the bottom before the <kbd>&lt;/body&gt;</kbd> tag.</li>
 							<li>b. Once your page has been loaded, the DataPushthru object class and dependencies will then be loaded.</li>
-							<li>c. It is essential that you save these files in your project in order to call the class anywhere. <a href="#">Sample here.</a></li>
+							<li>c. It is essential that you save these files in your project in order to call the class anywhere.</li>
 						</ul>
 					</div>
 					<div class="mt-5">
@@ -43,6 +43,7 @@
 								<p class="mb-2">Then initialize the object class and pass your <kbd>API key</kbd> as a parameter, just like so:</p>
 								<pre><code><b>var pushthru = new Pushthru(<i class="text-warning">YOUR_APP_KEY</i>);</b></code></pre>
 							</li>
+							<li class="alert alert-success" role="alert"><span class="small"><b>NOTE:</b> <strong><pre><code>pushthru.stashes.options.autoRunStash;</code></pre></strong>Is set to <kbd>false</kbd> by default. This option will automatically run the recent triggered events when set to <kbd>true</kbd>. This is helpfull when internet connection is suddenly unreachable.</span></li>
 						</ul>
 					</div>
 					<div class="mt-5">
