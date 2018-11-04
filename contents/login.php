@@ -22,7 +22,7 @@
 				<button class="btn btn-block btn-lg btn-success">Login</button>
 			</div>
 		</form>
-		<!-- <div class="row mt-3 mx-3">
+		<!-- <div class="row mt-3 mx-3"> 
 			<a href="#">Reset Password</a>
 		</div> -->
 	</div>
