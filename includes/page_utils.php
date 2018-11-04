@@ -18,7 +18,7 @@
 				$activePage = 'Free';
 				break;
 			case 'business-register': // business register page
-				$pageTitle = 'Bueiness - Register';
+				$pageTitle = 'Business - Register';
 				$pageContent = 'contents/register.php';
 				$activePage = 'Business';
 				break;
