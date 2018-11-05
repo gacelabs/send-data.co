@@ -64,8 +64,8 @@
 					</div>
 				</div>
 				<div class="form-group mt-3">
-					<label for="url-name">Website URL/Domain</label>
-					<input type="url" name="projects[origin]" id="url-name" class="form-control" placeholder="https://www.website.com" required />
+					<label for="url-name">Website URL / Domain name</label>
+					<input type="url" name="projects[origin]" id="url-name" class="form-control" placeholder="Domain name must contain http or https" required />
 				</div>
 				<div class="row mt-3">
 					<div class="col-lg form-group mb-0">
