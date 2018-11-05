@@ -7,6 +7,11 @@
 				<p class="text-white">We made the API simple and easy to implement, <br/>you're good to go before you know it.</p>
 				<a href="?page=documentation" class="btn btn-warning">Documentation</a>
 			</div>
+			<div class="mt-4">
+				<p class="text-white"><strong>LET'S GET STARTED!</strong>
+					<a href="#register-panel" class="btn btn-lg btn-success" style="vertical-align: baseline;">REGISTER HERE</a>
+				</p>
+			</div>
 		</div>
 	</header>
 
@@ -25,6 +30,7 @@
 				<?php } ?>
 			</div>
 		</div>
+		<div class="row" id="register-panel">&nbsp;</div>
 	</div>
 
 	<div class="row">
