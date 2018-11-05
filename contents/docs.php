@@ -22,8 +22,8 @@
 					<div>
 						<p class="mb-0"><b>1. Declaring the JavaScript and getting your backend php file library for your website.</b></p>
 						<ul class="no-style-ul">
-							<li>Login to <b><a href="/?page=login">http://www.datapushthru.com/?page=login</a></b></li>
-							<li>Navigate to <b><a href="http://api.datapushthru.com/admin/profile">http://api.datapushthru.com/admin/profile</a></b> and click the<img src="/assets/images/appfilestab.png">tab. Then click the generate button for the desired project.</li>
+							<li>Login to <b><a href="/?page=login" target="_blank">http://www.datapushthru.com/?page=login</a></b></li>
+							<li>Navigate to <b><a href="http://api.datapushthru.com/admin/profile" target="_blank">http://api.datapushthru.com/admin/profile</a></b> and click the<img src="/assets/images/appfilestab.png">tab. Then click the generate button for the desired project.</li>
 							<li>Your php file library (for backend transmitting) and javascript tag will be generated.</li>
 							<li class="my-3"></li>
 							<li>a. In the script panel, copy the script tag and patse it at the bottom before the <kbd>&lt;/body&gt;</kbd> tag.</li>
