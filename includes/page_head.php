@@ -11,6 +11,7 @@
 
 	?>
 	<title><?php echo $pageTitle; ?></title>
+	<link rel="icon" type="image/png" sizes="256x256" href="assets/images/icon.png">
 	<link rel="stylesheet" type="text/css" href="assets/css/bootstrap.min.css">
 	<link rel="stylesheet" type="text/css" href="assets/css/font-awesome.min.css">
 	<link rel="stylesheet" type="text/css" href="assets/css/default.css">
