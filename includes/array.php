@@ -1,4 +1,11 @@
 <?php
+	
+	$customed_price = '1,000';
+	if (date('Y-m-d') != '2018-12-31') {
+		if (isset($_GET['code']) AND $_GET['code'] == 'CustomedOFF') {
+			$customed_price = '500';
+		}
+	}
 
 	$products = array(
 		'Free' => array(
@@ -24,7 +31,7 @@
 		),
 		'Customed' => array(
 			'reg-link' => 'customed-register',
-			'price' => '1,000',
+			'price' => $customed_price,
 			'billed' => 'Monthly',
 			'desc' => array(
 				'Monthly',

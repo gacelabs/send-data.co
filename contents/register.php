@@ -40,9 +40,15 @@
 				<h5 class="zero-gaps">REGISTRATION</h5>
 			</div>
 			<?php
-				$register_url = 'http://local.api.datapushthru/register';
+				$promo_code = '';
+				if (date('Y-m-d') != '2018-12-31') {
+					if (isset($_GET['code']) AND $_GET['code'] == 'CustomedOFF') {
+						$promo_code = '?promo_code=1';
+					}
+				}
+				$register_url = 'http://local.api.datapushthru/register'.$promo_code;
 				if (PROD == 1) {
-					$register_url = 'http://api.datapushthru.com/register';
+					$register_url = 'http://api.datapushthru.com/register'.$promo_code;
 				}
 			?>
 			<form action="<?php echo $register_url;?>" method="get" class="pt-3 px-3 form-body">
