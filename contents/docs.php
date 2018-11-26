@@ -119,7 +119,7 @@
 							<ul class="no-style-ul mb-4">
 								<li class="alert alert-warning mb-2" role="alert"><pre class="mb-0"><code class="nohighlight">'name_of_the_event'<br/><span class="fa fa-info-circle text-grey"></span> <span class="small">The parameter is a string value of your event name</span></code></pre></li>
 								<li class="alert alert-warning mb-2" role="alert"><pre class="mb-0"><code class="nohighlight">'name_of_channel'<br/><span class="fa fa-info-circle text-grey"></span> <span class="small">The parameter is a string value of your channel name</span></code></pre></li>
-								<li class="alert alert-warning mb-2" role="alert"><pre class="mb-0"><code class="nohighlight">'callback'<br/><span class="fa fa-info-circle text-grey"></span> <span class="small">The parameter is a fixed object for event binding of pushthru class</span></code></pre></li>
+								<li class="alert alert-warning mb-2" role="alert"><pre class="mb-0"><code class="nohighlight">'callback'<br/><span class="fa fa-info-circle text-grey"></span> <span class="small">The parameter is a fixed method/function for event binding of pushthru class</span></code></pre></li>
 							</ul>
 						</ul>
 					</div>
