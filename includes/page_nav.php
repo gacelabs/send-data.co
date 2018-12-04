@@ -12,6 +12,9 @@
 				<li class="nav-item <?php if ($activePage == 'docs') {echo 'active';}; ?>">
 					<a class="nav-link" href="?page=documentation">Docs</a>
 				</li>
+				<li class="nav-item">
+					<a class="nav-link" href="mailto:gacelabs.inc@gmail.com">Contact Us</a>
+				</li>
 				<li class="nav-item <?php if ($activePage == 'login') {echo 'active';}; ?>">
 					<a class="nav-link" href="?page=login">Login</a>
 				</li>
