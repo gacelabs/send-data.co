@@ -40,8 +40,8 @@
 								<pre><code>	&lt;script type="text/javascript" src="/your/other/js/files.js">&lt;/script&gt;<br/>	<b>&lt;script type="text/javascript" id="push-thru-scripts" src="http://api.datapushthru.com/get/jsfile/YOUR_APP_KEY">&lt;/script&gt;</b><br>&lt;/body&gt;<br>&lt;/html&gt;</code></pre>
 							</li>
 							<li>
-								<p class="mb-2">Then initialize the object class and pass your <kbd>APP KEY</kbd> as a parameter, just like so:</p>
-								<pre><code><b>var pushthru = new Pushthru(<i class="text-warning">YOUR_APP_KEY</i>);</b></code></pre>
+								<p class="mb-2">Then initialize the object class and pass your <kbd><a href="/page=customed-register">APP KEY</a></kbd> as a parameter, just like so:</p>
+								<pre><code><b>var pushthru = new Pushthru(<i class="text-warning"><a href="/?page=customed-register">YOUR_APP_KEY</a></i>);</b></code></pre>
 							</li>
 							<li class="alert alert-success" role="alert"><span class="small"><b>NOTE:</b> <strong><pre><code>pushthru.stashes.options.autoRunStash;</code></pre></strong>Is set to <kbd>false</kbd> by default. This option will automatically run the recent triggered events when set to <kbd>true</kbd>. This is helpfull when internet connection is suddenly unreachable.</span></li>
 						</ul>
@@ -134,20 +134,20 @@
 						<ul class="no-style-ul">
 							<li>Copy and patse this php file to desired folder in your website application path.</li>
 							<li>This is class library for backend implementation, there are ways of initializing this class base on your framework style on initializing it.</li>
-							<li class="mt-2"><pre class="mb-2"><code><h5 class="mb-0"><b>CodeIgniter</b></h5><br/>$this->load->library('pushthru', array('app_key'=><i><kbd>YOUR_APP_KEY</kbd></i>));</code></pre></li>
-							<li class="mt-2"><pre class="mb-2"><code><h5 class="mb-0"><b>Native PHP</b></h5><br/>require('path/to/the/PushThru.php');<br/><br/>$PushThruClass = new PushThru;<br/>$pushthru = $PushThruClass->initialize('<i><kbd>YOUR_APP_KEY</kbd></i>');</code></pre></li>
+							<li class="mt-2"><pre class="mb-2"><code><h5 class="mb-0"><b>CodeIgniter</b></h5><br/>$this->load->library('pushthru', array('app_key'=><i><kbd><a href="/?page=customed-register">YOUR_APP_KEY</a></kbd></i>));</code></pre></li>
+							<li class="mt-2"><pre class="mb-2"><code><h5 class="mb-0"><b>Native PHP</b></h5><br/>require('path/to/the/PushThru.php');<br/><br/>$PushThruClass = new PushThru;<br/>$pushthru = $PushThruClass->initialize('<i><kbd><a href="/?page=customed-register">YOUR_APP_KEY</a></kbd></i>');</code></pre></li>
 							<li>or this</li>
-							<li class="mt-2"><pre class="mb-2"><code>$pushthru = new PushThru('<i><kbd>YOUR_APP_KEY</kbd></i>');</code></pre></li>
+							<li class="mt-2"><pre class="mb-2"><code>$pushthru = new PushThru('<i><kbd><a href="/?page=customed-register">YOUR_APP_KEY</a></kbd></i>');</code></pre></li>
 						</ul>		
 					</div>
 					<div class="mt-5">
 						<p class="mb-0"><b>2. Transmitting data on the subscribed channel and event in the frontend</b></p>
 						<ul class="no-style-ul">
 							<li>Transmitting data from backend. You must already subscribed and added the event on a channel (please see JavaScript Documentation steps 3 and 4).</li>
-							<li class="mt-2"><pre class="mb-2"><code><h5 class="mb-0"><b>CodeIgniter</b></h5><br/>$this->load->library('pushthru', array('app_key'=><i><kbd>YOUR_APP_KEY</kbd></i>));<br/>$PushThruObject = $this->pushthru;<br/><br/>$PushThruObject->trigger('name_of_the_event', 'name_of_channel', data_to_transmit_or_push);</code></pre></li>
-							<li class="mt-2"><pre class="mb-2"><code><h5 class="mb-0"><b>Native PHP</b></h5><br/>require('path/to/the/PushThru.php');<br/><br/>$PushThruClass = new PushThru;<br/>$pushthru = $PushThruClass->initialize('<i><kbd>YOUR_APP_KEY</kbd></i>');</code></pre></li>
+							<li class="mt-2"><pre class="mb-2"><code><h5 class="mb-0"><b>CodeIgniter</b></h5><br/>$this->load->library('pushthru', array('app_key'=><i><kbd><a href="/?page=customed-register">YOUR_APP_KEY</a></kbd></i>));<br/>$PushThruObject = $this->pushthru;<br/><br/>$PushThruObject->trigger('name_of_the_event', 'name_of_channel', data_to_transmit_or_push);</code></pre></li>
+							<li class="mt-2"><pre class="mb-2"><code><h5 class="mb-0"><b>Native PHP</b></h5><br/>require('path/to/the/PushThru.php');<br/><br/>$PushThruClass = new PushThru;<br/>$pushthru = $PushThruClass->initialize('<i><kbd><a href="/?page=customed-register">YOUR_APP_KEY</a></kbd></i>');</code></pre></li>
 							<li>or this</li>
-							<li class="mt-2"><pre class="mb-2"><code><h5 class="mb-0"><b>Native PHP</b></h5><br/>$pushthru = new PushThru('<i><kbd>YOUR_APP_KEY</kbd></i>');<br/><br/>$pushthru->trigger('name_of_the_event', 'name_of_channel', data_to_transmit_or_push);</code></pre></li>
+							<li class="mt-2"><pre class="mb-2"><code><h5 class="mb-0"><b>Native PHP</b></h5><br/>$pushthru = new PushThru('<i><kbd><a href="/?page=customed-register">YOUR_APP_KEY</a></kbd></i>');<br/><br/>$pushthru->trigger('name_of_the_event', 'name_of_channel', data_to_transmit_or_push);</code></pre></li>
 						</ul>
 					</div>
 				</div>
