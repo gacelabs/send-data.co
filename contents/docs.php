@@ -40,7 +40,7 @@
 								<pre><code>	&lt;script type="text/javascript" src="/your/other/js/files.js">&lt;/script&gt;<br/>	<b>&lt;script type="text/javascript" id="push-thru-scripts" src="http://api.datapushthru.com/get/jsfile/YOUR_APP_KEY">&lt;/script&gt;</b><br>&lt;/body&gt;<br>&lt;/html&gt;</code></pre>
 							</li>
 							<li>
-								<p class="mb-2">Then initialize the object class and pass your <kbd><a href="/page=customed-register">APP KEY</a></kbd> as a parameter, just like so:</p>
+								<p class="mb-2">Then initialize the object class and pass your <kbd><a href="/?page=customed-register">APP KEY</a></kbd> as a parameter, just like so:</p>
 								<pre><code><b>var pushthru = new Pushthru(<i class="text-warning"><a href="/?page=customed-register">YOUR_APP_KEY</a></i>);</b></code></pre>
 							</li>
 							<li class="alert alert-success" role="alert"><span class="small"><b>NOTE:</b> <strong><pre><code>pushthru.stashes.options.autoRunStash;</code></pre></strong>Is set to <kbd>false</kbd> by default. This option will automatically run the recent triggered events when set to <kbd>true</kbd>. This is helpfull when internet connection is suddenly unreachable.</span></li>
