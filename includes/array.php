@@ -25,7 +25,7 @@
 			'desc' => array(
 				'Monthly',
 				'20K Upfront Payload for Php 7K',
-				'Metered Succeeding Payload',
+				'Php 1K Metered Succeeding Payload',
 				'24/7 Email Support'
 			)
 		),
