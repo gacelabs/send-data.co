@@ -43,7 +43,7 @@ $(document).ready(function() {
 			if ($.trim($('#url-name').val()) != '') {
 				var regex = /((?:https\:\/\/)|(?:http\:\/\/)|(?:www\.))?([a-zA-Z0-9\-\.]+\.[a-zA-Z]{2,3}(?:\??)[a-zA-Z0-9\-\._\?\,\'\/\\\+&%\$#\=~]+)/gi
 				var matches = $.trim($('#url-name').val()).match(regex);
-				if (matches.length == 0) {
+				if (matches == null) {
 					e.preventDefault();
 					$('#url-name').addClass('input-error');
 					$('#url-name').closest('form').find('button').removeClass('btn-success').addClass('btn-danger').css('pointer-events','auto');
@@ -75,7 +75,7 @@ $(document).ready(function() {
 			} else if ($.trim($(input).attr('type')) == 'url' || $(input).data('type') == 'url') {
 				var regex = /((?:https\:\/\/)|(?:http\:\/\/)|(?:www\.))?([a-zA-Z0-9\-\.]+\.[a-zA-Z]{2,3}(?:\??)[a-zA-Z0-9\-\._\?\,\'\/\\\+&%\$#\=~]+)/gi
 				var matches = $.trim($(input).val()).match(regex);
-				if (matches.length == 0) {
+				if (matches == null) {
 					e.preventDefault();
 					$(input).addClass('input-error');
 					$(input).closest('form').find('button').removeClass('btn-success').addClass('btn-danger').css('pointer-events','auto');
