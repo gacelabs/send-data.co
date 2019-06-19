@@ -52,35 +52,43 @@
 				}
 			?>
 			<form action="<?php echo $register_url;?>" method="get" class="pt-3 px-3 form-body">
-				<input type="text" name="projects[package_type]" class="d-none" value="<?php echo $activePage;?>"/>
-				<input type="text" name="projects[price]" class="d-none" value="<?php echo str_replace(',', '', $products[$activePage]['price']);?>"/>
+				<input type="text" name="projects[package_type]" class="d-none" value="<?php echo $activePage;?>" data-type="text" />
+				<input type="text" name="projects[price]" class="d-none" value="<?php echo str_replace(',', '', $products[$activePage]['price']);?>" data-type="text" />
 				<input type="text" name="projects[billed]" class="d-none" value="<?php echo $products[$activePage]['billed'];?>"/>
 				<div class="form-group mb-0">
 					<label for="org-name">Organization</label>
-					<input type="text" name="accounts[company]" id="org-name" class="form-control" placeholder="Software Company Philippines" required />
+					<input type="text" name="accounts[company]" id="org-name" class="form-control" placeholder="Software Company Philippines" data-type="text" />
 				</div>
 				<div class="row mt-3">
 					<div class="col-lg form-group mb-0">
 						<label for="email-name">Email Address</label>
-						<input type="email" name="accounts[email]" id="email-name" class="form-control" placeholder="juancruz@softwarecompanyph.com" required />
+						<input type="email" name="accounts[email]" id="email-name" class="form-control" placeholder="juancruz@softwarecompanyph.com" data-type="email" />
 					</div>
 					<div class="col-lg form-group mb-0">
 						<label for="admin-name">Admin Name</label>
-						<input type="text" name="accounts[admin]" id="admin-name" class="form-control" placeholder="Juan Cruz" required />
+						<input type="text" name="accounts[admin]" id="admin-name" class="form-control" placeholder="Juan Cruz" data-type="text" />
 					</div>
 				</div>
 				<div class="form-group mt-3">
 					<label for="url-name">Website URL / Domain name</label>
-					<input type="url" name="projects[origin]" id="url-name" class="form-control" placeholder="Domain name must contain http or https" required />
+					<div class="input-group mb-3">
+						<select class="custom-select col-lg-3 col-sm-3" id="url-protocol">
+							<option value="https://">https://</option>
+							<option value="http://">http://</option>
+						</select>
+						<input type="text" id="url-name" class="form-control" placeholder="Domain name must contain http or https" data-type="url" />
+					</div>
+					<input type="text" name="projects[origin]" id="url-origin" class="form-control d-none" />
+					<input type="text" name="projects[domain]" id="url-domain" class="form-control d-none" />
 				</div>
 				<div class="row mt-3">
 					<div class="col-lg form-group mb-0">
 						<label for="pw-name">Password</label>
-						<input type="password" name="accounts[password]" id="pw-name" class="form-control" placeholder="secured password" required />
+						<input type="password" name="accounts[password]" id="pw-name" class="form-control" placeholder="secured password" data-type="password" />
 					</div>
 					<div class="col-lg form-group mb-0">
 						<label for="re-pw-name">Retype Password</label>
-						<input type="password" id="re-pw-name" class="form-control" placeholder="check password" required />
+						<input type="password" id="re-pw-name" class="form-control" placeholder="check password" data-type="password" />
 					</div>
 				</div>
 				<div class="row mt-3 mb-3">
