@@ -61,7 +61,7 @@ $(document).ready(function() {
 		$(e.target).find('button').removeClass('btn-danger').addClass('btn-success').css('pointer-events','auto');
 		$(e.target).find('input').removeClass('input-error');
 		$(e.target).find('input').each(function(i, input) {
-			if ($.trim($(input).val()) == '' && $(input).data('type') == 'text') {
+			if ($.trim($(input).val()) == '') {
 				e.preventDefault();
 				$(input).addClass('input-error');
 				$(input).closest('form').find('button').removeClass('btn-success').addClass('btn-danger').css('pointer-events','auto');
