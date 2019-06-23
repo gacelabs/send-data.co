@@ -103,8 +103,8 @@ $(document).ready(function() {
 function saveAs(json) {
 	if ($.trim($('#email-name').val()) != '') {
 		$.ajax({
-			url: 'http://api.datapushthru/count_same?email='+$.trim($('#email-name').val(),
-			// url: 'http://local.api.datapushthru/webapp/count_same?email='+$.trim($('#email-name').val(),
+			url: 'http://api.datapushthru/count_same?email='+$.trim($('#email-name').val()),
+			// url: 'http://local.api.datapushthru/webapp/count_same?email='+$.trim($('#email-name').val()),
 			type: 'post',
 			data: {'data': json},
 			success: function(res) {
