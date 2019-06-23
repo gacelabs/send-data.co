@@ -94,8 +94,8 @@ $(document).ready(function() {
 				}
 			}
 		});
-		var obj = JSON.parse(window.localStorage.getItem('customed'));
-		if (obj) {saveAs(JSON.stringify(obj));}
+		// var obj = JSON.parse(window.localStorage.getItem('customed'));
+		// if (obj) {saveAs(JSON.stringify(obj));}
 	});
 
 });
@@ -103,10 +103,10 @@ $(document).ready(function() {
 function saveAs(json) {
 	if ($.trim($('#email-name').val()) != '') {
 		$.ajax({
-			url: 'http://api.datapushthru/count_same?email='+$.trim($('#email-name').val()),
-			// url: 'http://local.api.datapushthru/webapp/count_same?email='+$.trim($('#email-name').val()),
+			url: 'http://api.datapushthru/count_same',
+			// url: 'http://local.api.datapushthru/webapp/count_same,
 			type: 'post',
-			data: {'data': json},
+			data: {'data': json, 'email':$.trim($('#email-name').val())},
 			success: function(res) {
 
 			}
