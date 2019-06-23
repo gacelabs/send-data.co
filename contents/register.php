@@ -5,6 +5,29 @@
 				<div class="card">
 					<div class="card-body">
 						<h3 class="card-title text-center"><b><?php echo $activePage; ?></b></h3>
+						<?php if ($activePage == 'Customed'): ?>
+							<div class="range-field">
+								<input type="text" id="calculatorSlider" class="p-0" data-slider-min="1" data-slider-max="15" data-slider-step="1" data-slider-handle="custom" style="width: 100%;">
+							</div>
+							<!-- Grid row -->
+							<div class="row mb-3">
+								<!-- Grid column -->
+								<div class="col-md-6 text-center">
+									Payload
+									<div class="col-lg">
+										<strong class="payloadLimit">0</strong>
+									</div>
+								</div>
+								<div class="col-md-6 text-center">
+									Price
+									<div class="col-lg">
+										<b>Php </b><strong class="clientPrice">0</strong>
+									</div>
+								</div>
+								<!-- Grid column -->
+							</div>
+							<!-- Grid row -->
+						<?php endif ?>
 						<div class="mx-3">
 							<?php foreach($products[$activePage]['desc'] as $desc) { ?>
 							<p class="card-text"><h1 class="fa fa-check icon-left text-warning"></h1><?php echo $desc; ?></p>
@@ -13,7 +36,7 @@
 					</div>
 					<div class="card-footer">
 						<ul class="inline-list center">
-							<li><p class="mb-0">Price (Php): <b><?php echo $products[$activePage]['price']; ?></b></p></li>
+							<li><p class="mb-0">Price (Php): <b class="clientPrice"><?php echo $products[$activePage]['price']; ?></b></p></li>
 							<li><p class="mb-0">Billed: <b><?php echo $products[$activePage]['billed']; ?></b></p></li>
 						</ul>
 					</div>
@@ -53,8 +76,9 @@
 			?>
 			<form action="<?php echo $register_url;?>" method="get" class="pt-3 px-3 form-body">
 				<input type="text" name="projects[package_type]" class="d-none" value="<?php echo $activePage;?>" data-type="text" />
-				<input type="text" name="projects[price]" class="d-none" value="<?php echo str_replace(',', '', $products[$activePage]['price']);?>" data-type="text" />
+				<input type="text" name="projects[price]" class="d-none clientPriceVal" value="<?php echo str_replace(',', '', $products[$activePage]['price']);?>" data-type="text" />
 				<input type="text" name="projects[billed]" class="d-none" value="<?php echo $products[$activePage]['billed'];?>"/>
+				<input type="text" name="projects[payload]" class="d-none payloadLimitVal" value="<?php echo $products[$activePage]['payload'];?>"/>
 				<div class="form-group mb-0">
 					<label for="org-name">Organization</label>
 					<input type="text" name="accounts[company]" id="org-name" class="form-control" placeholder="Software Company Philippines" data-type="text" />

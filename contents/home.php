@@ -39,14 +39,37 @@
 				<div class="card">
 					<div class="card-body">
 						<h4 class="card-title text-center"><b><?php echo $product; ?></b></h4>
+						<?php if ($product == 'Customed'): ?>
+							<div class="range-field">
+								<input type="text" id="calculatorSlider" class="no-border col-lg-12 p-0" data-slider-min="1" data-slider-max="15" data-slider-step="1" data-slider-value="1" data-slider-handle="custom" style="width: 100%;">
+							</div>
+							<!-- Grid row -->
+							<div class="row mb-3">
+								<!-- Grid column -->
+								<div class="col-md-6 text-center">
+									Payload
+									<div class="col-lg">
+										<strong class="payloadLimit">0</strong>
+									</div>
+								</div>
+								<div class="col-md-6 text-center">
+									Price
+									<div class="col-lg">
+										<b>Php </b><strong class="clientPrice">0</strong>
+									</div>
+								</div>
+								<!-- Grid column -->
+							</div>
+							<!-- Grid row -->
+						<?php endif ?>
 						<?php foreach($rows['desc'] as $val) { ?>
 							<div class="col-lg">
-								<p class="card-text"><h1 class="fa fa-check icon-left text-warning"></h1><?php echo $val; ?></p>
+								<p class="card-text"><i class="fa fa-check icon-left text-warning"></i><?php echo $val; ?></p>
 							</div>
 						<?php } ?>
 					</div>
 					<div class="card-footer text-center">
-						<a href="?page=<?php echo $rows['reg-link'] ?>" class="btn btn-primary">Register</a>
+						<a href="?page=<?php echo $rows['reg-link']?>" class="btn btn-primary">Register</a>
 					</div>
 				</div>
 			</div>

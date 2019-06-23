@@ -9,6 +9,8 @@
 <!-- Bootstrap core JavaScript -->
 <script src="assets/js/jquery.min.js"></script>
 <script src="assets/js/bootstrap.min.js"></script>
+<script src="assets/js/bootstrap-slider.js"></script>
 <script src="assets/js/main.js"></script>
 <script src="assets/js/highlight.pack.js"></script>
 <script>hljs.initHighlightingOnLoad();</script>
+<script src="assets/js/calc.js"></script>

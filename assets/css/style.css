@@ -166,3 +166,40 @@ kbd {
     padding: 9px;
     font-weight: bolder;
 }
+
+.slider-handle {
+    position: absolute;
+    top: 0;
+    width: 20px;
+    height: 20px;
+    background-color: #ffc107;
+    background-image: -webkit-linear-gradient(top, #ffc107 0%, #f6c76c 100%);
+    background-image: -o-linear-gradient(top, #ffc107 0%, #f6c76c 100%);
+    background-image: linear-gradient(to bottom, #ffc107 0%, #f6c76c 100%);
+    background-repeat: repeat-x;
+    filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#ff337ab7', endColorstr='#ff2e6da4', GradientType=0);
+    filter: none;
+    -webkit-box-shadow: none;
+    box-shadow: none;
+    border: 0px solid transparent;
+    margin-left: -5px !important;
+}
+
+.slider-selection {
+	background-image: linear-gradient(to bottom, #ffc107 0%, #f6c76c 100%) !important;
+}
+
+.slider-handle.custom {
+	background: transparent none;
+	/* You can customize the handle and set a background image */
+}
+
+/* Or display content like unicode characters or fontawesome icons */
+.slider-handle.custom::before {
+	font-size: 20px;
+	content: '➧';
+	color: #ffc107;
+	position: absolute;
+	left: 0px;
+	bottom: 1px;
+}

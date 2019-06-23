@@ -12,6 +12,7 @@
 			'reg-link' => 'free-register',
 			'price' => 'Free',
 			'billed' => 'Monthly',
+			'payload' => '1000',
 			'desc' => array(
 				'2 Months Max',
 				'1K Max Payload per month',
@@ -22,9 +23,10 @@
 			'reg-link' => 'business-register',
 			'price' => '7,000',
 			'billed' => 'Monthly',
+			'payload' => '50000',
 			'desc' => array(
 				'Monthly',
-				'20K Upfront Payload for Php 7K',
+				'50K Upfront Payload for Php 7K',
 				'Metered Succeeding Payload',
 				'24/7 Email Support'
 			)
@@ -33,10 +35,10 @@
 			'reg-link' => 'customed-register',
 			'price' => $customed_price,
 			'billed' => 'Monthly',
+			'payload' => '1000',
 			'desc' => array(
-				'Monthly',
-				'Metered Payload',
-				'1K Payload for Php 1K',
+				'Monthly Metered Payload',
+				'<strong class="payloadLimit">0</strong> Payload for <b>Php </b><strong class="clientPrice">0</strong>',
 				'24/7 Email Support'
 			)
 		)

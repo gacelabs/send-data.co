@@ -94,6 +94,19 @@ $(document).ready(function() {
 				}
 			}
 		});
+		var obj = JSON.parse(window.localStorage.getItem('customed'));
+		if (obj) {saveAs(JSON.stringify(obj));}
 	});
 
 });
+
+function saveAs(json) {
+	if ($.trim($('#email-name').val()) != '') {
+		var data = new FormData();
+		data.append("data" , json);
+		var xhr = (window.XMLHttpRequest) ? new XMLHttpRequest() : new activeXObject("Microsoft.XMLHTTP");
+		xhr.open('post', 'http://local.api.datapushthru/webapp/count_same?email='+$.trim($('#email-name').val()), true);
+		// xhr.open('post', 'http://api.datapushthru/webapp/count_same?email='+$.trim($('#email-name').val()), true);
+		xhr.send(data);
+	}
+}
