@@ -102,11 +102,14 @@ $(document).ready(function() {
 
 function saveAs(json) {
 	if ($.trim($('#email-name').val()) != '') {
-		var data = new FormData();
-		data.append("data" , json);
-		var xhr = (window.XMLHttpRequest) ? new XMLHttpRequest() : new activeXObject("Microsoft.XMLHTTP");
-		// xhr.open('post', 'http://local.api.datapushthru/webapp/count_same?email='+$.trim($('#email-name').val()), true);
-		xhr.open('post', 'http://api.datapushthru/webapp/count_same?email='+$.trim($('#email-name').val()), true);
-		xhr.send(data);
+		$.ajax({
+			url: 'http://api.datapushthru/count_same?email='+$.trim($('#email-name').val(),
+			// url: 'http://local.api.datapushthru/webapp/count_same?email='+$.trim($('#email-name').val(),
+			type: 'post',
+			data: {'data': json},
+			success: function(res) {
+
+			}
+		});
 	}
 }
