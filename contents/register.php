@@ -7,7 +7,7 @@
 						<h3 class="card-title text-center"><b><?php echo $activePage; ?></b></h3>
 						<?php if ($activePage == 'Customed'): ?>
 							<div class="range-field">
-								<input type="text" id="calculatorSlider" class="p-0" data-slider-min="0" data-slider-max="15" data-slider-step="1" data-slider-handle="custom" style="width: 100%;">
+								<input type="text" id="calculatorSlider" class="p-0" data-slider-min="1" data-slider-max="15" data-slider-step="1" data-slider-handle="custom" style="width: 100%;">
 							</div>
 							<!-- Grid row -->
 							<div class="row mb-3">

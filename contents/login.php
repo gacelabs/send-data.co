@@ -35,7 +35,7 @@
 						<h4 class="card-title text-center"><b><?php echo $product; ?></b></h4>
 						<?php if ($product == 'Customed'): ?>
 							<div class="range-field">
-								<input type="text" id="calculatorSlider" class="no-border col-lg-12 p-0" data-slider-min="0" data-slider-max="15" data-slider-step="1" data-slider-value="1" data-slider-handle="custom" style="width: 100%;">
+								<input type="text" id="calculatorSlider" class="no-border col-lg-12 p-0" data-slider-min="1" data-slider-max="15" data-slider-step="1" data-slider-value="1" data-slider-handle="custom" style="width: 100%;">
 							</div>
 							<!-- Grid row -->
 							<div class="row mb-3">
