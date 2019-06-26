@@ -81,16 +81,16 @@
 				<input type="text" name="projects[payload]" class="d-none payloadLimitVal" value="<?php echo $products[$activePage]['payload'];?>"/>
 				<div class="form-group mb-0">
 					<label for="org-name">Organization</label>
-					<input type="text" name="accounts[company]" id="org-name" class="form-control" placeholder="Software Company Philippines" data-type="text" />
+					<input type="text" name="accounts[company]" id="org-name" class="form-control" placeholder="Software Company Philippines" required="required" data-type="text" />
 				</div>
 				<div class="row mt-3">
 					<div class="col-lg form-group mb-0">
 						<label for="email-name">Email Address</label>
-						<input type="email" name="accounts[email]" id="email-name" class="form-control" placeholder="juancruz@softwarecompanyph.com" data-type="email" />
+						<input type="email" name="accounts[email]" id="email-name" class="form-control" placeholder="juancruz@softwarecompanyph.com" required="required" data-type="email" />
 					</div>
 					<div class="col-lg form-group mb-0">
 						<label for="admin-name">Admin Name</label>
-						<input type="text" name="accounts[admin]" id="admin-name" class="form-control" placeholder="Juan Cruz" data-type="text" />
+						<input type="text" name="accounts[admin]" id="admin-name" class="form-control" placeholder="Juan Cruz" required="required" data-type="text" />
 					</div>
 				</div>
 				<div class="form-group mt-3">
@@ -100,7 +100,7 @@
 							<option value="https://">https://</option>
 							<option value="http://">http://</option>
 						</select>
-						<input type="text" id="url-name" class="form-control" placeholder="Domain name must contain http or https" data-type="url" />
+						<input type="text" id="url-name" class="form-control" placeholder="Domain name must contain http or https" required="required" data-type="url" />
 					</div>
 					<input type="text" name="projects[origin]" id="url-origin" class="form-control d-none" />
 					<input type="text" name="projects[domain]" id="url-domain" class="form-control d-none" />
@@ -108,11 +108,11 @@
 				<div class="row mt-3">
 					<div class="col-lg form-group mb-0">
 						<label for="pw-name">Password</label>
-						<input type="password" name="accounts[password]" id="pw-name" class="form-control" placeholder="secured password" data-type="password" />
+						<input type="password" name="accounts[password]" id="pw-name" class="form-control" placeholder="secured password" required="required" data-type="password" />
 					</div>
 					<div class="col-lg form-group mb-0">
 						<label for="re-pw-name">Retype Password</label>
-						<input type="password" id="re-pw-name" class="form-control" placeholder="check password" data-type="password" />
+						<input type="password" id="re-pw-name" class="form-control" placeholder="check password" required="required" data-type="password" />
 					</div>
 				</div>
 				<div class="row mt-3 mb-3">

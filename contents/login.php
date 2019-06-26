@@ -12,11 +12,11 @@
 			</div>
 			<div class="form-group mb-0 mx-3">
 				<label for="email-name">Email address</label>
-				<input type="email" name="email" id="email-name" class="form-control" placeholder="juancruz@softwarcompanyph.com" required/>
+				<input type="email" name="email" id="email-name" class="form-control" placeholder="juancruz@softwarcompanyph.com" required="required"/>
 			</div>
 			<div class="form-group my-3 mx-3">
 				<label for="pw-name">Password</label>
-				<input type="password" name="password" id="pw-name" class="form-control" required/>
+				<input type="password" name="password" id="pw-name" class="form-control" required="required"/>
 			</div>
 			<div class="mx-3">
 				<button class="btn btn-block btn-lg btn-success">Login</button>
