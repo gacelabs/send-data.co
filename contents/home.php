@@ -1,6 +1,6 @@
 <div class="container">
 	<header class="business-header">
-		<div class="px-5 pt-5">
+		<!-- <div class="px-5 pt-5">
 			<h2 class="text-white">Push data across your app</h2>
 			<h3 class="text-white">Fast. Secured. Affordable.</h3>
 			<div class="mt-4">
@@ -12,6 +12,17 @@
 					<a href="#register-panel" class="btn btn-lg btn-success" style="vertical-align: baseline;">REGISTER HERE</a>
 				</p>
 			</div>
+		</div> -->
+		<div class="px-5 pt-5 pull-right">
+			<h2 class="text-white">Push data across your app</h2>
+			<h3 class="text-white">Fast. Secured. Affordable.</h3>
+			<div class="mt-4">
+				<p class="text-white">We made the API simple and easy to implement, <br/>you're good to go before you know it.</p>
+				<a href="?page=documentation" class="btn btn-warning">Documentation</a>
+			</div>
+		</div>
+		<div class="px-5 pt-5" style="top: 80px; position: relative;">
+			<a href="#register-panel" class="btn btn-lg btn-success" style="vertical-align: baseline;">LET'S GET STARTED!</a>
 		</div>
 	</header>
 
