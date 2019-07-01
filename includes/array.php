@@ -37,7 +37,7 @@
 			'billed' => 'Monthly',
 			'payload' => '1000',
 			'desc' => array(
-				'Monthly Metered Payload',
+				'Metered Payload',
 				'<strong class="payloadLimit">0</strong> Payload for <b>Php </b><strong class="clientPrice">0</strong>',
 				'24/7 Email Support'
 			)
