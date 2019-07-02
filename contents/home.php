@@ -21,7 +21,7 @@
 				<a href="?page=documentation" class="btn btn-warning">Documentation</a>
 			</div>
 		</div>
-		<div class="px-5 pt-5" style="top: 80px; position: relative;">
+		<div class="px-5 pt-5" style="top: 80px;">
 			<a href="#register-panel" class="btn btn-lg btn-success" style="vertical-align: baseline;">LET'S GET STARTED!</a>
 		</div>
 	</header>
