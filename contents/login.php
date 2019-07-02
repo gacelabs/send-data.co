@@ -40,13 +40,13 @@
 							<!-- Grid row -->
 							<div class="row mb-3">
 								<!-- Grid column -->
-								<div class="col-md-6 text-center">
+								<div class="col-md-6 col-6 text-center">
 									Payload
 									<div class="col-lg">
 										<strong class="payloadLimit">0</strong>
 									</div>
 								</div>
-								<div class="col-md-6 text-center">
+								<div class="col-md-6 col-6 text-center">
 									Price
 									<div class="col-lg">
 										<b>Php </b><strong class="clientPrice">0</strong>

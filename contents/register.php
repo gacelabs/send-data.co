@@ -12,13 +12,13 @@
 							<!-- Grid row -->
 							<div class="row mb-3">
 								<!-- Grid column -->
-								<div class="col-md-6 text-center">
+								<div class="col-md-6 col-6 text-center">
 									Payload
 									<div class="col-lg">
 										<strong class="payloadLimit">0</strong>
 									</div>
 								</div>
-								<div class="col-md-6 text-center">
+								<div class="col-md-6 col-6 text-center">
 									Price
 									<div class="col-lg">
 										<b>Php </b><strong class="clientPrice">0</strong>
@@ -96,7 +96,7 @@
 				<div class="form-group mt-3">
 					<label for="url-name">Website URL / Domain name</label>
 					<div class="input-group mb-3">
-						<select class="custom-select col-lg-3 col-sm-3" id="url-protocol">
+						<select class="custom-select col-4" id="url-protocol">
 							<option value="https://">https://</option>
 							<option value="http://">http://</option>
 						</select>
