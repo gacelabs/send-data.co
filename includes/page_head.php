@@ -7,7 +7,7 @@
 
 	<?php
 
-		include('includes/page_utils.php');
+	include('includes/page_utils.php');
 
 	?>
 	<title><?php echo $pageTitle; ?></title>
@@ -18,9 +18,9 @@
 	<link rel="stylesheet" type="text/css" href="assets/css/default.css">
 	<link rel="stylesheet" type="text/css" href="assets/css/style.css">
 </head>
-	
-	<?php
 
-		include('includes/array.php');
+<?php
 
-	?>
+include('includes/array.php');
+
+?>
