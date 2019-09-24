@@ -10,8 +10,8 @@ include('includes/page_head.php');
 	<script>
 		window.fbAsyncInit = function() {
 			FB.init({
-				xfbml            : true,
-				version          : 'v4.0'
+				xfbml: true,
+				version: 'v4.0'
 			});
 		};
 
