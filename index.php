@@ -24,9 +24,7 @@ include('includes/page_head.php');
 		}(document, 'script', 'facebook-jssdk'));</script>
 
 		<!-- Your customer chat code -->
-		<div class="fb-customerchat"
-		attribution=setup_tool
-		page_id="307503806518656">
+		<div class="fb-customerchat" attribution="setup_tool" page_id="307503806518656">
 	</div>
 
 	<!-- Navigation -->

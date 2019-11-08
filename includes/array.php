@@ -15,18 +15,18 @@
 			'payload' => '1000',
 			'desc' => array(
 				'2 Months Max',
-				'1K Max Payload per month',
+				'2K Max Payload per month',
 				'Limited Support'
 			)
 		),
 		'Business' => array(
 			'reg-link' => 'business-register',
-			'price' => '7,000',
+			'price' => '139',
 			'billed' => 'Monthly',
 			'payload' => '50000',
 			'desc' => array(
 				'Monthly',
-				'50K Upfront Payload for Php 7K',
+				'50K Upfront Payload for USD 139',
 				'Metered Succeeding Payload',
 				'24/7 Email Support'
 			)
@@ -38,7 +38,7 @@
 			'payload' => '1000',
 			'desc' => array(
 				'Metered Payload',
-				'<strong class="payloadLimit">0</strong> Payload for <b>Php </b><strong class="clientPrice">0</strong>',
+				'<strong class="payloadLimit">0</strong> Payload for <b>USD </b><strong class="clientPrice">0</strong>',
 				'24/7 Email Support'
 			)
 		)

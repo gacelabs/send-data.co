@@ -66,7 +66,7 @@
 								<div class="col-md-6 col-6 text-center">
 									Price
 									<div class="col-lg">
-										<b>Php </b><strong class="clientPrice">0</strong>
+										<b>USD </b><strong class="clientPrice">0</strong>
 									</div>
 								</div>
 								<!-- Grid column -->

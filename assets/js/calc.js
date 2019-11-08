@@ -47,6 +47,7 @@ $(document).ready(function() {
 					percentageFee = license.enterprise.percentage;
 				}
 				var newPrice = Math.round(((value * 300) + price) * percentageFee);
+				newPrice = Math.round(newPrice / 39);
 				clientPrice.text(newPrice);
 				clientPriceVal.attr('value', newPrice);
 				slider.attr('value', parseInt(newLimit) / price);

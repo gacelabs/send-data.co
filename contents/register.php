@@ -21,7 +21,7 @@
 								<div class="col-md-6 col-6 text-center">
 									Price
 									<div class="col-lg">
-										<b>Php </b><strong class="clientPrice">0</strong>
+										<b>USD </b><strong class="clientPrice">0</strong>
 									</div>
 								</div>
 								<!-- Grid column -->
@@ -36,7 +36,7 @@
 					</div>
 					<div class="card-footer">
 						<ul class="inline-list center">
-							<li><p class="mb-0">Price (Php): <b class="clientPrice"><?php echo $products[$activePage]['price']; ?></b></p></li>
+							<li><p class="mb-0">Price (USD): <b class="clientPrice"><?php echo $products[$activePage]['price']; ?></b></p></li>
 							<li><p class="mb-0">Billed: <b><?php echo $products[$activePage]['billed']; ?></b></p></li>
 						</ul>
 					</div>
