@@ -17,6 +17,7 @@
 	<link rel="stylesheet" type="text/css" href="assets/css/font-awesome.min.css">
 	<link rel="stylesheet" type="text/css" href="assets/css/default.css">
 	<link rel="stylesheet" type="text/css" href="assets/css/style.css">
+	<script data-ad-client="ca-pub-3716182521515143" async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
 </head>
 
 <?php
