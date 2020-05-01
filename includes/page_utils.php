@@ -39,7 +39,7 @@
 				break;
 		}
 	} else {
-		$pageTitle = 'Data Push Thru';
+		$pageTitle = 'Send-Data';
 		$pageContent = 'contents/home.php';
 		$activePage = 'home';
 	}
