@@ -6,7 +6,7 @@ $(document).ready(function() {
 		var clientPrice = $(".clientPrice");
 		var payloadLimitVal = $(".payloadLimitVal");
 		var clientPriceVal = $(".clientPriceVal");
-		// var percentageFee = 0.769;
+		// var percentageFee = 0.977;
 		var license = {
 			enterprise: {
 				active: false,
@@ -16,7 +16,7 @@ $(document).ready(function() {
 			corpo: {
 				active: true,
 				price: 1000,
-				percentage: 0.769
+				percentage: 0.977
 			},
 			priv: {
 				active: false,
@@ -38,7 +38,7 @@ $(document).ready(function() {
 			if ((value * price) == 0) {
 				clientPrice.text(Math.round(0));
 			} else {
-				var percentageFee = 0.769;
+				var percentageFee = 0.977;
 				if (license.priv.active) {
 					percentageFee = license.priv.percentage;
 				} else if (license.corpo.active) {

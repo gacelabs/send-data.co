@@ -69,10 +69,7 @@
 						$promo_code = '?promo_code=1';
 					}
 				}
-				$register_url = 'http://local.api.datapushthru/register'.$promo_code;
-				if (PROD == 1) {
-					$register_url = 'http://api.datapushthru.com/register'.$promo_code;
-				}
+				$register_url = PRODSITE.'register'.$promo_code;
 			?>
 			<form action="<?php echo $register_url;?>" method="get" class="pt-3 px-3 form-body">
 				<input type="text" name="projects[package_type]" class="d-none" value="<?php echo $activePage;?>" data-type="text" />

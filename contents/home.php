@@ -29,7 +29,7 @@
 	<div class="skew-bg mb-5">
 		<div class="skew-bg-child text-center">
 			<div class="my-4">
-				<h4 class="text-grey"><b>Projects that our customers built with DataPushThru</b></h4>
+				<h4 class="text-grey"><b>Projects that our customers built with Send-Data</b></h4>
 			</div>
 			<div class="row">
 				<?php foreach ($projects as $project => $rows) { ?>
@@ -88,7 +88,7 @@
 	</div>
 
 	<div class="text-center my-5">
-		<h4 class="mt-4 mb-4 text-grey"><b>Technology like DataPushThru is being used in</b></h4>
+		<h4 class="mt-4 mb-4 text-grey"><b>Technology like Send-Data is being used in</b></h4>
 		<div>
 			<ul class="inline-list center">
 				<?php foreach($sampleSystems as $system) { ?>
