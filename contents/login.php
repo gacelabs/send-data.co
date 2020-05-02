@@ -1,7 +1,7 @@
 <div class="container">
 	<div class="form-container controlled center">
 		<?php
-			$login_url = PRODSITE.'accounts/login/';
+			$login_url = PRODSITE.'login/';
 		?>
 		<form action="<?php echo $login_url;?>" method="post" id="login-form" class="form-body pb-3">
 			<div class="form-header text-center mb-3">
