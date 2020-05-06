@@ -23,10 +23,10 @@
 			'reg-link' => 'business-register',
 			'price' => '145',
 			'billed' => 'Monthly',
-			'payload' => '50000',
+			'payload' => '500000',
 			'desc' => array(
 				'Monthly',
-				'50K Upfront Payload for USD 145',
+				'500K Upfront Payload for USD 145',
 				'Metered Succeeding Payload',
 				'24/7 Email Support'
 			)
@@ -37,7 +37,7 @@
 			'billed' => 'Monthly',
 			'payload' => '1000',
 			'desc' => array(
-				'Metered Payload',
+				'Metered Payload per Month',
 				'<strong class="payloadLimit">0</strong> Payload for <b>USD </b><strong class="clientPrice">0</strong>',
 				'24/7 Email Support'
 			)

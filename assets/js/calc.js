@@ -32,7 +32,7 @@ $(document).ready(function() {
 
 		function calculate(price, value) {
 			// console.log(price)
-			var newLimit = Math.round(value * price);
+			var newLimit = Math.round(value * 10000);
 			payloadLimit.text(newLimit);
 			payloadLimitVal.attr('value', newLimit);
 			if ((value * price) == 0) {
@@ -50,8 +50,8 @@ $(document).ready(function() {
 				newPrice = Math.round(newPrice / 39);
 				clientPrice.text(newPrice);
 				clientPriceVal.attr('value', newPrice);
-				slider.attr('value', parseInt(newLimit) / price);
-				slider.attr('data-value', parseInt(newLimit) / price);
+				slider.attr('value', parseInt(newLimit) / 10000);
+				slider.attr('data-value', parseInt(newLimit) / 10000);
 				var obj = {'payload':newLimit, 'price':newPrice};
 				window.localStorage.setItem('customed', JSON.stringify(obj));
 				window.sessionStorage.setItem('customed', JSON.stringify(obj));
@@ -75,13 +75,14 @@ $(document).ready(function() {
 		var value = 1;
 		if (window.localStorage.getItem('customed')) {
 			var obj = JSON.parse(window.localStorage.getItem('customed'));
+			console.log(obj)
 			if (obj.payload != undefined) {
 				// calculate(license.corpo.price, parseInt(value));
 				if (license.priv.active) {
 					value = obj.payload / license.priv.price;
 					var obj = calculate(license.priv.price, parseInt(value));
 				} else if (license.corpo.active) {
-					value = obj.payload / license.corpo.price;
+					value = obj.payload / 10000;
 					var obj = calculate(license.corpo.price, parseInt(value));
 				} else if (license.enterprise.active) {
 					value = obj.payload / license.enterprise.price;
