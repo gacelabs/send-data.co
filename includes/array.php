@@ -15,7 +15,7 @@
 			'payload' => '1000',
 			'desc' => array(
 				'2 Months Max',
-				'2K Max Payload per month',
+				'20K Max Payload per month',
 				'Limited Support'
 			)
 		),
