@@ -20,9 +20,9 @@ class LeftAndMainExtension extends DataExtension {
 		// debug::endshow($form);
 		if ($this->owner->hasMethod('getModelClass')) {
 			// debug::endshow($this->owner->getModelClass());
-			if ($this->owner->getModelClass() == 'Component\\Models\\FormBlockField') {
+			if (in_array($this->owner->getModelClass(), ['Component\\Models\\FormBlockField', 'Component\\FormSubmissionBlock'])) {
 				foreach ($form->Fields() as $key => $Field) {
-					if ($Field->getName() == 'Component-Models-FormBlockField') {
+					if (in_array($Field->getName(), ['Component-Models-FormBlockField','Component-FormSubmissionBlock'])) {
 						$Field->getConfig()->addComponent(new GridFieldSortableRows('SortOrder'))
 							->removeComponentsByType(GridFieldPaginator::class)
 							->addComponent($pagination = new GridFieldPaginator(50));

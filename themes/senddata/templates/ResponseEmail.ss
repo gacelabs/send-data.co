@@ -15,8 +15,8 @@
 			</p>
 		<% end_if %>
 
-		<% loop $Submission.EmailFieldValues %>
-		<div><strong>$label:</strong> $value</div>
+		<% loop $Submission %>
+			<div><strong>$label:</strong> $value</div>
 		<% end_loop %>
 
 		<div><strong>Date:</strong> $Now.Format(M/d/y)</div>

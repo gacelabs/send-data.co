@@ -16,6 +16,7 @@ use SilverStripe\CMS\Model\SiteTree;
 use SilverStripe\ORM\ArrayList;
 use SilverStripe\ORM\DataObject;
 use SilverStripe\Core\ClassInfo;
+use SilverStripe\View\Requirements;
 use InvalidArgumentException;
 
 use App\Helpers\FieldHelper;
@@ -25,6 +26,7 @@ use App\Helpers\GeneralHelper;
 use Component\Models\DropdownObject;
 use Component\Models\FormBlockField;
 use Component\Models\Recipient;
+use Component\Models\FormSubmissionData;
 
 class FormHandler extends Form {
 
@@ -54,7 +56,9 @@ class FormHandler extends Form {
 						} else if (in_array(strtolower($Field->Type), ['dropdown','listbox','optionsetfield'])) {
 							$List = [];
 							if (strtolower($Field->DropdownObject) == 'custom') {
-								$List = explode(',', trim($Field->CustomDropdown));
+								// debug::endshow($Field->CustomDropdowns());
+								// $List = explode(',', trim($Field->CustomDropdown));
+								$List = $Field->CustomDropdowns();
 							} else {
 								if (ClassInfo::hasTable($Field->DropdownObject)) {
 									$List = DropdownObject::get()->Filter('ClassName', 'Component\\Models\\'.$Field->DropdownObject);
@@ -86,6 +90,7 @@ class FormHandler extends Form {
 
 	public function __construct($Controller, $FormData)
 	{
+        Requirements::javascript('https://www.google.com/recaptcha/api.js?onload=reCaptchaLoad&render=explicit');
 		$this->Controller = $Controller;
 		$this->Form = $FormData;
 		$this->FieldList();
@@ -107,19 +112,39 @@ class FormHandler extends Form {
 	{
 		$Controller = $Form->getController();
 		$Data = Convert::raw2sql($RawData);
-		// debug::show($Controller);
-		// debug::endshow($Data);
+		/*debug::show($this->Form->Submission());
+		debug::endshow($Data);*/
+		$TemplateData = ArrayList::create();
 
-		// debug::endshow($this->Form->getSubmissions());
-		if ($this->Form->hasMethod('getSubmissions')) {
-			$Submission = $this->Form->getSubmissions()::create();
-			$Form->saveInto($Submission);
-			$Submission->write();
-			// add ID to Contact form summission for this form type
-			// $Controller->Submissions()->add($Submission->ID);
+		$Submission = $this->Form->Submission();
+		// debug::endshow($Submission->Exists());
+		if ($this->Form->hasMethod('Submission') AND $Submission->Exists()) {
+			$Columns = $Submission->FormBlockFields();
+			// debug::show($Columns);
+			$FormData = [];
+			foreach ($Columns as $key => $FormBlockField) {
+				if ($FormBlockField->DropdownObject == 'Custom') {
+					$Value = $Data[$FormBlockField->Name];
+					if ($FormBlockField->CustomDropdowns()->Exists()) {
+						$Value = $FormBlockField->CustomDropdowns()->byID($Value)->Value;
+					}
+				}
+				$FormData[$FormBlockField->Name] = $Value;
+				$TemplateData->push(['label' => $FormBlockField->Name, 'value' => $Value]);
+			}
+			// debug::endshow(base64_encode(serialize($FormData)));
+			$SubmissionObject = FormSubmissionData::create();
+			$SubmissionObject->Data = base64_encode(serialize($FormData));
+			$SubmissionObject->write();
+			// debug::endshow($SubmissionObject->FormSubmissionBlocks()->hasMethod('add'));
+			$SubmissionObject->FormSubmissionBlocks()->add($Submission->ID);
+		} else {
+			// $this->Form->sessionMessage('Form has no assigned Submission! Please contact us!', 'bad');
 		}
+		// debug::endshow($Submission);
+		// debug::endshow($this->Form->getSubmissions());
 
-		if ($this->Form->hasMethod('getRecipients') AND isset($Submission)) {
+		if ($this->Form->hasMethod('getRecipients') AND isset($Submission) AND isset($Data['Email'])) {
 			$FormRecipients = $this->Form->getRecipients();
 			// debug::endshow($FormRecipients);
 			$RecipientData = ArrayList::create();
@@ -131,7 +156,7 @@ class FormHandler extends Form {
 					}
 				}
 			} else {
-				$RecipientData->push(['Name' => 'Devs', 'Email' => 'garciaeddiem+devs@gmail.com']);
+				$RecipientData->push(['Name' => 'Devs', 'Email' => 'gacelabs.inc+devs@gmail.com']);
 				$this->no_recipients = true;
 			}
 			// debug::endshow($RecipientData);
@@ -139,46 +164,94 @@ class FormHandler extends Form {
 				if (isset($Recipient->Name) AND $Recipient->Name) {
 					$Data['RecipientName'] = $Recipient->Name;
 				}
-				$EmailClass = $this->prepareEmail($Data, $Submission, $Controller);
+				$EmailClass = $this->prepareEmail($Data, $TemplateData, $Controller);
 				$EmailClass->setData($Data);
 				$EmailClass->setTo($Recipient->Email);
 				// $EmailClass->setBCC(['eddie@ypdigital.com.au']);
-				$EmailClass->setReplyTo($Data['Email'], $Data['AdminName']); //Reply to
+				// $EmailClass->setReplyTo($Data['Email'], $Data['AdminName']); //Reply to
 				// debug::endshow($EmailClass);
 				$EmailClass->send();
 			}
 		}
 
-		return $this->onSuccess($Form->getController());
+		return $this->onSuccess($Form->getController(), $Data);
 	}
 
-	public function prepareEmail(&$Data, $Submission, $Controller)
+	public function prepareEmail(&$Data, $TemplateData, $Controller)
 	{
 		$subject = $this->Form->SubjectLine ?: 'New Enquiry';
-		$From    = $this->Form->RecipientEmailFrom ?: $Submission->Email;
+		$From    = $this->Form->RecipientEmailFrom ?: $Data['Email'];
 
 		$EmailClass = new Email($From, '', $subject);
 
-		$Data['Submission'] = $Submission;
+		$Data['Submission'] = $TemplateData;
 		if ($this->no_recipients) {
 			$Data['NoRecipients'] = 'Has no recipients with this form! '.$this->Form->getName();
 		}
-
 		$EmailClass->setHTMLTemplate(Config::inst()->get(get_class($this), 'auto_response_template'));
+
 		return $EmailClass;
 	}
 
-	public function onSuccess($Controller=null)
+	public function onSuccess($Controller=null, $Data=null)
 	{
-		if (!is_null($Controller)) {
-			$ThankYouPage = SiteTree::get()->byID($Controller->TyPageID);
-			// debug::endshow($ThankYouPage);
-			$Link = $Controller->Link();
-			if ($ThankYouPage->Exists()) {
-				$Link = $ThankYouPage->Link();
+		/*check some BackURL links*/
+		// debug::endshow($this->Form);
+		$SelFields = $this->selectedFields();
+		$BackURLData = $SelFields->Filter('FormField.Name', 'BackURL');
+		if ($BackURLData->Count() AND in_array($this->Form->ActionName, ['Login', 'Register'])) {
+			$BackURLData = $BackURLData->First()->FormField();
+			$GETUrl = [];
+			if ($this->Form->ActionName == 'Login') {
+				foreach ($SelFields->Filter('FormField.Name:Not', 'BackURL') as $key => $Selects) {
+					$Name = $Selects->FormField()->Name;
+					$GETUrl['accounts'][$Name] = $Data[$Name];
+				}
+			} else {
+				foreach ($SelFields->Filter('FormField.Name:Not', 'BackURL') as $key => $Selects) {
+					$Name = $Selects->FormField()->Name;
+					$toUse = explode('_', $Name);
+					if (count($toUse) > 1) {
+						$index = strtolower($toUse[0]);
+						$hash = $toUse[1];
+						if (count($toUse) == 3) {
+							$hash .= '_'.$toUse[2];
+						}
+						$GETUrl[$index][$hash] = $Data[$Name];
+					}
+				}
 			}
-			return $Controller->redirect($Link);
+			// debug::show($GETUrl);
+			$URL = $BackURLData->DefaultValue.'?'.http_build_query($GETUrl);
+			// debug::endshow($URL);
+			return $Controller->redirect($URL);
+		} else {
+			if (!is_null($Controller)) {
+				$ThankYouPage = SiteTree::get()->byID($Controller->TyPageID);
+				// debug::endshow($ThankYouPage);
+				$Link = $Controller->Link();
+				if ($ThankYouPage->Exists()) {
+					$Link = $ThankYouPage->Link();
+				}
+				return $Controller->redirect($Link);
+			}
 		}
+	
 		return $Controller->redirect('/page-not-found/');
+	}
+
+	public function selectedFields()
+	{
+		return $this->Form->FormBlockFields();
+	}
+
+	public function isInGroupWith($ID)
+	{
+		$Field = FormBlockField::get()->byID($ID);
+		if ($Field->Exists()) {
+			return $Field->InGroup;
+			// debug::endshow($Field->InGroup);
+		}
+		return FALSE;
 	}
 }

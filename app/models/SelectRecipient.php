@@ -42,7 +42,7 @@ class SelectRecipient extends DataObject {
 		$fields->addFieldToTab('Root.Main', FieldHelper::HeaderField('SelectRecipient')->setHeadingLevel(1), 'RecipientID');
 
 		$fields->addFieldsToTab('Root.Main', [
-			FieldHelper::Dropdown('RecipientID', 'Select a recipient', Recipient::get())
+			FieldHelper::Dropdown('RecipientID', ' ', Recipient::get())
 		]);
 
 		return $fields;

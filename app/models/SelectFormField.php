@@ -47,6 +47,11 @@ class SelectFormField extends DataObject {
 		]);
 
 		return $fields;
+	}
 
+	public function getFieldTypes()
+	{
+		debug::endshow(FormBlockField::GetFieldTypes());
+		return FormBlockField::GetFieldTypes();
 	}
 }

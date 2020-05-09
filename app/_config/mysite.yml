@@ -41,10 +41,12 @@ App\LeftModelAdmin\DataRecords:
   managed_models:
     Component\FormBlock:
       title: 'Data Forms'
+    Component\FormSubmissionBlock:
+      title: 'Data Submissions'
     Component\Models\FormBlockField:
       title: 'Data Form Fields'
     Component\Models\Recipient:
-      title: 'Recipients'
+      title: 'Email Contacts'
 
 SilverStripe\Admin\LeftAndMain:
   # extra_requirements_css:

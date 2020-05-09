@@ -9,6 +9,7 @@ namespace {
 	use SilverStripe\Dev\Debug;
 	use SilverStripe\Control\Controller;
 	use SilverStripe\Core\Injector\Injector;
+	use SilverStripe\Blog\Model\BlogPost;
 
 	use Component\FormBlock;
 	use Component\FormHandler;
@@ -22,17 +23,25 @@ namespace {
 		public $main_css = [
 			'properties/css/bootstrap.min.css',
 			'properties/css/bootstrap-slider.css',
-			'properties/css/font-awesome.min.css',
+			// 'properties/css/font-awesome.min.css',
 			'properties/css/default.css',
-			'properties/css/style.css'
+			'properties/css/style.css',
+			'properties/css/main.css',
+			'properties/css/custom.css'
 		];
 
 		public $main_js = [
+			// 'properties/js/jquery.min.js',
+			// 'properties/js/bootstrap.min.js',
+			// 'properties/js/highlight.pack.js'
 			'properties/js/jquery.min.js',
-			'properties/js/bootstrap.min.js',
 			'properties/js/bootstrap-slider.js',
+			'properties/js/jquery.dropotron.min.js',
+			'properties/js/browser.min.js',
+			'properties/js/breakpoints.min.js',
+			'properties/js/util.js',
 			'properties/js/main.js',
-			'properties/js/highlight.pack.js'
+			'properties/js/main.js',
 		];
 
 		protected function init()
@@ -97,6 +106,11 @@ namespace {
 				return $this->dataRecord->DataForm($getVars, $this);
 			}
 			return false;
+		}
+
+		public function BlogPosts()
+		{
+			return BlogPost::get()->Sort('PublishDate', 'DESC');
 		}
 	}
 }

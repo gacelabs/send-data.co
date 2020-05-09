@@ -22,10 +22,10 @@ class SiteConfigExtension extends DataExtension
 		'LinkedInLink'  => 'Varchar(255)',
 		'YoutubeLink' => 'Varchar(255)',
 		'PinterestLink' => 'Varchar(255)',
-		'PhoneNumber'   => 'Varchar(255)',
 		'FooterContactDetails' => 'HTMLText',
-		'SiteEmail'   => 'Varchar(255)',
 		'MainJsScripts' => 'Text',
+		'reCaptchaAPiKey' => 'Varchar(255)',
+		'reCaptchaAPiSecret' => 'Varchar(255)',
 	];
 
 	private static $has_one = [
@@ -40,8 +40,6 @@ class SiteConfigExtension extends DataExtension
 
 		$fields->addFieldsToTab('Root.Main', [
 			FieldHelper::Upload("SiteFavIcon", "Site Fav Icon"),
-			FieldHelper::Text("PhoneNumber", "Phone Number"),
-			FieldHelper::Text("SiteEmail", "Site Email"),
 			FieldHelper::Accordion($fields, 'SiteSocialMediaLinks', 'Social Media Links', [
 				FieldHelper::Text("FacebookLink", "Facebook Link"),
 				FieldHelper::Text("TwitterLink", "Twitter Link"),
@@ -58,6 +56,11 @@ class SiteConfigExtension extends DataExtension
 
 		$fields->addFieldsToTab('Root.Scripts',[
 			FieldHelper::Textarea('MainJsScripts')
+		]);
+
+		$fields->addFieldsToTab('Root.Keys',[
+			FieldHelper::Text('reCaptchaAPiKey', 'reCAPTCHA API Key'),
+			FieldHelper::Text('reCaptchaAPiSecret', 'reCAPTCHA API Secret')
 		]);
 	}
 }

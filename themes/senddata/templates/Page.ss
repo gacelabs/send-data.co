@@ -9,18 +9,18 @@
 	<script data-ad-client="ca-pub-3716182521515143" async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
 	<% base_tag %>
 	<title><% if $MetaTitle %>$MetaTitle<% else %>$Title<% end_if %> &raquo; $SiteConfig.Title</title>
-	<meta charset="utf-8">
-	<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0">
+	<meta charset="utf-8" />
+	<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
 	<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
 	$MetaTags(false)
 	<!--[if lt IE 9]>
 	<script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script>
 	<![endif]-->
-	<link rel="icon" type="image/png" sizes="256x256" href="properties/images/icon.png">
+	<link rel="icon" type="image/png" sizes="256x256" href="$SiteConfig.SiteFavIcon.Link">
 	$SiteConfig.MainJsScripts.RAW
 </head>
 
-<body class="$ClassName.ShortName">
+<body class="{$URLSegment.LowerCase}-{$ClassName.ShortName.LowerCase} is-preload">
 	<!-- Google Tag Manager (noscript) -->
 	<%-- <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-T2LRXWG"
 	height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
@@ -44,12 +44,22 @@
 	</script>
 	<!-- Your customer chat code -->
 	<div class="fb-customerchat" attribution="setup_tool" page_id="307503806518656"></div> --%>
-
-	<% include Header %>
-	<div class="container">
-		$Layout
+	<div id="page-wrapper">
+		<!-- Header -->
+		<section id="header">
+			<% include Header %>
+		</section>
+		<!-- Main -->
+		<section id="main">
+			<div class="container">
+				$Layout
+			</div>
+		</section>
+		<!-- Footer -->
+		<section id="footer">
+			<% include Footer %>
+		</section>
 	</div>
-	<% include Footer %>
 
 </body>
 

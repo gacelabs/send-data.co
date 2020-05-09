@@ -6,6 +6,7 @@ use SilverStripe\ORM\DataObject;
 use SilverStripe\Assets\Image;
 use SilverStripe\Dev\Debug;
 use SilverStripe\Dev\Backtrace;
+use SilverStripe\Control\Controller;
 
 use App\Helpers\FieldHelper;
 use App\Helpers\GridHelper;
@@ -55,6 +56,11 @@ class MembershipBlock extends Block {
 	public function forTemplate()
 	{
 		return $this;
+	}
+
+	public function getController()
+	{
+		return Controller::curr();
 	}
 
 }

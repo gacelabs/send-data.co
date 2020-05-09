@@ -149,7 +149,7 @@ kbd {
 	margin: 0;
 }
 .input-error {
-	border: 2px solid #ed5565;
+	border: 2px solid #ed5565 !important;
 }
 .required-badge {
 	position: relative;

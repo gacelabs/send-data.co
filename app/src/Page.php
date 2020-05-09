@@ -90,6 +90,19 @@ namespace {
 			return $fields;
 		}
 
+		public function GetHomeComponentBlock($ClassName) {
+			$Blocks = $this->owner->Blocks()->Filter(['Published'=>1, 'ClassName' => $ClassName]);
+			$HTML = '';
+			if ($Blocks) {
+				foreach ($Blocks as $Block) {
+					// debug::endshow($Block);
+					$Template = $Block->ClassName ?: 'Component\\Default';
+					$HTML .= $Block->renderWith($Template);
+				}
+			}
+			return FieldHelper::HTMLText($HTML);
+		}
+
 		public function GetComponentBlocks() {
 			$Blocks = $this->owner->Blocks()->Filter(['Published'=>1]);
 			SSViewer::add_themes([SITE_DEFAULT_THEME]);
@@ -109,11 +122,10 @@ namespace {
 		public function DataForm($vars=false, $Controller=false)
 		{
 			if ($vars) {
-				$ID = $vars['id']; $Submission = $vars['submissions']; $Template = $vars['template'];
+				$ID = $vars['id']; $Template = isset($vars['template']) ? $vars['template'] : 'Forms\\DataForm';
 				$FormBlock = FormBlock::get()->byID($ID);
 				if ($FormBlock) {
 					$FormBlock->setDataFormTemplate($Template);
-					$FormBlock->setSubmission($Submission);
 					// debug::endshow($FormBlock->FormTemplate);
 					$Controller = $Controller ?: Controller::curr();
 					$Form = Injector::inst()->createWithArgs(FormHandler::class, [$Controller, $FormBlock]);

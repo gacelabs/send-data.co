@@ -11,10 +11,13 @@ use SilverStripe\Forms\FormField;
 use SilverStripe\Core\ClassInfo;
 
 use App\Helpers\FieldHelper;
+use App\Helpers\GridHelper;
 use App\Helpers\GeneralHelper;
 use App\Subscriptions\Registrations;
 use Component\FormBlock;
+use Component\FormSubmissionBlock;
 use Component\Models\DropdownObject;
+use Component\Models\CustomDropdown;
 
 class FormBlockField extends DataObject {
 
@@ -30,23 +33,34 @@ class FormBlockField extends DataObject {
 		'Type' => 'Varchar(200)',
 		'DataType' => 'Varchar(200)',
 		'DropdownObject' => 'Varchar(200)',
-		'CustomDropdown' => 'Text',
 		'DefaultValue' => 'Varchar(255)',
 		'PlaceHolder' => 'Varchar(255)',
 		'Required' => 'Boolean',
 		'Readonly' => 'Boolean',
 		'Disabled' => 'Boolean',
 		'Invisible' => 'Boolean',
+		'TwoColumnedRow' => 'Boolean',
+		'InGroup' => 'Boolean',
 		'SortOrder' => 'Int'
 	];
 	private static $default_sort = 'SortOrder';
 
-	private static $has_one = [];
-	private static $has_many = [];
-	private static $many_many = [];
+	private static $has_one = [
+		'FormSubmissionBlock' => FormSubmissionBlock::class
+	];
+
+	private static $has_many = [
+		'CustomDropdowns' => CustomDropdown::class
+	];
+
+	private static $many_many = [
+		'GroupFields' => self::class
+	];
+
 	private static $belongs_many_many = [];
 	private static $defaults = [];
 	private static $field_labels = [];
+	
 	private static $summary_fields = [
 		'GridName' => 'Title',
 		'Type' => 'Type',
@@ -59,14 +73,9 @@ class FormBlockField extends DataObject {
 
 	public function getCMSFields() {
 		$fields = parent::getCMSFields();
-		$fields->removeByName(['SortOrder','FormBlockID']);
-		$FieldTypes = get_class_methods(FieldHelper::class);
-		// debug::endshow($FieldTypes);
-		foreach ([0,5,8,10,15,16,17,19,20,21] as $index) unset($FieldTypes[$index]); /*these are CMS fields*/
-		$Types = [];
-		foreach ($FieldTypes as $Value) $Types[$Value] = ucwords(GeneralHelper::CamelNameConcat($Value));
+		$fields->removeByName(['SortOrder','FormBlockID','FormSubmissionBlockID','CustomDropdowns']);
+		$Types = self::GetFieldTypes();
 		// debug::endshow($Types);
-		ksort($Types);
 		$ClassInfo = ClassInfo::dataClassesFor(DropdownObject::class);
 		unset($ClassInfo['component\models\dropdownobject']);
 		$DropdownObjects = [];
@@ -81,6 +90,10 @@ class FormBlockField extends DataObject {
 		$fields->addFieldToTab('Root.Main', FieldHelper::HeaderField('FormField')->setHeadingLevel(1), 'GridName');
 
 		$fields->addFieldsToTab('Root.Main', [
+			FieldHelper::Checkbox('TwoColumnedRow'),
+			FieldHelper::Checkbox('InGroup'),
+			FieldHelper::ListBox('GroupFields', 'In Group With', self::get())
+				->displayIf('InGroup')->isChecked()->end(),
 			FieldHelper::Dropdown('Type', 'Field Type', $Types),
 
 			FieldHelper::Text('DefaultValue')->hideIf('Type')->isEqualTo('File')
@@ -102,18 +115,23 @@ class FormBlockField extends DataObject {
 
 			FieldHelper::Checkbox('Invisible')->hideIf('Type')->isEqualTo('Hidden')->end(),
 			FieldHelper::Text('PlaceHolder')->hideIf('Type')->isEqualTo('Hidden')->end(),
-
-			FieldHelper::Textarea('CustomDropdown', 'Custom dropdown values')
-				->setDescription('<span style="color: red;">Comma separated values only!</span>')
-				->hideIf("DropdownObject")->isNotEqualTo("Custom")
-					->orIf()
-						->group()
-							->andIf('Type')->isNotEqualTo('Dropdown')
-							->andIf("Type")->isNotEqualTo("ListBox")
-							->andIf("Type")->isNotEqualTo("OptionsetField")
-				->end(),
 		]);
 
+		if ($this->DropdownObject == 'Custom') {
+			$fields->addFieldToTab('Root.CustomDropdowns', GridHelper::sortable('CustomDropdowns', 'Custom dropdown values', $this->CustomDropdowns()));
+		}
+
 		return $fields;
+	}
+
+	public static function GetFieldTypes()
+	{
+		$FieldTypes = get_class_methods(FieldHelper::class);
+		// debug::endshow($FieldTypes);
+		foreach ([0,5,8,10,15,16,17,19,20,21] as $index) unset($FieldTypes[$index]); /*these are CMS fields*/
+		$Types = [];
+		foreach ($FieldTypes as $Value) $Types[$Value] = ucwords(GeneralHelper::CamelNameConcat($Value));
+		ksort($Types);
+		return $Types;
 	}
 }

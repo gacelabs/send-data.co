@@ -22,7 +22,7 @@ class BannerBlock extends Block {
 
 	private static $db = [
 		/*RIGHT*/
-		'UpperRightText' => 'HTMLText',
+		'UpperRightText' => 'Text',
 		'UpperRightSubText' => 'Text',
 		'UpperRightButtonText' => 'Varchar(50)',
 		'IsRightButtonAnchor' => 'Boolean',
@@ -56,21 +56,21 @@ class BannerBlock extends Block {
 		$fields->addFieldsToTab('Root.Main', [
 			FieldHelper::Upload('Banner'),
 			/*RIGHT*/
-			FieldHelper::HTMLEditor('UpperRightText'),
-			FieldHelper::Textarea('UpperRightSubText'),
-			FieldHelper::Text('UpperRightButtonText'),
-			FieldHelper::Checkbox('IsRightButtonAnchor'),
-			FieldHelper::Text('RightButtonAnchorText')->displayIf('IsRightButtonAnchor')->isChecked()->end(),
-			FieldHelper::Wrap(FieldHelper::TreeDropdown('UpperRightButtonID', 'Right Link', SiteTree::class))
+			FieldHelper::Textarea('UpperRightText', 'Intro Text'),
+			FieldHelper::Textarea('UpperRightSubText', 'Sub Text'),
+			FieldHelper::Text('UpperRightButtonText', 'Button Text'),
+			FieldHelper::Checkbox('IsRightButtonAnchor', 'Anchored?'),
+			FieldHelper::Text('RightButtonAnchorText', 'Anchor Text')->displayIf('IsRightButtonAnchor')->isChecked()->end(),
+			FieldHelper::Wrap(FieldHelper::TreeDropdown('UpperRightButtonID', 'Link', SiteTree::class))
 				->hideIf('IsRightButtonAnchor')->isChecked()->end(),
 			/*LEFT*/
-			FieldHelper::HTMLEditor('UpperLeftText'),
+			/*FieldHelper::HTMLEditor('UpperLeftText'),
 			FieldHelper::Text('UpperLeftSubText'),
 			FieldHelper::Text('UpperLeftButtonText'),
 			FieldHelper::Checkbox('IsLeftButtonAnchor'),
 			FieldHelper::Text('LeftButtonAnchorText')->displayIf('IsLeftButtonAnchor')->isChecked()->end(),
 			FieldHelper::Wrap(FieldHelper::TreeDropdown('UpperLeftButtonID', 'Left Link', SiteTree::class))
-				->hideIf('IsLeftButtonAnchor')->isChecked()->end()
+				->hideIf('IsLeftButtonAnchor')->isChecked()->end()*/
 		]);
 
 		return $fields;

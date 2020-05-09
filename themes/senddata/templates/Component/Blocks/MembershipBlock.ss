@@ -1,22 +1,25 @@
-<div class="row"<% if $Anchor %> id="$Anchor"<% end_if %>>&nbsp;</div>
-<div class="text-center">
-	<h4 class="mt-1 mb-4 text-grey"><b>$Name</b></h4>
-</div>
-<div class="row">
-	<% loop $MembershipItems %>
-		<div class="col-lg col-md mt-3 mb-5">
-			<div class="card">
-				<div class="card-body">
-					<h4 class="card-title text-center"><b>$Title</b></h4>
-					<% if $IsSlider %>
-						<% include SliderBox %>
-					<% end_if %>
-					$Content
-				</div>
-				<div class="card-footer text-center">
-					<a href="$Page.Link" class="btn btn-primary">$ButtonText</a>
-				</div>
+
+<!-- Intro -->
+<section id="intro" class="container">
+	<div class="row">
+		<% loop $MembershipItems %>
+			<div class="col-4 col-12-medium">
+				<section class="<% if $First %>first<% else_if $Last %>last<% else %><% if $Top.getController.Link == '/home/' %>middle<% end_if %><% end_if %>">
+					<i class="icon solid featured 
+						fa-<% if $First %>star<% else_if $Last %>tools<% else %>bolt<% end_if %>
+						<% if not $First && not $Last %> alt<% else_if $Last %> alt2<% end_if %>"></i>
+					<header>
+						<h2>$Title</h2>
+					</header>
+					<p>$Content</p>
+					<br>
+					<footer>
+						<ul class="actions">
+							<li><a href="$Page.Link" class="button<% if not $First && not $Last %> alt<% else_if $Last %> alt2<% end_if %>">$ButtonText</a></li>
+						</ul>
+					</footer>
+				</section>
 			</div>
-		</div>
-	<% end_loop %>
-</div>
+		<% end_loop %>
+	</div>
+</section>

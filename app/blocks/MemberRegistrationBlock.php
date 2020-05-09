@@ -71,13 +71,8 @@ class MemberRegistrationBlock extends Block {
 	{
 		// debug::endshow($this->Page());
 		$this->FormBlock()->setDataFormTemplate('Forms\\RegisterForm');
-		$this->FormBlock()->setSubmission(Registration::class);
-		// debug::endshow($this->FormBlock()->Submissions);
 		$Form = new FormHandler($this->getController(), $this->FormBlock());
-		/*$Form->getRequestHandler()->config()->update('url_handlers', [
-			'$ID' => 'httpSubmission',
-		]);*/
-		$Form->setFormAction(Controller::curr()->Link() . 'DataForm/?id=' . $this->FormBlock()->ID . '&submissions=' . Registration::class . '&template=Forms\\RegisterForm');
+		$Form->setFormAction(Controller::curr()->Link() . 'DataForm/?id=' . $this->FormBlock()->ID);
 		return $Form;
 	}
 

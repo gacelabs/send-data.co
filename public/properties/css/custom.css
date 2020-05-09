@@ -1,0 +1,12 @@
+input[type="button"].alt2, input[type="submit"].alt2, input[type="reset"].alt2, button.alt2, .button.alt2 {
+	background: #827a7c;
+}
+
+.pr-0.pt-0 {
+	padding-right: 0;
+    padding-top: 0;
+}
+
+.h55 {
+	height: 55px;
+}

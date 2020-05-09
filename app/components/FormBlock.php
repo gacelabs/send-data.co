@@ -11,8 +11,11 @@ use App\Helpers\FieldHelper;
 use App\Helpers\GridHelper;
 
 use Component\Block;
+use Component\FormSubmissionBlock;
+
 use Component\Models\SelectFormField;
 use Component\Models\SelectRecipient;
+
 use Submission\Subscriptions;
 
 class FormBlock extends DataObject {
@@ -29,10 +32,13 @@ class FormBlock extends DataObject {
 	];
 	private static $default_sort = 'SortOrder';
 
-	private static $has_one = [];
+	private static $has_one = [
+		'Submission' => FormSubmissionBlock::class
+	];
+
 	private static $has_many = [
 		'Recipients' => SelectRecipient::class,
-		'FormBlockFields' => SelectFormField::class
+		'FormBlockFields' => SelectFormField::class,
 	];
 	private static $many_many = [];
 	private static $belongs_many_many = [];
@@ -40,11 +46,11 @@ class FormBlock extends DataObject {
 	private static $field_labels = [];
 	private static $summary_fields = [
 		'Name' => 'Name',
-		'ActionName' => 'Action'
+		'ActionName' => 'Action',
+		'Submission.Name' => 'Submission'
 	];
 
 	public $FormTemplate = 'Forms\\DataForm';
-	public $Submissions = Subscriptions::class;
 
 	public function getCMSFields()
 	{
@@ -60,9 +66,6 @@ class FormBlock extends DataObject {
 		$fields->addFieldsToTab('Root.Recipients', [
 			GridHelper::relational('Recipients', 'Recipients', $this->Recipients())
 		]);
-		/*$fields->addFieldsToTab('Root.Subscriptions', [
-			GridHelper::relational('Subscriptions', 'Recipients', $this->Subscriptions())
-		]);*/
 
 		return $fields;
 	}
@@ -73,19 +76,8 @@ class FormBlock extends DataObject {
 		return $this->FormTemplate;
 	}
 
-	public function setSubmission($submission=Subscriptions::class)
-	{
-		$this->Submissions = $submission;
-		return $this->Submissions;
-	}
-
 	public function getRecipients()
 	{
 		return $this->Recipients();
-	}
-
-	public function getSubmissions()
-	{
-		return $this->Submissions;
 	}
 }

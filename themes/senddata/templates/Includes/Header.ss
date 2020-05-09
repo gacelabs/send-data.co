@@ -1,34 +1,41 @@
 
-<nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top">
-	<div class="container">
-		<%-- <a class="navbar-brand text-warning" href="/">$SiteConfig.Title</a> --%>
-		<h3 class="display-5"><a class="text-warning" href="/">$SiteConfig.Title</a><span class="text-white">::</span></h3>
-		<button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
-			<span class="navbar-toggler-icon"></span>
-		</button>
-		<div class="collapse navbar-collapse" id="navbarResponsive">
-			<ul class="navbar-nav ml-auto">
-				<% loop $Menu(1) %>
-					<li class="nav-item $LinkingMode">
-						<a href="$Link" class="nav-link" title="$Title.XML">$MenuTitle.XML</a>
-					</li>
-				<% end_loop %>
-				<%-- <li class="nav-item active">
-					<a class="nav-link" href="/">Home</a>
+<!-- Logo -->
+<h1><a href="/">$SiteConfig.Title</a></h1>
+<!-- Nav -->
+<nav id="nav">
+	<ul>
+		<% loop $Menu(1) %>
+			<li class="$LinkingMode">
+				<a href="$Link">$MenuTitle.XML</a>
+			</li>
+		<% end_loop %>
+		<%-- <li class="current"><a href="/">Home</a></li>
+		<li>
+			<a href="#">Dropdown</a>
+			<ul>
+				<li><a href="#">Lorem ipsum dolor</a></li>
+				<li><a href="#">Magna phasellus</a></li>
+				<li><a href="#">Etiam dolore nisl</a></li>
+				<li>
+					<a href="#">Phasellus consequat</a>
+					<ul>
+						<li><a href="#">Magna phasellus</a></li>
+						<li><a href="#">Etiam dolore nisl</a></li>
+						<li><a href="#">Veroeros feugiat</a></li>
+						<li><a href="#">Nisl sed aliquam</a></li>
+						<li><a href="#">Dolore adipiscing</a></li>
+					</ul>
 				</li>
-				<li class="nav-item ">
-					<a class="nav-link" href="?page=documentation">Docs</a>
-				</li>
-				<li class="nav-item">
-					<a class="nav-link" href="mailto:gacelabs.inc@gmail.com?subject=Enquiry&amp;body=Full%20name%3A%20%0D%0AEmail%3A%20%0D%0AMessage%3A%20%0D%0A%0D%0A%0D%0A%0D%0A">Contact us</a>
-				</li>
-				<li class="nav-item" title="Visit our facebook page">
-					<a class="nav-link" href="https://www.facebook.com/datapushthru/" target="blank" onmouseenter="$(this).css('color', 'blue')" onmouseleave="$(this).removeAttr('style')"><i class="fa fa-facebook"></i>b</a>
-				</li>
-				<li class="nav-item ">
-					<a class="nav-link" href="?page=login">Login</a>
-				</li> --%>
+				<li><a href="#">Veroeros feugiat</a></li>
 			</ul>
-		</div>
-	</div>
+		</li>
+		<li><a href="left-sidebar.html">Left Sidebar</a></li>
+		<li><a href="right-sidebar.html">Right Sidebar</a></li>
+		<li><a href="no-sidebar.html">No Sidebar</a></li> --%>
+	</ul>
 </nav>
+
+<% if $URLSegment.LowerCase == home %>
+	$GetHomeComponentBlock('Component\Blocks\BannerBlock')
+	$GetHomeComponentBlock('Component\Blocks\MembershipBlock')
+<% end_if %>
