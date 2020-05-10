@@ -6,3 +6,4 @@ public/
 ss_error.log
 themes/
 vendor/
+.htaccess.bk
