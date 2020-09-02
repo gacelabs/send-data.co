@@ -16,7 +16,7 @@
 					<a class="nav-link" href="mailto:gacelabs.inc@gmail.com?subject=Enquiry&body=Full%20name%3A%20%0D%0AEmail%3A%20%0D%0AMessage%3A%20%0D%0A%0D%0A%0D%0A%0D%0A">Contact us</a>
 				</li>
 				<li class="nav-item" title="Visit our facebook page">
-					<a class="nav-link" href="https://www.facebook.com/Send-Data/" target="blank" onmouseenter="$(this).css('color', 'blue')" onmouseleave="$(this).removeAttr('style')"><i class="fa fa-facebook"></i>b</a>
+					<a class="nav-link" href="https://www.facebook.com/send.data.co/" target="blank" onmouseenter="$(this).css('color', 'blue')" onmouseleave="$(this).removeAttr('style')"><i class="fa fa-facebook"></i>b</a>
 				</li>
 				<li class="nav-item <?php if ($activePage == 'login') {echo 'active';}; ?>">
 					<a class="nav-link" href="?page=login">Login</a>
