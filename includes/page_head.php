@@ -14,11 +14,10 @@
 	<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 
 	<?php
-
-	include('includes/page_utils.php');
-
+		include('includes/page_utils.php');
 	?>
 	<title><?php echo $pageTitle; ?></title>
+	<?php echo $metas;?>
 	<link rel="icon" type="image/png" sizes="256x256" href="assets/images/icon.png">
 	<link rel="stylesheet" type="text/css" href="assets/css/bootstrap.min.css">
 	<link rel="stylesheet" type="text/css" href="assets/css/bootstrap-slider.css">
