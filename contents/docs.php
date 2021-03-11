@@ -37,7 +37,17 @@
 							<li>Place before the <kbd>&lt;/body&gt;</kbd> tag to call the Senddata object class</li>
 							<li class="my-2">
 								<p class="mb-2">Example:</p>
-								<pre><code>	&lt;script type="text/javascript" src="/your/other/js/files.js">&lt;/script&gt;<br/>	<b>&lt;script type="text/javascript" id="push-thru-scripts" src="<?php echo PRODSITE;?>get/jsfile/YOUR_APP_KEY">&lt;/script&gt;</b><br>&lt;/body&gt;<br>&lt;/html&gt;</code></pre>
+								<pre><code>	<b>&lt;script type="text/javascript"&gt;<br>		window.initSendData = function() {
+			/*Todo here, after Send-Data initializations*/
+		};
+		(function(d, s, id) {
+			var js, p = d.getElementsByTagName(s), me = p[p.length - 1];
+			if (d.getElementById(id)) return;
+			js = d.createElement(s); js.id = id;
+			js.type = "text/javascript";
+			js.src = "<?php echo PRODSITE;?>get/jsfile/<a href="/?page=customed-register">YOUR_APP_KEY</a>";
+			me.parentNode.insertBefore(js, me);
+		}(document, "script", "sd-sdk"));<br>	&lt;/script&gt;</b><br>&lt;/body&gt;<br>&lt;/html&gt;</code></pre>
 							</li>
 							<li>
 								<p class="mb-2">Then initialize the object class and pass your <kbd><a href="/?page=customed-register">APP KEY</a></kbd> as a parameter, just like so:</p>
