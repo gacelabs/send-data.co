@@ -48,10 +48,11 @@
 				autoConnect: false,
 				autoRunStash: false,
 				afterInit: function() {
-				  /*Todo here, after initialization script*/
+				  realtime.connect(function() {}); /*connection to server*/
+				  /*Todo here, after initialization*/
 				},
 				afterConnect: function() {
-				  /*Todo here, after connected script*/
+				  /*Todo here, after connection*/
 				}
 			});
 		};
