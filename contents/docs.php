@@ -8,6 +8,7 @@
 				<li>Binding</li>
 				<li>Subscribe</li>
 				<li>Transmitting</li>
+				<li>Unbinding</li>
 				<li>Unsubscribe</li>
 			</ul>
 			<p class="mt-4 mb-0 bold-caps">PHP</p>
@@ -40,14 +41,18 @@
 								<p class="mb-2">Then initialize the object into <code>window.initSendData</code> function, just like so:</p>
 							</li>
 							<li class="my-2">
-								<pre><code>	<b>&lt;script type="text/javascript"&gt;<br>		window.initSendData = function() {
-			/*Todo here, after initialization script*/
-			var realtime = new Senddata({
+								<pre><code>	<b>&lt;script type="text/javascript"&gt;<br>		var realtime = false;		
+		window.initSendData = function() {
+			realtime = new Senddata({
 				debug: false,
 				autoConnect: false,
 				autoRunStash: false,
-				afterInit: function() {},
-				afterConnect: function() {}
+				afterInit: function() {
+				  /*Todo here, after initialization script*/
+				},
+				afterConnect: function() {
+				  /*Todo here, after connected script*/
+				}
 			});
 		};
 		(function(d, s, id) {
@@ -79,14 +84,15 @@ realtime.app.options.autoConnect = false;</code>
 						<p class="mb-0"><b>3. Binding events to channels for connection.</b></p>
 						<ul class="no-style-ul">
 							<li>There's one way for catching the transmitted data.</li>
-							<li class="mt-2"><pre class="mb-2"><code><b>b.</b> realtime.bind('name_of_the_event', 'name_of_channel', function(data) {
+							<li class="mt-2"><pre class="mb-2"><code>realtime.bind('name_of_the_event', 'name_of_channel', function(data) {
 	console.log(data.user_id);
 	console.log(data.message);
 	// todo here ...
 });</code></pre></li>
 							<ul class="no-style-ul">
-								<li class="alert alert-warning mb-2" role="alert"><pre class="mb-0"><code class="nohighlight">'name_of_the_event'<br/><span class="fa fa-info-circle text-grey"></span> <span class="small">The parameter is a string value of your event name</span></code></pre></li>
-								<li class="alert alert-warning mb-2" role="alert"><pre class="mb-0"><code class="nohighlight">'name_of_channel'<br/><span class="fa fa-info-circle text-grey"></span> <span class="small">The parameter is a string value of your channel name</span></code></pre></li>
+								<li class="alert alert-warning mb-2" role="alert"><pre class="mb-0"><code class="nohighlight">'name_of_the_event'<br/><span class="fa fa-info-circle text-grey"></span> <span class="small">The parameter is a <i>string</i> value of your event name</span></code></pre></li>
+								<li class="alert alert-warning mb-2" role="alert"><pre class="mb-0"><code class="nohighlight">'name_of_channel'<br/><span class="fa fa-info-circle text-grey"></span> <span class="small">The parameter is a <i>string</i> value of your channel name</span></code></pre></li>
+								<li class="alert alert-warning mb-2" role="alert"><pre class="mb-0"><code class="nohighlight">'function(data){}'<br/><span class="fa fa-info-circle text-grey"></span> <span class="small">The parameter is a <i>callback function</i> with the <b><i>data</i></b> argument passed/transmitted</span></code></pre></li>
 							</ul>
 						</ul>
 					</div>
@@ -96,7 +102,7 @@ realtime.app.options.autoConnect = false;</code>
 							<li>One way to subscribe a channel for an event:</li>
 								<li class="mt-2"><pre class="mb-2"><code>var channel = realtime.subscribe('name_of_channel');</code></pre></li>
 							<ul class="no-style-ul">
-								<li class="alert alert-warning" role="alert"><pre class="mb-0"><code class="nohighlight">'name_of_channel'<br/><span class="fa fa-info-circle text-grey"></span> <span class="small">The parameter is a string value of your channel name</span></code></pre></li>
+								<li class="alert alert-warning" role="alert"><pre class="mb-0"><code class="nohighlight">'name_of_channel'<br/><span class="fa fa-info-circle text-grey"></span> <span class="small">The parameter is a <i>string</i> value of your channel name</span></code></pre></li>
 							</ul>
 							<li class="mt-4"><pre class="mb-2"><code>channel.listen('name_of_the_event', function(data) {
 	console.log(data.user_id);
@@ -104,7 +110,8 @@ realtime.app.options.autoConnect = false;</code>
 	// todo here ...
 });</code></pre></li>
 							<ul class="no-style-ul">
-								<li class="alert alert-warning mb-2" role="alert"><pre class="mb-0"><code class="nohighlight">'name_of_the_event'<br/><span class="fa fa-info-circle text-grey"></span> <span class="small">The parameter is a string value of your event name</span><br/><span class="fa fa-info-circle text-grey"></span> <span class="small">The parameter is a callback function with the data argument passed/transmitted</span></code></pre></li>
+								<li class="alert alert-warning mb-2" role="alert"><pre class="mb-0"><code class="nohighlight">'name_of_the_event'<br/><span class="fa fa-info-circle text-grey"></span> <span class="small">The parameter is a <i>string</i> value of your event name</span></code></pre></li>
+								<li class="alert alert-warning mb-2" role="alert"><pre class="mb-0"><code class="nohighlight">'function(data){}'<br/><span class="fa fa-info-circle text-grey"></span> <span class="small">The parameter is a <i>callback function</i> with the <b><i>data</i></b> argument passed/transmitted</span></code></pre></li>
 								<li class="alert alert-success" role="alert"><span class="small"><b>NOTE:</b> You cant only call the <kbd>listen</kbd> function on the last subscribed channel</span></li>
 							</ul>
 						</ul>
@@ -112,12 +119,12 @@ realtime.app.options.autoConnect = false;</code>
 					<div class="mt-5">
 						<p class="mb-0"><b>5. Transmitting your data to a channel connection.</b></p>
 						<ul class="no-style-ul">
-							<li>Finally this show you how to transmit the data to another user subscribed to a channel connection.</li>
-							<li class="mt-2"><pre class="mb-2"><code><b>a.</b> realtime.trigger('name_of_the_event', 'name_of_channel', data_to_transmit_or_push);</code></pre></li>
+							<li>This show you how to transmit the data to another user subscribed to a channel connection.</li>
+							<li class="mt-2"><pre class="mb-2"><code>realtime.trigger('name_of_the_event', 'name_of_channel', data_to_transmit_or_push);</code></pre></li>
 							<ul class="no-style-ul mb-4">
-								<li class="alert alert-warning mb-2" role="alert"><pre class="mb-0"><code class="nohighlight">'name_of_the_event'<br/><span class="fa fa-info-circle text-grey"></span> <span class="small">The parameter is a string value of your event name</span></code></pre></li>
-								<li class="alert alert-warning mb-2" role="alert"><pre class="mb-0"><code class="nohighlight">'name_of_channel'<br/><span class="fa fa-info-circle text-grey"></span> <span class="small">The parameter is a string value of your channel name</span></code></pre></li>
-								<li class="alert alert-warning mb-2" role="alert"><pre class="mb-0"><code class="nohighlight">'data_to_transmit_or_push'<br/><span class="fa fa-info-circle text-grey"></span> <span class="small">The parameter is a string or object value to transmit</span></code></pre></li>
+								<li class="alert alert-warning mb-2" role="alert"><pre class="mb-0"><code class="nohighlight">'name_of_the_event'<br/><span class="fa fa-info-circle text-grey"></span> <span class="small">The parameter is a <i>string</i> value of your event name</span></code></pre></li>
+								<li class="alert alert-warning mb-2" role="alert"><pre class="mb-0"><code class="nohighlight">'name_of_channel'<br/><span class="fa fa-info-circle text-grey"></span> <span class="small">The parameter is a <i>string</i> value of your channel name</span></code></pre></li>
+								<li class="alert alert-warning mb-2" role="alert"><pre class="mb-0"><code class="nohighlight">'data_to_transmit_or_push'<br/><span class="fa fa-info-circle text-grey"></span> <span class="small">The parameter is a <i>string</i> or <i>object</i> value to transmit</span></code></pre></li>
 							</ul>
 							<li class="mb-2">Data types of <kbd><b>data_to_transmit_or_push</b></kbd> parameter</li>
 							<li class="mb-2"><pre class="mb-0"><code><b>string</b><br/>realtime.trigger('name_of_the_event', 'name_of_channel', 'Hello world!');</code></pre></li>
@@ -128,18 +135,29 @@ realtime.app.options.autoConnect = false;</code>
 						</ul>
 					</div>
 					<div class="mt-5">
-						<p class="mb-0"><b>6. Unsubscribe to an event from a channel connection.</b></p>
+						<p class="mb-0"><b>6. Unbinding to an event from a channel connection.</b></p>
 						<ul class="no-style-ul">
-							<li>This will show you how to unsubscribe the event from a channel.</li>
-							<li class="mt-2"><pre class="mb-2"><code><b>a.</b> realtime.unbind('name_of_the_event', 'name_of_channel', function(data) {
-	console.log(data.user_id);
-	console.log(data.message);
+							<li>This will show you how to unbind the event from a channel.</li>
+							<li class="mt-2"><pre class="mb-2"><code>realtime.unbind('name_of_the_event', 'name_of_channel', function(data) {
 	// todo here ...
 });</code></pre></li>
 							<ul class="no-style-ul mb-4">
-								<li class="alert alert-warning mb-2" role="alert"><pre class="mb-0"><code class="nohighlight">'name_of_the_event'<br/><span class="fa fa-info-circle text-grey"></span> <span class="small">The parameter is a string value of your event name</span></code></pre></li>
-								<li class="alert alert-warning mb-2" role="alert"><pre class="mb-0"><code class="nohighlight">'name_of_channel'<br/><span class="fa fa-info-circle text-grey"></span> <span class="small">The parameter is a string value of your channel name</span></code></pre></li>
-								<li class="alert alert-warning mb-2" role="alert"><pre class="mb-0"><code class="nohighlight">'callback'<br/><span class="fa fa-info-circle text-grey"></span> <span class="small">The parameter is a callback function for handling other todos</span></code></pre></li>
+								<li class="alert alert-warning mb-2" role="alert"><pre class="mb-0"><code class="nohighlight">'name_of_the_event'<br/><span class="fa fa-info-circle text-grey"></span> <span class="small">The parameter is a <i>string</i> value of your event name</span></code></pre></li>
+								<li class="alert alert-warning mb-2" role="alert"><pre class="mb-0"><code class="nohighlight">'name_of_channel'<br/><span class="fa fa-info-circle text-grey"></span> <span class="small">The parameter is a <i>string</i> value of your channel name</span></code></pre></li>
+								<li class="alert alert-warning mb-2" role="alert"><pre class="mb-0"><code class="nohighlight">'function(data){}'<br/><span class="fa fa-info-circle text-grey"></span> <span class="small">The parameter is a <i>callback function</i> for handling other todos</span></code></pre></li>
+							</ul>
+						</ul>
+					</div>
+					<div class="mt-5">
+						<p class="mb-0"><b>7. Unsubscribe an event with the channel connection.</b></p>
+						<ul class="no-style-ul">
+							<li>This will show you how to unsubscribe an event with channel.</li>
+							<li class="mt-2"><pre class="mb-2"><code>realtime.unsubscribe('name_of_the_event<strong>:</strong>name_of_channel');</code></pre></li>
+							<ul class="no-style-ul mb-4">
+								<li class="alert alert-warning mb-2" role="alert"><pre class="mb-0"><code class="nohighlight">'name_of_the_event'<br/><span class="fa fa-info-circle text-grey"></span> <span class="small">The parameter is a <i>string</i> value of your event name</span></code></pre></li>
+								<li class="alert alert-warning mb-2" role="alert"><pre class="mb-0"><code class="nohighlight">': (colon)'<br/><span class="fa fa-info-circle text-grey"></span> <span class="small">Must be in between of 'name_of_the_event' and 'name_of_channel'</span></code></pre></li>
+								<li class="alert alert-warning mb-2" role="alert"><pre class="mb-0"><code class="nohighlight">'name_of_channel'<br/><span class="fa fa-info-circle text-grey"></span> <span class="small">The parameter is a <i>string</i> value of your channel name</span></code></pre></li>
+								<li class="alert alert-success" role="alert"><span class="small"><b>NOTE: </b>The Parameter of the function <b>unsubscribe(<i>string</i>)</b> <kbd>must</kbd> be a string data type.</span></li>
 							</ul>
 						</ul>
 					</div>
