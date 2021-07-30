@@ -5,9 +5,10 @@
 			<ul class="no-style-ul">
 				<li>Declare</li>
 				<li>Initialize</li>
-				<li>Subscribe</li>
 				<li>Binding</li>
+				<li>Subscribe</li>
 				<li>Transmitting</li>
+				<li>Unsubscribe</li>
 			</ul>
 			<p class="mt-4 mb-0 bold-caps">PHP</p>
 			<ul class="no-style-ul">
@@ -32,13 +33,22 @@
 						</ul>
 					</div>
 					<div class="mt-5">
-						<p class="mb-0"><b>2. Initializing the Senddata object class.</b></p>
+						<p class="mb-0"><b>2. Initializing the Senddata object script.</b></p>
 						<ul class="no-style-ul">
-							<li>Place before the <kbd>&lt;/body&gt;</kbd> tag to call the Senddata object class</li>
+							<li>Place these codes before the <kbd>&lt;/body&gt;</kbd> tag to call the Senddata object class</li>
+							<li>
+								<p class="mb-2">Then initialize the object into <code>window.initSendData</code> function, just like so:</p>
+							</li>
 							<li class="my-2">
-								<p class="mb-2">Example:</p>
 								<pre><code>	<b>&lt;script type="text/javascript"&gt;<br>		window.initSendData = function() {
-			/*Todo here, after Send-Data initializations*/
+			/*Todo here, after initialization script*/
+			var realtime = new Senddata({
+				debug: false,
+				autoConnect: false,
+				autoRunStash: false,
+				afterInit: function() {},
+				afterConnect: function() {}
+			});
 		};
 		(function(d, s, id) {
 			var js, p = d.getElementsByTagName(s), me = p[p.length - 1];
@@ -49,29 +59,30 @@
 			me.parentNode.insertBefore(js, me);
 		}(document, "script", "sd-sdk"));<br>	&lt;/script&gt;</b><br>&lt;/body&gt;<br>&lt;/html&gt;</code></pre>
 							</li>
-							<li>
-								<p class="mb-2">Then initialize the object class and pass your <kbd><a href="/?page=customed-register">APP KEY</a></kbd> as a parameter, just like so:</p>
-								<pre><code><b>var senddata = new Senddata(<i class="text-warning"><a href="/?page=customed-register">YOUR_APP_KEY</a></i>);</b></code></pre>
+							<li class="alert alert-success" role="alert">
+								<span class="small"><b>NOTE:</b> 
+									<strong>
+										<pre style="margin: 0; height: 60px; overflow: hidden;">
+											<code>realtime.app.options.autoRunStash = false;
+realtime.app.options.autoConnect = false;</code>
+										</pre>
+									</strong>
+									<b>autoRunStash</b> and <b>autoConnect</b> are set to <kbd>false</kbd> by default.
+									<br>- Set <b>autoConnect</b> to <kbd>true</kbd> to re-attach the connection.
+									<br>- To run the recent triggered events set both options to <kbd>true</kbd>.
+									<br><br>These are helpfull after an internet connection was suddenly unreachable.
+								</span>
 							</li>
-							<li class="alert alert-success" role="alert"><span class="small"><b>NOTE:</b> <strong><pre><code>senddata.stashes.options.autoRunStash;</code></pre></strong>Is set to <kbd>false</kbd> by default. This option will automatically run the recent triggered events when set to <kbd>true</kbd>. This is helpfull when internet connection is suddenly unreachable.</span></li>
 						</ul>
 					</div>
 					<div class="mt-5">
-						<p class="mb-0"><b>3. Subscribing channels for connection.</b></p>
+						<p class="mb-0"><b>3. Binding events to channels for connection.</b></p>
 						<ul class="no-style-ul">
-							<li>There are two ways to declare a subscribe method.</li>
-							<li class="mt-2"><pre class="mb-2"><code><b>a.</b> senddata.subscribe('name_of_channel');</code></pre></li>
-							<ul class="no-style-ul">
-								<li class="mt-0 mb-2">In this method, you initially subscribe the <kbd>'name_of_channel'</kbd> for a connection</li>
-								<li class="alert alert-warning mb-2" role="alert"><pre class="mb-0"><code class="nohighlight">'name_of_channel'<br/><span class="fa fa-info-circle text-grey"></span> <span class="small">The parameter is a string value of your channel name</span></code></pre></li>
-							</ul>
-						</ul>
-						<ul class="no-style-ul mt-4">
-							<li>And here's the other way</li>
-							<li class="mt-2"><pre class="mb-2"><code><b>b.</b> senddata.bind('name_of_the_event', 'name_of_channel', function(data) {
+							<li>There's one way for catching the transmitted data.</li>
+							<li class="mt-2"><pre class="mb-2"><code><b>b.</b> realtime.bind('name_of_the_event', 'name_of_channel', function(data) {
 	console.log(data.user_id);
 	console.log(data.message);
-	// this will output the values of the object transmitted to this channel connection with the event specify
+	// todo here ...
 });</code></pre></li>
 							<ul class="no-style-ul">
 								<li class="alert alert-warning mb-2" role="alert"><pre class="mb-0"><code class="nohighlight">'name_of_the_event'<br/><span class="fa fa-info-circle text-grey"></span> <span class="small">The parameter is a string value of your event name</span></code></pre></li>
@@ -80,56 +91,55 @@
 						</ul>
 					</div>
 					<div class="mt-5">
-						<p class="mb-0"><b>4. Binding an event to a channel connection.</b></p>
+						<p class="mb-0"><b>4. Subscribing a channel connection for an event.</b></p>
 						<ul class="no-style-ul">
-							<li>There are also two ways to declare an event to a channel connection.</li>
-								<li class="mt-2"><pre class="mb-2"><code><b>a.</b> var channel = senddata.subscribe('name_of_channel');</code></pre></li>
+							<li>One way to subscribe a channel for an event:</li>
+								<li class="mt-2"><pre class="mb-2"><code>var channel = realtime.subscribe('name_of_channel');</code></pre></li>
 							<ul class="no-style-ul">
 								<li class="alert alert-warning" role="alert"><pre class="mb-0"><code class="nohighlight">'name_of_channel'<br/><span class="fa fa-info-circle text-grey"></span> <span class="small">The parameter is a string value of your channel name</span></code></pre></li>
 							</ul>
 							<li class="mt-4"><pre class="mb-2"><code>channel.listen('name_of_the_event', function(data) {
 	console.log(data.user_id);
 	console.log(data.message);
-	// this will output the values of the object transmitted to this channel connection with the event specify
+	// todo here ...
 });</code></pre></li>
 							<ul class="no-style-ul">
-								<li class="alert alert-warning mb-2" role="alert"><pre class="mb-0"><code class="nohighlight">'name_of_the_event'<br/><span class="fa fa-info-circle text-grey"></span> <span class="small">The parameter is a string value of your event name</span><br/><span class="fa fa-info-circle text-grey"></span> <span class="small">The parameter is a fixed object for event binding of senddata class</span></code></pre></li>
+								<li class="alert alert-warning mb-2" role="alert"><pre class="mb-0"><code class="nohighlight">'name_of_the_event'<br/><span class="fa fa-info-circle text-grey"></span> <span class="small">The parameter is a string value of your event name</span><br/><span class="fa fa-info-circle text-grey"></span> <span class="small">The parameter is a callback function with the data argument passed/transmitted</span></code></pre></li>
 								<li class="alert alert-success" role="alert"><span class="small"><b>NOTE:</b> You cant only call the <kbd>listen</kbd> function on the last subscribed channel</span></li>
 							</ul>
-							<li><kbd><b>b.</b></kbd> Or same as letter (b) in the step for Subscribing channels for connection.</li>
 						</ul>
 					</div>
 					<div class="mt-5">
 						<p class="mb-0"><b>5. Transmitting your data to a channel connection.</b></p>
 						<ul class="no-style-ul">
 							<li>Finally this show you how to transmit the data to another user subscribed to a channel connection.</li>
-							<li class="mt-2"><pre class="mb-2"><code><b>a.</b> senddata.trigger('name_of_the_event', 'name_of_channel', data_to_transmit_or_push);</code></pre></li>
+							<li class="mt-2"><pre class="mb-2"><code><b>a.</b> realtime.trigger('name_of_the_event', 'name_of_channel', data_to_transmit_or_push);</code></pre></li>
 							<ul class="no-style-ul mb-4">
 								<li class="alert alert-warning mb-2" role="alert"><pre class="mb-0"><code class="nohighlight">'name_of_the_event'<br/><span class="fa fa-info-circle text-grey"></span> <span class="small">The parameter is a string value of your event name</span></code></pre></li>
 								<li class="alert alert-warning mb-2" role="alert"><pre class="mb-0"><code class="nohighlight">'name_of_channel'<br/><span class="fa fa-info-circle text-grey"></span> <span class="small">The parameter is a string value of your channel name</span></code></pre></li>
 								<li class="alert alert-warning mb-2" role="alert"><pre class="mb-0"><code class="nohighlight">'data_to_transmit_or_push'<br/><span class="fa fa-info-circle text-grey"></span> <span class="small">The parameter is a string or object value to transmit</span></code></pre></li>
 							</ul>
 							<li class="mb-2">Data types of <kbd><b>data_to_transmit_or_push</b></kbd> parameter</li>
-							<li class="mb-2"><pre class="mb-0"><code><b>string</b><br/>senddata.trigger('name_of_the_event', 'name_of_channel', 'Hello world!');</code></pre></li>
-							<li><pre><code><b>object</b><br/>senddata.trigger('name_of_the_event', 'name_of_channel', {
+							<li class="mb-2"><pre class="mb-0"><code><b>string</b><br/>realtime.trigger('name_of_the_event', 'name_of_channel', 'Hello world!');</code></pre></li>
+							<li><pre><code><b>object</b><br/>realtime.trigger('name_of_the_event', 'name_of_channel', {
 	user_id: 1,
 	message: "Hello world!"
 });</code></pre></li>
 						</ul>
 					</div>
 					<div class="mt-5">
-						<p class="mb-0"><b>6. Catching the transmitted data.</b></p>
+						<p class="mb-0"><b>6. Unsubscribe to an event from a channel connection.</b></p>
 						<ul class="no-style-ul">
-							<li>This will show you how to handle the transmitted data.</li>
-							<li class="mt-2"><pre class="mb-2"><code><b>a.</b> senddata.bind('name_of_the_event', 'name_of_channel', function(data) {
+							<li>This will show you how to unsubscribe the event from a channel.</li>
+							<li class="mt-2"><pre class="mb-2"><code><b>a.</b> realtime.unbind('name_of_the_event', 'name_of_channel', function(data) {
 	console.log(data.user_id);
 	console.log(data.message);
-	// this will output the values of the object transmitted to this channel connection with the event specify
+	// todo here ...
 });</code></pre></li>
 							<ul class="no-style-ul mb-4">
 								<li class="alert alert-warning mb-2" role="alert"><pre class="mb-0"><code class="nohighlight">'name_of_the_event'<br/><span class="fa fa-info-circle text-grey"></span> <span class="small">The parameter is a string value of your event name</span></code></pre></li>
 								<li class="alert alert-warning mb-2" role="alert"><pre class="mb-0"><code class="nohighlight">'name_of_channel'<br/><span class="fa fa-info-circle text-grey"></span> <span class="small">The parameter is a string value of your channel name</span></code></pre></li>
-								<li class="alert alert-warning mb-2" role="alert"><pre class="mb-0"><code class="nohighlight">'callback'<br/><span class="fa fa-info-circle text-grey"></span> <span class="small">The parameter is a fixed method/function for event binding of senddata class</span></code></pre></li>
+								<li class="alert alert-warning mb-2" role="alert"><pre class="mb-0"><code class="nohighlight">'callback'<br/><span class="fa fa-info-circle text-grey"></span> <span class="small">The parameter is a callback function for handling other todos</span></code></pre></li>
 							</ul>
 						</ul>
 					</div>
@@ -165,4 +175,5 @@
 
 		</div>
 	</div>
+	<p>Last updated: <b>Friday, July 30, 2021</b></p>
 </div>
