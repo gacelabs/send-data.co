@@ -123,7 +123,7 @@ realtime.app.options.autoConnect = false;</code>
 					<div class="mt-5">
 						<p class="mb-0"><b>5. Transmitting your data to a channel connection.</b></p>
 						<ul class="no-style-ul">
-							<li>This show you how to transmit the data to another user subscribed to a channel connection.</li>
+							<li>This shows you how to transmit the data to another user subscribed to a channel connection.</li>
 							<li class="mt-2"><pre class="mb-2"><code>realtime.trigger('name_of_the_event', 'name_of_channel', data_to_transmit_or_push);</code></pre></li>
 							<ul class="no-style-ul mb-4">
 								<li class="alert alert-warning mb-2" role="alert"><pre class="mb-0"><code class="nohighlight">'name_of_the_event'<br/><span class="fa fa-info-circle text-grey"></span> <span class="small">The parameter is a <i>string</i> value of your event name</span></code></pre></li>
