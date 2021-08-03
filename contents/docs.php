@@ -48,8 +48,11 @@
 				autoConnect: false,
 				autoRunStash: false,
 				afterInit: function() {
-				  realtime.connect(function() {}); /*connection to server*/
-				  /*Todo here, after initialization*/
+				  "☝NOTE: Only call the function connect() if autoConnect option is set to false"
+				  /*connection to server*/
+				  realtime.connect(function() {
+				    /*Todo here, after initialization*/
+				  });
 				},
 				afterConnect: function() {
 				  /*Todo here, after connection*/
