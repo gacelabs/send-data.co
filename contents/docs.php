@@ -116,7 +116,7 @@ realtime.app.options.autoConnect = false;</code>
 							<ul class="no-style-ul">
 								<li class="alert alert-warning mb-2" role="alert"><pre class="mb-0"><code class="nohighlight">'name_of_the_event'<br/><span class="fa fa-info-circle text-grey"></span> <span class="small">The parameter is a <i>string</i> value of your event name</span></code></pre></li>
 								<li class="alert alert-warning mb-2" role="alert"><pre class="mb-0"><code class="nohighlight">'function(data){}'<br/><span class="fa fa-info-circle text-grey"></span> <span class="small">The parameter is a <i>callback function</i> with the <b><i>data</i></b> argument passed/transmitted</span></code></pre></li>
-								<li class="alert alert-success" role="alert"><span class="small"><b>NOTE:</b> You cant only call the <kbd>listen</kbd> function on the last subscribed channel</span></li>
+								<li class="alert alert-success" role="alert"><span class="small"><b>NOTE:</b> You can only call the <kbd>listen</kbd> function on the last subscribed channel</span></li>
 							</ul>
 						</ul>
 					</div>
