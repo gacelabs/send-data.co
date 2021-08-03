@@ -197,5 +197,5 @@ realtime.app.options.autoConnect = false;</code>
 
 		</div>
 	</div>
-	<p>Last updated: <b>Friday, July 30, 2021</b></p>
+	<p>Last updated: <b>Tuesday, August 3, 2021</b></p>
 </div>
