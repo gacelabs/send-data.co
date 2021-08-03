@@ -156,12 +156,14 @@ realtime.app.options.autoConnect = false;</code>
 						<p class="mb-0"><b>7. Unsubscribe an event with the channel connection.</b></p>
 						<ul class="no-style-ul">
 							<li>This will show you how to unsubscribe an event with channel.</li>
-							<li class="mt-2"><pre class="mb-2"><code>realtime.unsubscribe('name_of_the_event<strong>:</strong>name_of_channel');</code></pre></li>
+							<li class="mt-2"><pre class="mb-2"><code>realtime.unsubscribe('name_of_the_event<strong>:</strong>name_of_channel', function(list) {
+	// todo here ...
+});</code></pre></li>
 							<ul class="no-style-ul mb-4">
 								<li class="alert alert-warning mb-2" role="alert"><pre class="mb-0"><code class="nohighlight">'name_of_the_event'<br/><span class="fa fa-info-circle text-grey"></span> <span class="small">The parameter is a <i>string</i> value of your event name</span></code></pre></li>
-								<li class="alert alert-warning mb-2" role="alert"><pre class="mb-0"><code class="nohighlight">': (colon)'<br/><span class="fa fa-info-circle text-grey"></span> <span class="small">Must be in between of 'name_of_the_event' and 'name_of_channel'</span></code></pre></li>
+								<li class="alert alert-warning mb-2" role="alert"><pre class="mb-0"><code class="nohighlight">': <i>(a colon)</i>'<br/><span class="fa fa-info-circle text-grey"></span> <span class="small">Must be in between 'name_of_the_event' and 'name_of_channel'</span></code></pre></li>
 								<li class="alert alert-warning mb-2" role="alert"><pre class="mb-0"><code class="nohighlight">'name_of_channel'<br/><span class="fa fa-info-circle text-grey"></span> <span class="small">The parameter is a <i>string</i> value of your channel name</span></code></pre></li>
-								<li class="alert alert-success" role="alert"><span class="small"><b>NOTE: </b>The Parameter of the function <b>unsubscribe(<i>string</i>)</b> <kbd>must</kbd> be a string data type.</span></li>
+								<li class="alert alert-warning mb-2" role="alert"><pre class="mb-0"><code class="nohighlight">'function(list){}'<br/><span class="fa fa-info-circle text-grey"></span> <span class="small">The parameter is a <i>callback function</i> with the <b><i>list</i></b> argument of the saved channel events</span></code></pre></li>
 							</ul>
 						</ul>
 					</div>
