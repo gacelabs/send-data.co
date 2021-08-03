@@ -189,7 +189,7 @@ realtime.app.options.autoConnect = false;</code>
 						<ul class="no-style-ul">
 							<li>Transmitting data from backend. You must already subscribed and added the event on a channel (please see JavaScript Documentation steps 3 and 4).</li>
 							<li class="mt-2"><pre class="mb-2"><code><h5 class="mb-0"><b>CodeIgniter</b></h5><br/>$this->load->library('senddata', array('app_key'=><i><kbd><a href="/?page=customed-register">YOUR_APP_KEY</a></kbd></i>));<br/>$SendDataObject = $this->senddata;<br/><br/>$SendDataObject->trigger('name_of_the_event', 'name_of_channel', data_to_transmit_or_push);</code></pre></li>
-							<li class="mt-2"><pre class="mb-2"><code><h5 class="mb-0"><b>Native PHP</b></h5><br/>require('path/to/the/SendData.php');<br/><br/>$SendDataClass = new SendData;<br/>$senddata = $SendDataClass->initialize('<i><kbd><a href="/?page=customed-register">YOUR_APP_KEY</a></kbd></i>');</code></pre></li>
+							<li class="mt-2"><pre class="mb-2"><code><h5 class="mb-0"><b>Native PHP</b></h5><br/>require('path/to/the/SendData.php');<br/><br/>$SendDataClass = new SendData;<br/>$senddata = $SendDataClass->initialize('<i><kbd><a href="/?page=customed-register">YOUR_APP_KEY</a></kbd></i>');<br/><br/>$senddata->trigger('name_of_the_event', 'name_of_channel', data_to_transmit_or_push);</code></pre></li>
 							<li>or this</li>
 							<li class="mt-2"><pre class="mb-2"><code><h5 class="mb-0"><b>Native PHP</b></h5><br/>$senddata = new SendData('<i><kbd><a href="/?page=customed-register">YOUR_APP_KEY</a></kbd></i>');<br/><br/>$senddata->trigger('name_of_the_event', 'name_of_channel', data_to_transmit_or_push);</code></pre></li>
 						</ul>
