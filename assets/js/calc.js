@@ -6,6 +6,7 @@ $(document).ready(function() {
 		var clientPrice = $(".clientPrice");
 		var payloadLimitVal = $(".payloadLimitVal");
 		var clientPriceVal = $(".clientPriceVal");
+		var payloadTimes = 3000000;
 		// var percentageFee = 0.977;
 		var license = {
 			enterprise: {
@@ -32,8 +33,8 @@ $(document).ready(function() {
 
 		function calculate(price, value) {
 			// console.log(price)
-			var newLimit = Math.round(value * 10000);
-			payloadLimit.text(newLimit);
+			var newLimit = Math.round(value * payloadTimes);
+			payloadLimit.text(nFormatter(newLimit));
 			payloadLimitVal.attr('value', newLimit);
 			if ((value * price) == 0) {
 				clientPrice.text(Math.round(0));
@@ -50,8 +51,8 @@ $(document).ready(function() {
 				newPrice = Math.round(newPrice / 39);
 				clientPrice.text(newPrice);
 				clientPriceVal.attr('value', newPrice);
-				slider.attr('value', parseInt(newLimit) / 10000);
-				slider.attr('data-value', parseInt(newLimit) / 10000);
+				slider.attr('value', parseInt(newLimit) / payloadTimes);
+				slider.attr('data-value', parseInt(newLimit) / payloadTimes);
 				var obj = {'payload':newLimit, 'price':newPrice};
 				window.localStorage.setItem('customed', JSON.stringify(obj));
 				window.sessionStorage.setItem('customed', JSON.stringify(obj));
@@ -82,7 +83,7 @@ $(document).ready(function() {
 					value = obj.payload / license.priv.price;
 					var obj = calculate(license.priv.price, parseInt(value));
 				} else if (license.corpo.active) {
-					value = obj.payload / 10000;
+					value = obj.payload / payloadTimes;
 					var obj = calculate(license.corpo.price, parseInt(value));
 				} else if (license.enterprise.active) {
 					value = obj.payload / license.enterprise.price;
@@ -117,3 +118,16 @@ $(document).ready(function() {
 		$('#calculatorSlider').slider({'value': 1});
 	}
 });
+
+function nFormatter(num) {
+	if (num >= 1000000000) {
+		return (num / 1000000000).toFixed(1).replace(/\.0$/, '') + ' Billion';
+	}
+	if (num >= 1000000) {
+		return (num / 1000000).toFixed(1).replace(/\.0$/, '') + ' Million';
+	}
+	if (num >= 1000) {
+		return (num / 1000).toFixed(1).replace(/\.0$/, '') + 'K';
+	}
+	return num;
+}

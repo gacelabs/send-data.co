@@ -12,10 +12,10 @@
 			'reg-link' => 'free-register',
 			'price' => 'Free',
 			'billed' => 'Monthly',
-			'payload' => '1000',
+			'payload' => '100000',
 			'desc' => array(
 				'2 Months Max',
-				'20K Max Payload per month',
+				'100K Max Messages per month',
 				'Limited Support'
 			)
 		),
@@ -23,11 +23,11 @@
 			'reg-link' => 'business-register',
 			'price' => '145',
 			'billed' => 'Monthly',
-			'payload' => '500000',
+			'payload' => '50000000',
 			'desc' => array(
 				'Monthly',
-				'500K Upfront Payload for USD 145',
-				'Metered Succeeding Payload',
+				'50M Upfront Messages for USD 145',
+				'Metered Succeeding Messages',
 				'24/7 Email Support'
 			)
 		),
@@ -35,10 +35,10 @@
 			'reg-link' => 'customed-register',
 			'price' => $customed_price,
 			'billed' => 'Monthly',
-			'payload' => '1000',
+			'payload' => '5000000',
 			'desc' => array(
-				'Metered Payload per Month',
-				'<strong class="payloadLimit">0</strong> Payload for <b>USD </b><strong class="clientPrice">0</strong>',
+				'Metered Messages per Month',
+				'<strong class="payloadLimit">0</strong> Messages for <b>USD </b><strong class="clientPrice">0</strong>',
 				'24/7 Email Support'
 			)
 		)

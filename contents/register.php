@@ -13,7 +13,7 @@
 							<div class="row mb-3">
 								<!-- Grid column -->
 								<div class="col-md-6 col-6 text-center">
-									Payload
+									Messages
 									<div class="col-lg">
 										<strong class="payloadLimit">0</strong>
 									</div>
