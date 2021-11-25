@@ -69,10 +69,21 @@
 				break;
 		}
 	} else {
-		$metas = '<meta property="og:title" content="Simple send-data API written in php & javascript.">
+		$metas = '<!-- Primary Meta Tags -->
+		<meta name="title" content="Simple API written in php & javascript.">
+		<meta name="description" content="Push data across your app Fast. Secured. Affordable. Create a messenger app for personal or for your business. Send notifications across all your users, fast and reliable, best for Inventory Systems, Real-time Sales Reporting, CRM Records, Order Tracking System and more!">
+		<!-- Open Graph / Facebook -->
+		<meta property="og:type" content="website">
+		<meta property="og:url" content="https://send-data.co/">
+		<meta property="og:title" content="Simple API written in php & javascript.">
 		<meta property="og:description" content="Push data across your app Fast. Secured. Affordable. Create a messenger app for personal or for your business. Send notifications across all your users, fast and reliable, best for Inventory Systems, Real-time Sales Reporting, CRM Records, Order Tracking System and more!">
 		<meta property="og:image" content="https://send-data.co/assets/images/header-bg3.jpg">
-		<meta name="description" content="Push data across your app Fast. Secured. Affordable. Create a messenger app for personal or for your business. Send notifications across all your users, fast and reliable, best for Inventory Systems, Real-time Sales Reporting, CRM Records, Order Tracking System and more!">
+		<!-- Twitter -->
+		<meta property="twitter:card" content="summary_large_image">
+		<meta property="twitter:url" content="https://send-data.co/">
+		<meta property="twitter:title" content="Simple API written in php & javascript.">
+		<meta property="twitter:description" content="Push data across your app Fast. Secured. Affordable. Create a messenger app for personal or for your business. Send notifications across all your users, fast and reliable, best for Inventory Systems, Real-time Sales Reporting, CRM Records, Order Tracking System and more!">
+		<meta property="twitter:image" content="https://send-data.co/assets/images/header-bg3.jpg">
 		<link rel="canonical" href="https://send-data.co'.$_SERVER['REQUEST_URI'].'">';
 		$pageTitle = 'Send-Data';
 		$pageContent = 'contents/home.php';
