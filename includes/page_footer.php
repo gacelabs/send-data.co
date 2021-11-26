@@ -1,3 +1,4 @@
+<div class="page-load-overlay"><div class="page-loader"></div></div>
 <?php if (isset($_GET['page']) AND !in_array($_GET['page'], ['customed-register'])): ?>
 	<div class="container">
 		<?php include('includes/register-cards.php');?>

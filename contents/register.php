@@ -13,7 +13,7 @@
 				}
 				$register_url = PRODSITE.'register'.$promo_code;
 			?>
-			<form action="<?php echo $register_url;?>" method="get" class="pt-3 px-3 form-body">
+			<form action="<?php echo $register_url;?>" method="get" class="pt-3 px-3 form-body" id="register-form">
 				<input type="text" name="projects[package_type]" class="d-none" value="<?php echo $activePage;?>" data-type="text" />
 				<input type="text" name="projects[price]" class="d-none clientPriceVal" value="<?php echo str_replace(',', '', $products[$activePage]['price']);?>" data-type="text" />
 				<input type="text" name="projects[billed]" class="d-none" value="<?php echo $products[$activePage]['billed'];?>"/>

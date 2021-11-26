@@ -98,6 +98,12 @@ $(document).ready(function() {
 		// if (obj) {saveAs(JSON.stringify(obj));}
 	});
 
+	if ($('#register-form').length) {
+		$('#register-form').on('submit', function(e) {
+			// e.preventDefault();
+			$('body').addClass('page-loading');
+		});
+	}
 });
 
 function saveAs(json) {
