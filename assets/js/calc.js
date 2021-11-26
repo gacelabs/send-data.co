@@ -1,6 +1,6 @@
 $(document).ready(function() {
 	var search = window.location.search;
-	if ($.inArray($.trim(search), ['', '?page=login', '?page=customed-register', '?page=', '?page=enquiry-sent']) >= 0) {
+	if ($.inArray($.trim(search), ['', '?page=login', '?page=customed-register', '?page=', '?page=enquiry-sent', '?page=documentation']) >= 0) {
 		var slider = $("#calculatorSlider");
 		var payloadLimit = $(".payloadLimit");
 		var clientPrice = $(".clientPrice");
