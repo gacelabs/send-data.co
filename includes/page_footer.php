@@ -10,6 +10,14 @@
 			<!-- Grid column -->
 			<div class="col-md-2 mb-3">
 				<h6 class="text-uppercase font-weight-bold">
+					<a class="text-warning" href="/">Home</a>
+				</h6>
+			</div>
+			<!-- Grid column -->
+
+			<!-- Grid column -->
+			<div class="col-md-2 mb-3">
+				<h6 class="text-uppercase font-weight-bold">
 					<a class="text-warning" href="?page=documentation">Documentation</a>
 				</h6>
 			</div>
