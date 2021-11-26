@@ -21,12 +21,12 @@
 		),
 		'Business' => array(
 			'reg-link' => 'business-register',
-			'price' => '145',
+			'price' => '199',
 			'billed' => 'Monthly',
 			'payload' => '50000000',
 			'desc' => array(
 				'Monthly',
-				'50M Upfront Messages for USD 145',
+				'50M Upfront Messages for USD 199',
 				'Metered Succeeding Messages',
 				'24/7 Email Support'
 			)
