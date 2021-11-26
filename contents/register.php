@@ -1,63 +1,5 @@
 <div class="container">
 	<div class="row justify-content-between my-4">
-		<div class="col-md-5 col-sm-12 col-xs-12 px-0 product-container">
-			<div class="mb-4 px-0">
-				<div class="card">
-					<div class="card-body">
-						<h3 class="card-title text-center"><b><?php echo $activePage; ?></b></h3>
-						<?php if ($activePage == 'Customed'): ?>
-							<div class="range-field">
-								<input type="text" id="calculatorSlider" class="p-0" data-slider-min="1" data-slider-max="10" data-slider-step="1" data-slider-handle="custom" style="width: 100%;">
-							</div>
-							<!-- Grid row -->
-							<div class="row mb-3">
-								<!-- Grid column -->
-								<div class="col-md-6 col-6 text-center">
-									Messages
-									<div class="col-lg">
-										<strong class="payloadLimit">0</strong>
-									</div>
-								</div>
-								<div class="col-md-6 col-6 text-center">
-									Price
-									<div class="col-lg">
-										<b>USD </b><strong class="clientPrice">0</strong>
-									</div>
-								</div>
-								<!-- Grid column -->
-							</div>
-							<!-- Grid row -->
-						<?php endif ?>
-						<div class="mx-3">
-							<?php foreach($products[$activePage]['desc'] as $desc) { ?>
-							<p class="card-text"><h1 class="fa fa-check icon-left text-warning"></h1><?php echo $desc; ?></p>
-							<?php } ?>
-						</div>
-					</div>
-					<div class="card-footer">
-						<ul class="inline-list center">
-							<li><p class="mb-0">Price (USD): <b class="clientPrice"><?php echo $products[$activePage]['price']; ?></b></p></li>
-							<li><p class="mb-0">Billed: <b><?php echo $products[$activePage]['billed']; ?></b></p></li>
-						</ul>
-					</div>
-				</div>
-			</div>
-			<div class="row">
-				<?php foreach($products as $product => $rows) { ?>
-				<div class="col-md-4 col-sm-4 my-2">
-					<div class="card">
-						<div class="card-body">
-							<h5 class="card-title text-center mb-0"><b><?php echo $product; ?></b></h5>
-						</div>
-						<div class="card-footer text-center">
-							<a href="?page=<?php echo $rows['reg-link'] ?>" class="btn btn-primary">Select</a>
-						</div>
-					</div>
-				</div>
-				<?php } ?>
-			</div>
-		</div>
-
 		<div class="col-md-5 col-sm-12 col-xs-12 form-container">
 			<div class="form-header text-center">
 				<h5 class="zero-gaps">REGISTRATION</h5>
@@ -121,6 +63,64 @@
 					</div>
 				</div>
 			</form>
+		</div>
+		
+		<div class="col-md-5 col-sm-12 col-xs-12 px-0 product-container">
+			<div class="mb-4 px-0">
+				<div class="card">
+					<div class="card-body">
+						<h3 class="card-title text-center"><b><?php echo $activePage; ?></b></h3>
+						<?php if ($activePage == 'Customed'): ?>
+							<div class="range-field">
+								<input type="text" id="calculatorSlider" class="p-0" data-slider-min="1" data-slider-max="10" data-slider-step="1" data-slider-handle="custom" style="width: 100%;">
+							</div>
+							<!-- Grid row -->
+							<div class="row mb-3">
+								<!-- Grid column -->
+								<div class="col-md-6 col-6 text-center">
+									Messages
+									<div class="col-lg">
+										<strong class="payloadLimit">0</strong>
+									</div>
+								</div>
+								<div class="col-md-6 col-6 text-center">
+									Price
+									<div class="col-lg">
+										<b>USD </b><strong class="clientPrice">0</strong>
+									</div>
+								</div>
+								<!-- Grid column -->
+							</div>
+							<!-- Grid row -->
+						<?php endif ?>
+						<div class="mx-3">
+							<?php foreach($products[$activePage]['desc'] as $desc) { ?>
+							<p class="card-text"><h1 class="fa fa-check icon-left text-warning"></h1><?php echo $desc; ?></p>
+							<?php } ?>
+						</div>
+					</div>
+					<div class="card-footer">
+						<ul class="inline-list center">
+							<li><p class="mb-0">Price (USD): <b class="clientPrice"><?php echo $products[$activePage]['price']; ?></b></p></li>
+							<li><p class="mb-0">Billed: <b><?php echo $products[$activePage]['billed']; ?></b></p></li>
+						</ul>
+					</div>
+				</div>
+			</div>
+			<div class="row">
+				<?php foreach($products as $product => $rows) { ?>
+				<div class="col-md-4 col-sm-4 my-2">
+					<div class="card">
+						<div class="card-body">
+							<h5 class="card-title text-center mb-0"><b><?php echo $product; ?></b></h5>
+						</div>
+						<div class="card-footer text-center">
+							<a href="?page=<?php echo $rows['reg-link'] ?>" class="btn btn-primary">Select</a>
+						</div>
+					</div>
+				</div>
+				<?php } ?>
+			</div>
 		</div>
 	</div>
 </div>
