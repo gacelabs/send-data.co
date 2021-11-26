@@ -1,7 +1,7 @@
 $(document).ready(function() {
 	var search = window.location.search;
-	if ($.inArray($.trim(search), ['', '?page=login', '?page=customed-register', '?page=', '?page=enquiry-sent', '?page=documentation']) >= 0) {
-		var slider = $("#calculatorSlider");
+	var slider = $("#calculatorSlider");
+	if (slider.length) {
 		var payloadLimit = $(".payloadLimit");
 		var clientPrice = $(".clientPrice");
 		var payloadLimitVal = $(".payloadLimitVal");
@@ -26,7 +26,7 @@ $(document).ready(function() {
 			}
 		};
 
-		if ($.inArray(search, ['', '?page=login']) >= 0) {
+		if ($.inArray(search, [''/*, '?page=login'*/]) >= 0) {
 			window.localStorage.removeItem('customed');
 			window.sessionStorage.removeItem('customed');
 		}

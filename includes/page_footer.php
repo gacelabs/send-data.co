@@ -1,6 +1,10 @@
+<?php if (isset($_GET['page']) AND !in_array($_GET['page'], ['customed-register'])): ?>
+	<div class="container">
+		<?php include('includes/register-cards.php');?>
+	</div>
+<?php endif ?>
 <!-- Footer -->
 <footer class="page-footer font-small bg-dark">
-
 	<!-- Footer Links -->
 	<div class="container">
 
@@ -112,7 +116,6 @@
 		<a class="text-warning" href="/"> Send-Data.co </a>
 	</div>
 	<!-- Copyright -->
-
 </footer>
 <!-- Footer -->
 
