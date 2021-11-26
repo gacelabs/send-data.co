@@ -19,7 +19,7 @@
 					<a class="nav-link" href="https://www.facebook.com/send.data.co/" target="blank" onmouseenter="$(this).css('color', 'blue')" onmouseleave="$(this).removeAttr('style')">Facebook link</a>
 				</li> -->
 				<li class="nav-item">
-					<a class="nav-link" href="?page=contact-us">Contact us</a>
+					<a class="nav-link" href="?page=contact-us">Contact Us</a>
 				</li>
 				<li class="nav-item <?php if ($activePage == 'login') {echo 'active';}; ?>">
 					<a class="nav-link" href="?page=login">Login</a>
