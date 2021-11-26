@@ -65,12 +65,12 @@
 				$pageContent = 'contents/contact_us.php';
 				$activePage = 'Contact Us';
 				break;
-			case 'thank-you':
+			/*case 'thank-you':
 				$metas = '';
 				$pageTitle = 'Send-Data - Successful ~ Thank You!';
 				$pageContent = 'contents/thankyou.php';
 				$activePage = 'Thank You';
-				break;
+				break;*/
 			case 'enquiry-sent':
 				$metas = '';
 				$pageTitle = 'Send-Data - Successful ~ Enquiry!';
