@@ -1,11 +1,112 @@
-<footer class="py-5 bg-dark">
+<!-- Footer -->
+<footer class="page-footer font-small bg-dark">
+
+	<!-- Footer Links -->
 	<div class="container">
-		<p class="m-0 text-center text-white"><a href="mailto:gacelabs.inc@gmail.com?subject=Enquiry&body=Full%20name%3A%20%0D%0AEmail%3A%20%0D%0AMessage%3A%20%0D%0A%0D%0A%0D%0A%0D%0A">Contact us</a></p>
-		<p class="m-0 text-center text-white"><a class="btn btn-default" href="https://www.facebook.com/send.data.co/" target="blank" onmouseenter="$(this).css('color', 'blue')" onmouseleave="$(this).removeAttr('style')"><i class="fa fa-facebook"></i>acebook</a></p>
-		<p class="m-0 text-center text-white">Send-Data&copy; <span class="yearNow"></span></p>
+
+		<!-- Grid row-->
+		<div class="row text-center d-flex justify-content-center pt-5 mb-3">
+
+			<!-- Grid column -->
+			<div class="col-md-2 mb-3">
+				<h6 class="text-uppercase font-weight-bold">
+					<a class="text-warning" href="?page=documentation">Documentation</a>
+				</h6>
+			</div>
+			<!-- Grid column -->
+
+			<!-- Grid column -->
+			<div class="col-md-2 mb-3">
+				<h6 class="text-uppercase font-weight-bold">
+					<a class="text-warning" href="?page=login">Login</a>
+				</h6>
+			</div>
+			<!-- Grid column -->
+
+			<!-- Grid column -->
+			<div class="col-md-2 mb-3">
+				<h6 class="text-uppercase font-weight-bold">
+					<a class="text-warning" href="?page=contact-us">Contact Us</a>
+				</h6>
+			</div>
+			<!-- Grid column -->
+
+			<!-- Grid column -->
+			<!-- <div class="col-md-2 mb-3">
+				<h6 class="text-uppercase font-weight-bold">
+					<a class="text-warning" target="_blank" href="//blog.send-data.co/help/">Help</a>
+				</h6>
+			</div> -->
+			<!-- Grid column -->
+
+		</div>
+		<!-- Grid row-->
+		<hr class="rgba-white-light" style="margin: 0 15%;">
+
+		<!-- Grid row-->
+		<div class="row d-flex text-center justify-content-center mb-md-0 mb-4">
+
+			<!-- Grid column -->
+			<div class="col-md-8 col-12 mt-5 text-white">
+				<p style="line-height: 1.7rem">Push data across your app Fast. Secured. Affordable. Create a messenger app for personal or for your business. Send notifications across all your users, fast and reliable, best for Inventory Systems, Real-time Sales Reporting, CRM Records, Order Tracking System and more!</p>
+			</div>
+			<!-- Grid column -->
+
+		</div>
+		<!-- Grid row-->
+		<hr class="clearfix d-md-none rgba-white-light" style="margin: 10% 15% 5%;">
+
+		<!-- Grid row-->
+		<div class="row pb-3 text-center">
+
+			<!-- Grid column -->
+			<div class="col-md-12">
+
+				<div class="mb-5 flex-center">
+					<!-- Facebook -->
+					<a target="_blank" class="fb-ic" href="https://www.facebook.com/send.data.co/">
+						<i class="fa fa-facebook fa-lg text-white mr-4"> </i>
+					</a>
+					<!-- Twitter -->
+					<!-- <a target="_blank" class="tw-ic">
+						<i class="fab fa-twitter fa-lg text-white mr-4"> </i>
+					</a> -->
+					<!-- Google +-->
+					<!-- <a target="_blank" class="gplus-ic">
+						<i class="fab fa-google-plus-g fa-lg text-white mr-4"> </i>
+					</a> -->
+					<!--Linkedin -->
+					<!-- <a target="_blank" class="li-ic">
+						<i class="fab fa-linkedin-in fa-lg text-white mr-4"> </i>
+					</a> -->
+					<!--Instagram-->
+					<!-- <a target="_blank" class="ins-ic">
+						<i class="fab fa-instagram fa-lg text-white mr-4"> </i>
+					</a> -->
+					<!--Pinterest-->
+					<!-- <a target="_blank" class="pin-ic">
+						<i class="fab fa-pinterest fa-lg text-white"> </i>
+					</a> -->
+
+				</div>
+
+			</div>
+			<!-- Grid column -->
+
+		</div>
+		<!-- Grid row-->
+
 	</div>
-	<!-- /.container -->
+	<!-- Footer Links -->
+
+	<!-- Copyright -->
+	<div class="footer-copyright text-center py-3 text-white">© <?php echo date('Y'); ?> Copyright:
+		<a class="text-warning" href="/"> Send-Data.co </a>
+	</div>
+	<!-- Copyright -->
+
 </footer>
+<!-- Footer -->
 
 <!-- Bootstrap core JavaScript -->
 <script src="assets/js/jquery.min.js"></script>

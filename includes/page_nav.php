@@ -6,18 +6,22 @@
 		</button>
 		<div class="collapse navbar-collapse" id="navbarResponsive">
 			<ul class="navbar-nav ml-auto">
-				<li class="nav-item <?php if ($activePage == 'home') {echo 'active';}; ?>">
+				<!-- <li class="nav-item <?php if ($activePage == 'home') {echo 'active';}; ?>">
 					<a class="nav-link" href="/">Home</a>
+				</li> -->
+				<li class="nav-item">
+					<a class="nav-link" href="/#register-panel">How to start?</a>
 				</li>
 				<li class="nav-item <?php if ($activePage == 'docs') {echo 'active';}; ?>">
-					<a class="nav-link" href="?page=documentation">Docs</a>
+					<a class="nav-link" href="?page=documentation">Documentation</a>
 				</li>
-				<li class="nav-item">
-					<a class="nav-link" href="mailto:gacelabs.inc@gmail.com?subject=Enquiry&body=Full%20name%3A%20%0D%0AEmail%3A%20%0D%0AMessage%3A%20%0D%0A%0D%0A%0D%0A%0D%0A">Contact us</a>
-				</li>
-				<li class="nav-item" title="Visit our facebook page">
-					<a class="nav-link" href="https://www.facebook.com/send.data.co/" target="blank" onmouseenter="$(this).css('color', 'blue')" onmouseleave="$(this).removeAttr('style')"><i class="fa fa-facebook"></i>b</a>
-				</li>
+				<!-- <li class="nav-item"> -->
+					<!-- <a class="nav-link" href="mailto:gacelabs.inc@gmail.com?subject=Enquiry&body=Full%20name%3A%20%0D%0AEmail%3A%20%0D%0AMessage%3A%20%0D%0A%0D%0A%0D%0A%0D%0A">Contact us</a> -->
+					<!-- <a class="nav-link" href="?page=contact-us">Contact us</a> -->
+				<!-- </li> -->
+				<!-- <li class="nav-item" title="Visit our facebook page">
+					<a class="nav-link" href="https://www.facebook.com/send.data.co/" target="blank" onmouseenter="$(this).css('color', 'blue')" onmouseleave="$(this).removeAttr('style')">Facebook link</a>
+				</li> -->
 				<li class="nav-item <?php if ($activePage == 'login') {echo 'active';}; ?>">
 					<a class="nav-link" href="?page=login">Login</a>
 				</li>
