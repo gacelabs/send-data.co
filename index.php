@@ -10,16 +10,22 @@ include('includes/page_head.php');
 		<!-- <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-T2LRXWG"
 		height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript> -->
 		<!-- End Google Tag Manager (noscript) -->
+
 		<!-- Load Facebook SDK for JavaScript -->
+		<!-- Messenger Chat Plugin Code -->
 		<div id="fb-root"></div>
+		<!-- Your Chat Plugin code -->
+		<div id="fb-customer-chat" class="fb-customerchat"></div>
 		<script>
+			var chatbox = document.getElementById('fb-customer-chat');
+			chatbox.setAttribute("page_id", "307503806518656");
+			chatbox.setAttribute("attribution", "biz_inbox");
 			window.fbAsyncInit = function() {
 				FB.init({
-					xfbml: true,
-					version: 'v4.0'
+					xfbml : true,
+					version : 'v12.0'
 				});
 			};
-
 			(function(d, s, id) {
 				var js, fjs = d.getElementsByTagName(s)[0];
 				if (d.getElementById(id)) return;
@@ -28,9 +34,6 @@ include('includes/page_head.php');
 				fjs.parentNode.insertBefore(js, fjs);
 			}(document, 'script', 'facebook-jssdk'));
 		</script>
-
-		<!-- Your customer chat code -->
-		<div class="fb-customerchat" attribution="setup_tool" page_id="307503806518656"></div>
 	<?php endif ?>
 
 	<!-- Navigation -->
