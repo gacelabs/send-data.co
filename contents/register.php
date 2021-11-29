@@ -12,12 +12,13 @@
 					}
 				}
 				$register_url = PRODSITE.'register'.$promo_code;
+				$product = $products[$activePage];
 			?>
 			<form action="<?php echo $register_url;?>" method="get" class="pt-3 px-3 form-body" id="register-form">
 				<input type="text" name="projects[package_type]" class="d-none" value="<?php echo $activePage;?>" data-type="text" />
-				<input type="text" name="projects[price]" class="d-none clientPriceVal" value="<?php echo str_replace(',', '', $products[$activePage]['price']);?>" data-type="text" />
-				<input type="text" name="projects[billed]" class="d-none" value="<?php echo $products[$activePage]['billed'];?>"/>
-				<input type="text" name="projects[payload]" class="d-none payloadLimitVal" value="<?php echo $products[$activePage]['payload'];?>"/>
+				<input type="text" name="projects[price]" class="d-none<?php if ($activePage == 'Customed'): ?> clientPriceVal<?php endif ?>" value="<?php if ($activePage != 'Free'): ?><?php echo str_replace(',', '', $product['price']);?><?php else: ?>0.00<?php endif ?>" data-type="text" />
+				<input type="text" name="projects[payload]" class="d-none<?php if ($activePage == 'Customed'): ?> payloadLimitVal<?php endif ?>" value="<?php echo $product['payload'];?>"/>
+				<input type="text" name="projects[billed]" class="d-none" value="<?php echo $product['billed'];?>"/>
 				<div class="form-group mb-0">
 					<label for="org-name">Organization</label>
 					<input type="text" name="accounts[company]" id="org-name" class="form-control" placeholder="Software Company Philippines" required="required" data-type="text" />
@@ -64,7 +65,7 @@
 				</div>
 			</form>
 		</div>
-		
+
 		<div class="col-md-5 col-sm-12 col-xs-12 px-0 product-container">
 			<div class="mb-4 px-0">
 				<div class="card">
@@ -94,19 +95,24 @@
 							<!-- Grid row -->
 						<?php endif ?>
 						<div class="mx-3">
-							<?php foreach($products[$activePage]['desc'] as $desc) { ?>
-							<p class="card-text"><h1 class="fa fa-check icon-left text-warning"></h1><?php echo $desc; ?></p>
+							<?php foreach($product['desc'] as $desc) { ?>
+								<p class="card-text"><h1 class="fa fa-check icon-left text-warning"></h1><?php echo $desc; ?></p>
 							<?php } ?>
 						</div>
 					</div>
 					<div class="card-footer">
 						<ul class="inline-list center">
-							<li><p class="mb-0">Price (USD): <b class="clientPrice"><?php echo $products[$activePage]['price']; ?></b></p></li>
-							<li><p class="mb-0">Billed: <b><?php echo $products[$activePage]['billed']; ?></b></p></li>
+							<li><p class="mb-0">Price (USD): <b<?php if ($activePage == 'Customed'): ?> class="clientPrice"<?php endif ?>><?php echo $product['price']; ?></b></p></li>
+							<?php if ($activePage != 'Free'): ?>
+								<li><p class="mb-0">Billed: <b><?php echo $product['billed']; ?></b></p></li>
+							<?php endif ?>
 						</ul>
 					</div>
 				</div>
 			</div>
+			<?php
+				// echo "<pre>"; print_r($product);
+			?>
 			<div class="row">
 				<?php foreach($products as $product => $rows) { ?>
 				<div class="col-md-4 col-sm-4 my-2">
