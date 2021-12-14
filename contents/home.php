@@ -92,7 +92,7 @@
 		<div>
 			<ul class="inline-list center">
 				<?php foreach($sampleSystems as $system) { ?>
-				<li><img src="./assets/images/<?php echo $system; ?>" width="130"></li>
+				<li><img alt="<?php echo str_replace('.jpg', '', $system); ?>" src="./assets/images/<?php echo $system; ?>" width="130"></li>
 				<?php } ?>
 			</ul>
 		</div>
