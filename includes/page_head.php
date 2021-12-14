@@ -2,15 +2,6 @@
 <html>
 <head>
 	<?php if ((bool)strstr($_SERVER['HTTP_HOST'], 'local.') == false): ?>
-		<!-- Global site tag (gtag.js) - Google Analytics -->
-		<!-- <script async src="https://www.googletagmanager.com/gtag/js?id=UA-185827424-1">
-		</script>
-		<script>
-			window.dataLayer = window.dataLayer || [];
-			function gtag(){dataLayer.push(arguments);}
-			gtag('js', new Date());
-			gtag('config', 'UA-185827424-1');
-		</script> -->
 		<script data-ad-client="ca-pub-3716182521515143" async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
 	<?php endif ?>
 	<meta charset="utf-8">

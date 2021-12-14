@@ -6,11 +6,6 @@ include('includes/page_head.php');
 ?>
 <body>
 	<?php if ((bool)strstr($_SERVER['HTTP_HOST'], 'local.') == false): ?>
-		<!-- Google Tag Manager (noscript) -->
-		<!-- <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-T2LRXWG"
-		height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript> -->
-		<!-- End Google Tag Manager (noscript) -->
-
 		<!-- Load Facebook SDK for JavaScript -->
 		<!-- Messenger Chat Plugin Code -->
 		<div id="fb-root"></div>
