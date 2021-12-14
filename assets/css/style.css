@@ -198,7 +198,7 @@ kbd {
 /* Or display content like unicode characters or fontawesome icons */
 .slider-handle.custom::before {
     font-size: 35px;
-    content: '➧' !important;
+    content: '\27A7' !important;
     color: #ffc107;
     position: absolute;
     left: 0px;
