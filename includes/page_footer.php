@@ -120,19 +120,6 @@
 </footer>
 <!-- Footer -->
 
-<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-3716182521515143"
-crossorigin="anonymous"></script>
-<!-- First Ad -->
-<ins class="adsbygoogle"
-style="display:block"
-data-ad-client="ca-pub-3716182521515143"
-data-ad-slot="7970134604"
-data-ad-format="auto"
-data-full-width-responsive="true"></ins>
-<script>
-	(adsbygoogle = window.adsbygoogle || []).push({});
-</script>
-
 <!-- Bootstrap core JavaScript -->
 <script src="assets/js/jquery.min.js"></script>
 <script src="assets/js/bootstrap.min.js"></script>
