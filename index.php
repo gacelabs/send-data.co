@@ -4,7 +4,6 @@ include('includes/constants.php');
 include('includes/page_head.php');
 
 ?>
-<body>
 	<?php if ((bool)strstr($_SERVER['HTTP_HOST'], 'local.') == false): ?>
 		<!-- Load Facebook SDK for JavaScript -->
 		<!-- Messenger Chat Plugin Code -->

@@ -36,7 +36,6 @@
 		)
 	);
 
-
 	$projects = array(
 		'Chat App' => array(
 			'icon' => 'fa fa-commenting-o',
@@ -56,7 +55,6 @@
 		)
 	);
 
-
 	$sampleSystems = array(
 		'chat.jpg',
 		'chart.jpg',
@@ -65,5 +63,4 @@
 		'ecommerce.jpg',
 		'cloud.jpg'
 	);
-
 ?>

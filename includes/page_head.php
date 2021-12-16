@@ -27,8 +27,7 @@
 	<?php endif ?>
 </head>
 
-<?php
+<?php include('includes/array.php'); ?>
 
-include('includes/array.php');
-
-?>
+<body>
+	<h1 style="display:none;"><?php echo $metaTitle; ?></h1>
