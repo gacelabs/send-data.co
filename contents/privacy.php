@@ -77,7 +77,7 @@
 			<ul>
 				<li><span>Name / Username</span></li>
 				<li><span>Email Addresses</span></li>
-				<li><span>Debit/credit card numbers</span></li>
+				<li><span>Paypal Details / Informations</span></li>
 				<li><span>Password</span></li>
 			</ul>
 		</div>
