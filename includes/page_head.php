@@ -28,6 +28,3 @@
 </head>
 
 <?php include('includes/array.php'); ?>
-
-<body>
-	<h1 style="display:none;"><?php echo $metaTitle; ?></h1>

@@ -4,6 +4,7 @@ include('includes/constants.php');
 include('includes/page_head.php');
 
 ?>
+<body>
 	<?php if ((bool)strstr($_SERVER['HTTP_HOST'], 'local.') == false): ?>
 		<!-- Load Facebook SDK for JavaScript -->
 		<!-- Messenger Chat Plugin Code -->
@@ -30,27 +31,16 @@ include('includes/page_head.php');
 			}(document, 'script', 'facebook-jssdk'));
 		</script>
 	<?php endif ?>
+	<h1 style="display:none;"><?php echo $metaTitle; ?></h1>
 
 	<!-- Navigation -->
-	<?php
-
-	include('includes/page_nav.php');
-
-	?>
+	<?php include('includes/page_nav.php'); ?>
 
 	<!-- Page Content -->
-	<?php
-
-	include($pageContent);
-
-	?>
+	<?php include($pageContent); ?>
 
 	<!-- Footer -->
-	<?php
-
-	include('includes/page_footer.php');
-
-	?>
+	<?php include('includes/page_footer.php'); ?>
 
 </body>
 </html>
