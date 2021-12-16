@@ -68,6 +68,22 @@
 				$pageContent = 'contents/enquiry.php';
 				$activePage = 'Enquiry Sent';
 				break;
+			case 'privacy-policy':
+				$description = '';
+				
+				$pageTitle = 'Send-Data - Privacy Policy';
+				$metaTitle = 'Please read our Privacy Policy';
+				$pageContent = 'contents/privacy.php';
+				$activePage = 'Privacy Policy';
+				break;
+			case 'terms-and-conditions':
+				$description = '';
+				
+				$pageTitle = 'Send-Data - Terms & Conditions';
+				$metaTitle = 'Please read our Terms & Conditions';
+				$pageContent = 'contents/terms.php';
+				$activePage = 'Terms & Conditions';
+				break;
 			default:
 				$description = '';
 				

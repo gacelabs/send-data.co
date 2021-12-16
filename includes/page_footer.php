@@ -116,6 +116,11 @@
 	<div class="footer-copyright text-center py-3 text-white">© <?php echo date('Y'); ?> Copyright:
 		<a class="text-warning" href="/"> Send-Data.co </a>
 	</div>
+	<div class="footer-copyright text-center py-3 text-white">
+		<a class="text-warning" href="/?page=privacy-policy"> Privacy Policy </a>
+		| 
+		<a class="text-warning" href="/?page=terms-and-conditions"> Terms & Conditions </a>
+	</div>
 	<!-- Copyright -->
 </footer>
 <!-- Footer -->
