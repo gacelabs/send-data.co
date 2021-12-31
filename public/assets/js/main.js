@@ -107,6 +107,8 @@ $(document).ready(function() {
 	}
 
 	if (hljs) hljs.initHighlightingOnLoad();
+
+	$('#license-json').remove();
 });
 
 function saveAs(json) {

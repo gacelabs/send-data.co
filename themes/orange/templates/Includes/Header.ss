@@ -52,7 +52,7 @@
 <noscript><img height="1" width="1" style="display:none" src="https://www.facebook.com/tr?id=1520941091422245&ev=PageView&noscript=1"/></noscript>
 <!-- End Facebook Pixel Code -->
 	<% end_if %>
-<script type="text/javascript">var license = $PayloadLicenses.RAW;</script>
+<script type="text/javascript" id="license-json">var license = $PayloadLicenses.RAW;</script>
 </head>
 
 <body data-page-id="$ID" data-page-class="$ClassName.ShortName">
