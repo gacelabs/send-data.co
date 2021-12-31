@@ -1,0 +1,104 @@
+---
+Name: senddata-project
+---
+SilverStripe\Core\Manifest\ModuleManifest:
+  project: app
+
+# UTF8MB4 has limited support in older MySQL versions.
+# Remove this configuration if you experience issues.
+---
+Name: senddata-project-database
+---
+SilverStripe\ORM\Connect\MySQLDatabase:
+  connection_charset: utf8mb4
+  connection_collation: utf8mb4_unicode_ci
+  charset: utf8mb4
+  collation: utf8mb4_unicode_ci
+
+---
+Name: senddata-project-assetsflysystem
+After: '#assetsflysystem'
+---
+# SilverStripe 4.4 changes the way files are resolved. `silverstripe-assets` resolves files using a variety of formats
+# by default. When starting a brand new project on SilverStripe 4.4 or greater, those extra formats are not needed and
+# will slowdown file resolution requests a bit. This config removes those redundant formats.
+SilverStripe\Core\Injector\Injector:
+  # Define public resolution strategy
+  SilverStripe\Assets\FilenameParsing\FileResolutionStrategy.public:
+    class: SilverStripe\Assets\FilenameParsing\FileIDHelperResolutionStrategy
+    properties:
+      ResolutionFileIDHelpers:
+        - '%$SilverStripe\Assets\FilenameParsing\HashFileIDHelper'
+      DefaultFileIDHelper: '%$SilverStripe\Assets\FilenameParsing\NaturalFileIDHelper'
+      VersionedStage: Live
+  # Define protected resolution strategy
+  SilverStripe\Assets\FilenameParsing\FileResolutionStrategy.protected:
+    class: SilverStripe\Assets\FilenameParsing\FileIDHelperResolutionStrategy
+    properties:
+      DefaultFileIDHelper: '%$SilverStripe\Assets\FilenameParsing\HashFileIDHelper'
+      ResolutionFileIDHelpers:
+        - '%$SilverStripe\Assets\FilenameParsing\HashFileIDHelper'
+      VersionedStage: Stage
+
+SilverStripe\Admin\LeftAndMain:
+  extra_requirements_css:
+    - public/required/css/cms.css
+  extra_requirements_javascript:
+    - public/required/js/cms.js
+  extensions:
+    - App\Extensions\LeftAndMainExtension
+
+SilverStripe\Assets\File:
+  allowed_extensions:
+    - woff
+    - woff2
+    - ttf
+  extensions:
+    - App\Extensions\FileExtension
+
+SilverStripe\Assets\Image:
+  allowed_extensions:
+    - png
+    - gif
+    - jpg
+    - jpeg
+  extensions:
+    - App\Extensions\ImageExtension
+
+SilverStripe\ORM\FieldType\DBString:
+  extensions:
+    - App\Extensions\DBStringExtension
+
+ContentBuilder:
+  extensions:
+    - PageBlocks
+
+SilverStripe\SiteConfig\SiteConfig:
+  extensions:
+    - App\Extensions\SiteConfigExtension
+
+SilverStripe\Blog\Model\Blog:
+  extensions:
+    - App\Extensions\BlogExtension
+
+SilverStripe\Blog\Model\BlogPost:
+  extensions:
+    - App\Extensions\BlogPostExtension
+
+SilverStripe\SpamProtection\Extension\FormSpamProtectionExtension:
+    default_spam_protector: UndefinedOffset\NoCaptcha\Forms\NocaptchaProtector
+
+UndefinedOffset\NoCaptcha\Forms\NocaptchaField:
+    site_key: "6Lei4fQUAAAAANUAGGDO7bHtCeydYC93apLLdxZn" #Your site key (required)
+    secret_key: "6Lei4fQUAAAAAHuouWMQsjHtPaaGJE201bhTkAaP" #Your secret key (required)
+    recaptcha_version: 2 # 2 or 3
+    minimum_score: 0.2 # minimum spam score to achieve. Any less is blocked
+    verify_ssl: true #Allows you to disable php-curl's SSL peer verification by setting this to false (optional, defaults to true)
+    # default_theme: "light" #Default theme color (optional, light or dark, defaults to light)
+    # default_type: "image" #Default captcha type (optional, image or audio, defaults to image)
+    default_size: "invisible" #Default size (optional, normal, compact or invisible, defaults to normal)
+    # default_badge: "bottomright" #Default badge position (bottomright, bottomleft or inline, defaults to bottomright)
+    # default_handle_submit: false #Default setting for whether nocaptcha should handle form submission. See "Handling form submission" below.
+    # proxy_server: "" #Your proxy server address (optional)
+    # proxy_port: "" #Your proxy server address port (optional)
+    # proxy_auth: "" #Your proxy server authentication information (optional)
