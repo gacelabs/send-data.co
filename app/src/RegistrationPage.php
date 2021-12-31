@@ -54,16 +54,21 @@ class RegistrationPage extends ContentBuilder
 
 	public function PackageTypeMetas()
 	{
-		$PackageType = PackageType::get_by_id(Controller::curr()->request->param('ID'));
+		$PackageType = PackageType::get()->Filter('ID', Controller::curr()->request->param('ID'));
 		// debug::endshow($PackageType);
-		if ($PackageType->Exists()) {
-			return $PackageType;
+		if ($PackageType->Count()) {
+			return $PackageType->First();
 		} else {
 			return ArrayList::create([
 				'MetaTitle' => 'Simple API written in PHP Programming Language & JavaScript.',
 				'MetaDescription' => 'Push data across your app Fast. Secured. Affordable. Create a messenger app for personal or for your business. Send notifications across all your users, fast and reliable, best for Inventory Systems, Real-time Sales Reporting, CRM Records, Order Tracking System and more!',
 			]);
 		}
+	}
+
+	public function PackageTypes()
+	{
+		return PackageType::get();
 	}
 
 }

@@ -1,5 +1,10 @@
 	<div class="page-load-overlay"><div class="page-loader"></div></div>
-	<% include RegisterCards %>
+	<% if $CLassName != RegistrationPage %>
+		<div class="container" id="register-panel">
+			<hr>
+			<% include RegisterCards %>
+		</div>
+	<% end_if %>
 	<!-- Footer -->
 	<footer class="page-footer font-small bg-dark">
 		<!-- Footer Links -->

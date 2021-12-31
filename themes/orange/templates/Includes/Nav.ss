@@ -6,9 +6,11 @@
 		</button>
 		<div class="collapse navbar-collapse" id="navbarResponsive">
 			<ul class="navbar-nav ml-auto">
-				<li class="nav-item">
-					<a class="nav-link" href="#register-panel">How to Get Started?</a>
-				</li>
+				<% if $CLassName != RegistrationPage %>
+					<li class="nav-item">
+						<a class="nav-link" href="#register-panel">How to Get Started?</a>
+					</li>
+				<% end_if %>
 				<% loop $Menu(1) %>
 					<li class="nav-item">
 						<a class="nav-link" href="$Link">$MenuTitle</a>

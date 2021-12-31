@@ -1,1 +1,3 @@
-<% include RegisterCards %>
+<div class="container">
+	<% include RegisterCards %>
+</div>
