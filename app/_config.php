@@ -15,7 +15,7 @@ use SilverStripe\Control\Director;
 if ((bool)strstr($_SERVER['HTTP_HOST'], 'local') == TRUE) {
 	define('APP_SITE', 'http://local.app.send.data/');
 } else {
-	define('APP_SITE', 'https://app.send-data/');
+	define('APP_SITE', 'https://app.send-data.co/');
 }
 
 /*HTMLEditor additional tools*/
