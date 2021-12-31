@@ -92,8 +92,8 @@
 					</div>
 					<div class="card-footer">
 						<ul class="inline-list center">
-							<li><p class="mb-0">Price (USD): <b class="clientPrice"></b></p></li>
-							<li><p class="mb-0">Billed: <b></b></p></li>
+							<li><p class="mb-0">Price (USD): <b class="clientPrice">$PackageType.Price</b></p></li>
+							<li><p class="mb-0">Billed: <b>$PackageType.Billed.Name</b></p></li>
 						</ul>
 					</div>
 				</div>
