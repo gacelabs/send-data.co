@@ -1,0 +1,209 @@
+body {
+	padding-top: 54px;
+}
+
+@media (min-width: 992px) {
+	body {
+		padding-top: 56px;
+	}
+}
+@media (max-width: 767px) {
+	.business-header {
+		margin-left: -15px;
+		margin-right: -15px;
+	}
+	.business-header>div {
+		padding-left: 15px !important;
+		padding-right: 15px !important;
+		padding-top: 15px !important;
+		background-color: rgba(0,0,0,.3);
+		height: 400px;
+	}
+	.business-header>div>h2 {
+		font-size: 20px;
+	}
+	.business-header .btn-success {
+		padding: 2px 6px;
+		font-size: 14px;
+	}
+	.skew-bg {
+		padding-left: 10px;
+		padding-right: 10px;
+	}
+	.sm-no-gaps {
+		padding: 0;
+		margin: 0;
+	}
+}
+
+.business-header {
+	height: 50vh;
+	min-height: 400px;
+}
+.bold-caps {
+	text-transform: uppercase;
+	font-weight: bold;
+}
+.card {
+	height: 100%;
+}
+.form-body {
+	border-left: 1px solid #ddd;
+	border-bottom: 1px solid #ddd;
+	border-right: 1px solid #ddd;
+	border-radius: 6px;
+}
+.form-container {
+	margin-top: 30px !important;
+	margin-bottom: 30px !important;
+}
+.form-container.controlled {
+	width: 320px;
+}
+.form-container.controlled.center {
+	margin: 0 auto;
+}
+.fa-caret-down,.fa-caret-up {
+	cursor: pointer;
+	color: #aaa;
+	transition: all .3s ease-in-out;
+}
+.fa-caret-down:hover,.fa-caret-up:hover {
+	color: #ffc107;
+}
+.form-header {
+	background-color: #ffc107;
+	border-left: 1px solid #ffc107;
+	border-right: 1px solid #ffc107;
+	color: #fff;
+	padding: 15px 0;
+	border-top-left-radius: 6px;
+	border-top-right-radius: 6px;
+}
+kbd {
+	color: #212529;
+	font-weight: bold;
+	padding: .2rem 0;
+	background-color: transparent;
+}
+.header-orange-bg {
+	background-color: #ffc107;
+	border-top-left-radius: 6px;
+	border-top-right-radius: 6px;
+	border-left: 1px solid #ffc107;
+	border-right: 1px solid #ffc107;
+	color: #fff;
+}
+.icon-left {
+	margin-right: 15px;
+}
+.inline-list {
+	padding: 0;
+	margin: 0;
+}
+.inline-list>li {
+	display: inline-block;
+}
+.inline-list.center>li {
+	text-align: center;
+	margin: 0 15px;
+}
+.nav-item.active>a {
+	color: #ffc107 !important;
+}
+.no-style-ul {
+	list-style: none;
+	padding-left: 15px;
+}
+.skew-bg {
+	transform: skew(0deg, -4deg) translateY(-65px);
+	background: white;
+}
+.skew-bg .skew-bg-child {
+	transform: skew(0deg, 4deg) translateY(65px);
+}
+.text-all-caps {
+	text-transform: uppercase;
+}
+.text-grey {
+	color: #555;
+}
+.toggle-hide {
+	display: none;
+	transition: all .3s ease-in-out;
+}
+.voucher-body {
+
+}
+.voucher-width {
+	margin: 0 auto;
+	width: 700px;
+}
+.zero-gaps {
+	padding: 0;
+	margin: 0;
+}
+.input-error {
+	border: 2px solid #ed5565;
+}
+.required-badge {
+	position: relative;
+    top: -30px;
+    background: #ed5565;
+    text-align: center;
+    color: #fff;
+    border-radius: 50%;
+    right: 5px;
+    float: right;
+}
+.required-badge:before {
+    content: "\0021";
+    padding: 9px;
+    font-weight: bolder;
+}
+
+.slider-handle {
+    position: absolute;
+    top: 0;
+    width: 20px;
+    height: 20px;
+    background-color: #ffc107;
+    background-image: -webkit-linear-gradient(top, #ffc107 0%, #f6c76c 100%);
+    background-image: -o-linear-gradient(top, #ffc107 0%, #f6c76c 100%);
+    background-image: linear-gradient(to bottom, #ffc107 0%, #f6c76c 100%);
+    background-repeat: repeat-x;
+    filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#ff337ab7', endColorstr='#ff2e6da4', GradientType=0);
+    filter: none;
+    -webkit-box-shadow: none;
+    box-shadow: none;
+    border: 0px solid transparent;
+    margin-left: -5px !important;
+}
+
+.slider-selection {
+    background-image: linear-gradient(to bottom, #ffc107 0%, #f6c76c 100%) !important;
+    border-radius: unset !important;
+}
+
+.slider-handle.custom {
+	background: transparent none;
+	/* You can customize the handle and set a background image */
+}
+
+/* Or display content like unicode characters or fontawesome icons */
+.slider-handle.custom::before {
+    font-size: 35px;
+    content: '\27A7' !important;
+    color: #ffc107;
+    position: absolute;
+    left: 0px;
+    bottom: 5px;
+}
+
+.slider.slider-horizontal .slider-track {
+    height: 18px;
+    width: 100%;
+    margin-top: -5px;
+    top: 15%;
+    left: 0;
+}
