@@ -1,9 +1,0 @@
-assets/images/
-.env
-.htaccess
-composer.lock
-public/
-ss_error.log
-themes/
-vendor/
-.htaccess.bk
