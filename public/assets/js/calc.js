@@ -165,7 +165,7 @@ function newCompute(sliders) {
 
 		function calculate(price, value, slider) {
 			var payloadLimit = $(slider).parents('.card-body').find(".payloadLimit");
-			var clientPrice = $(".clientPrice");
+			var clientPrice = (pathname.indexOf('customed') < 0) ? $(slider).parents('.card-body').find(".clientPrice") : $(".clientPrice");
 			var payloadLimitVal = $(".payloadLimitVal");
 			var clientPriceVal = $(".clientPriceVal");
 			// console.log($(slider), price, payloadLimit, clientPrice, payloadLimitVal, clientPriceVal);
@@ -189,6 +189,7 @@ function newCompute(sliders) {
 				clientPriceVal.attr('value', newPrice);
 				$(slider).attr('value', parseInt(newLimit) / payloadTimes);
 				$(slider).attr('data-value', parseInt(newLimit) / payloadTimes);
+
 				var obj = {'payload':newLimit, 'price':newPrice};
 				window.localStorage.setItem('customed', JSON.stringify(obj));
 				window.sessionStorage.setItem('customed', JSON.stringify(obj));
