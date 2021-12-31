@@ -16,20 +16,31 @@
 	$MetaTags(false)
 	<meta name="theme-color" content="#FFC107">
 	<meta name="title" content="<% if $MetaTitle %>$MetaTitle<% else %>$Title<% end_if %>">
-	<% if $MetaDescription %>
-		<meta name="description" content="$MetaDescription" />
-		<meta property="og:description" content="$MetaDescription">
-		<meta property="twitter:description" content="$MetaDescription">
+	<% if $PackageTypeMetas %>
+		<meta name="description" content="$PackageTypeMetas.MetaDescription" />
+		<meta property="og:description" content="$PackageTypeMetas.MetaDescription">
+		<meta property="twitter:description" content="$PackageTypeMetas.MetaDescription">
+	<% else %>
+		<% if $MetaDescription %>
+			<meta name="description" content="$MetaDescription" />
+			<meta property="og:description" content="$MetaDescription">
+			<meta property="twitter:description" content="$MetaDescription">
+		<% end_if %>
+	<% end_if %>
+	<% if $PackageTypeMetas %>
+		<meta property="og:title" content="$PackageTypeMetas.MetaTitle">
+		<meta property="twitter:title" content="$PackageTypeMetas.MetaTitle">
+	<% else %>
+		<meta property="og:title" content="<% if $MetaTitle %>$MetaTitle<% else %>$Title<% end_if %>">
+		<meta property="twitter:title" content="<% if $MetaTitle %>$MetaTitle<% else %>$Title<% end_if %>">
 	<% end_if %>
 	<!-- Open Graph / Facebook -->
 	<meta property="og:type" content="website">
 	<meta property="og:url" content="$BaseHref">
-	<meta property="og:title" content="<% if $MetaTitle %>$MetaTitle<% else %>$Title<% end_if %>">
 	<meta property="og:image" content="{$BaseHref}assets/images/header-bg3.jpg">
 	<!-- Twitter -->
 	<meta property="twitter:card" content="summary_large_image">
 	<meta property="twitter:url" content="$BaseHref">
-	<meta property="twitter:title" content="<% if $MetaTitle %>$MetaTitle<% else %>$Title<% end_if %>">
 	<meta property="twitter:image" content="{$BaseHref}assets/images/header-bg3.jpg">
 
 	<link rel="canonical" href="$BaseHref">

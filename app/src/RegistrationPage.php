@@ -8,6 +8,7 @@ use SilverStripe\Control\Controller;
 use SilverStripe\CMS\Model\SiteTree;
 use SilverStripe\Forms\CompositeField;
 use SilverStripe\Dev\Debug;
+use SilverStripe\ORM\ArrayList;
 
 use App\Helpers\FieldHelper;
 use App\Helpers\GridHelper;
@@ -49,6 +50,20 @@ class RegistrationPage extends ContentBuilder
 		$fields->removeByName(['Content']);
 
 		return $fields;
+	}
+
+	public function PackageTypeMetas()
+	{
+		$PackageType = PackageType::get_by_id(Controller::curr()->request->param('ID'));
+		// debug::endshow($PackageType);
+		if ($PackageType->Exists()) {
+			return $PackageType;
+		} else {
+			return ArrayList::create([
+				'MetaTitle' => 'Simple API written in PHP Programming Language & JavaScript.',
+				'MetaDescription' => 'Push data across your app Fast. Secured. Affordable. Create a messenger app for personal or for your business. Send notifications across all your users, fast and reliable, best for Inventory Systems, Real-time Sales Reporting, CRM Records, Order Tracking System and more!',
+			]);
+		}
 	}
 
 }

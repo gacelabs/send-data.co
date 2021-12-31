@@ -165,7 +165,7 @@ function newCompute(sliders) {
 
 		function calculate(price, value, slider) {
 			var payloadLimit = $(slider).parents('.card-body').find(".payloadLimit");
-			var clientPrice = $(slider).parents('.card-body').find(".clientPrice");
+			var clientPrice = $(".clientPrice");
 			var payloadLimitVal = $(".payloadLimitVal");
 			var clientPriceVal = $(".clientPriceVal");
 			// console.log($(slider), price, payloadLimit, clientPrice, payloadLimitVal, clientPriceVal);

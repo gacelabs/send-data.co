@@ -29,6 +29,8 @@ class PackageType extends DataObject {
 		'IsActive' => 'Boolean',
 		'Payload' => 'Int',
 		'Description' => 'HTMLText',
+		'MetaTitle' => 'Text',
+		'MetaDescription' => 'Text',
 		'SortOrder' => 'Int',
 	];
 
@@ -62,6 +64,17 @@ class PackageType extends DataObject {
 			FieldHelper::Checkbox('IsActive', 'Active'),
 			FieldHelper::HTMLEditor('Description'),
 		], 'BilledID');
+
+		$fields->addFieldsToTab('Root.Main', [
+			FieldHelper::Accordion($fields, 'Metadata', 'Metadata', [
+				FieldHelper::Textarea('MetaTitle')
+					->setRightTitle('Shown at the top of the browser window and used as the "linked text" by search engines.')
+					->addExtraClass('help'),
+				FieldHelper::Textarea('MetaDescription')
+					->setRightTitle('Search engines use this content for displaying search results (although it will not influence their ranking).')
+					->addExtraClass('help'),
+			])->setStartClosed(false),
+		]);
 
 		return $fields;
 	}
