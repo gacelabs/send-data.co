@@ -12,7 +12,7 @@ define('SITE_DEFAULT_THEME', 'orange');
 define('PAYLOAD_RANGE', serialize([1,2,3,4,5,6,7,8,9,10]));
 
 use SilverStripe\Control\Director;
-if (Director::isDev()) {
+if ((bool)strstr($_SERVER['HTTP_HOST'], 'local') == TRUE) {
 	define('APP_SITE', 'http://local.app.send.data/');
 } else {
 	define('APP_SITE', 'https://app.send-data/');
