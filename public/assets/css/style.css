@@ -181,7 +181,7 @@ kbd {
 }
 
 .slider-selection {
-    background-image: linear-gradient(to bottom, #ffc107 0%, #f6c76c 100%) !important;
+    background-image: linear-gradient(to bottom, #ff0707 0%, #f66c6c 100%) !important;
     border-radius: unset !important;
 }
 
@@ -192,12 +192,17 @@ kbd {
 
 /* Or display content like unicode characters or fontawesome icons */
 .slider-handle.custom::before {
-    font-size: 35px;
+    font-size: 38px;
     content: '\27A7' !important;
-    color: #ffc107;
-    position: absolute;
-    left: 0px;
-    bottom: 5px;
+    /*color: #ffc107;*/
+    color: #ff4c07;
+	position: absolute;
+	left: -6px;
+	bottom: 5px;
+}
+
+.reg-page .slider-handle.custom::before {
+	bottom: 5px !important;
 }
 
 .slider.slider-horizontal .slider-track {

@@ -138,3 +138,8 @@ input.error, textarea.error, select.error {
 .grecaptcha-badge {
   display: none !important;
 }
+
+.slider-track {
+  background: url(../images/pb.gif) no-repeat center;
+  background-size: cover;
+}

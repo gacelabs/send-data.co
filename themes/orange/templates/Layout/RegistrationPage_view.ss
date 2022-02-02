@@ -66,7 +66,7 @@
 								<div class="text-center">
 									<span class="fa fa-info-circle text-primary"> Drag and slide to the right/left for flexible price</span>
 								</div>
-								<div class="range-field">
+								<div class="range-field reg-page">
 									<input type="text" class="p-0 calculatorSlider" data-slider-min="1" data-slider-max="10" data-slider-step="1" data-slider-handle="custom" style="width: 100%;">
 								</div>
 								<!-- Grid row -->
