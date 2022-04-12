@@ -66,7 +66,10 @@ $(document).ready(function() {
 		$('[href*="#"]').each(function(i, elem) {
 			$(elem).bind('click', function(e) {
 				e.preventDefault();
-				var id = $(elem).attr('href').replace(window.location.pathname, '');
+				var splitted = $(elem).attr('href').split('#'), id = null;
+				if (splitted.length) {
+					id = '#'+splitted[splitted.length-1];
+				}
 				if ($(id).length) {
 					$('html, body').animate({
 						scrollTop: $(id).offset().top - th
@@ -126,7 +129,7 @@ function saveAs(json) {
 }
 
 function getParameterByName(name, url) {
-	if (url == undefined) url = window.location.href;
+	if (url == undefined) url = window.location.search;
 	name = name.replace(/[\[\]]/g, '\\$&');
 	var regex = new RegExp('[?&]' + name + '(=([^&#]*)|&|#|$)'),
 	results = regex.exec(url);
